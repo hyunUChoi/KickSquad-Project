@@ -11,15 +11,13 @@
 <title>Insert title here</title>
 </head>
 <meta charset="UTF-8">
-<title> 초기화면 </title>
+<title> 주행화면 </title>
 </head>
 <body>
-	<h1> 초기화면 </h1>
-	<button type='button' onclick='location.href="${cpath}/play.do"'> 다음페이지 </button>
+	<h1> 주행화면 </h1>
+	<button type='button' onclick='location.href="${cpath}/quit.do"'> 다음페이지 </button>
 
 <script type="text/javascript">
-
-
 </script>
 </body>
 </html>
