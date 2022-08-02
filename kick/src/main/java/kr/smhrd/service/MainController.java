@@ -1,6 +1,5 @@
 package kr.smhrd.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -10,7 +9,7 @@ public class MainController {
 	//@Autowired
 	// private BoardMapper mapper;
 		
-	@RequestMapping("/basic")
+	@RequestMapping("/basic.do")
 	public String basic() {
 		System.out.println("메인화면");
 		return "basic";
@@ -27,5 +26,6 @@ public class MainController {
 		System.out.println("주행종료화면");
 		return "quit";
 	}
+	
 	
 }

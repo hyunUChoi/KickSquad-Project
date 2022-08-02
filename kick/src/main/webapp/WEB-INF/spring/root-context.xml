@@ -18,9 +18,9 @@
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 	    <!-- setter메소드 사용 -->
 	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-	    <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/mysql"/>
-	    <property name="username" value="root"/>
-	    <property name="password" value="12345"/>
+	    <property name="jdbcUrl" value="jdbc:mysql://project-db-stu.ddns.net:3307/kick"/>
+	    <property name="username" value="kick"/>
+	    <property name="password" value="kick"/>
 	</bean>
 	
 	<!-- DBCP 만들어주는 클래스 생성 -->
