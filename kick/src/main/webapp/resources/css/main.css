@@ -148,7 +148,7 @@ body > div > div.middle > div.body2 > div.inner2 > div.inner-middle2 > div > .bt
 
 body>div>div.middle>div.head>.session {
 	position: absolute;
-	right: 0;
+	right: 20px;
 }
 
 
@@ -318,7 +318,9 @@ img {
 	margin: 0 auto;
 	width: 490px;
 	position: relative;
-	height: 20px;
+	height: 1000px;
+	z-index:2;
+	margin-top:80px;
 }
 
 .main .main-img1 {
@@ -807,4 +809,30 @@ body > div > div.middle > div.body2 > div.inner2 > div.inner-middle2 > .text-gro
 	cursor: pointer;
 	background-color: #DCDCDE;
 	border-radius: 10%;
+}
+
+
+.drive-inner{
+	
+	
+}
+.drive-inner .drive-inner-in{
+	display:flex;
+	
+	
+	
+	
+}
+.drive-inner .drive-inner-in .drive-inner-head{
+	
+	
+}
+.drive-inner .drive-inner-in .drive-inner-main{
+	
+	
+}
+.drive-inner .drive-inner-in .drive-inner-foot{
+	
+	
+	
 }

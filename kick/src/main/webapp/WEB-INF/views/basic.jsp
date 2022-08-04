@@ -50,7 +50,7 @@
 
 				<c:if test="${!empty mvo}">
 					<div class="session">
-						<span class="material-icons">person</span> <span>${mvo.name}님</span>
+						<span class="material-icons">person</span> <span>${mvo.name}님</span> <span onclick='location.href="${cpath}/logout.do"' class="material-icons">logout</span>
 					</div>
 				</c:if>
 				<c:if test="${empty mvo}">
@@ -99,7 +99,7 @@
 						</div>
 						<div  class="inner-drive">
 							ㅇ <img  onclick="alert12()" class="dri" src="resources/image/btn1.png" alt="" />
-							<div class="btn1">주행하기</div>
+							<div onclick="movedrive()" class="btn1">주행하기</div>
 						</div>
 					</div>
 			</c:if>
@@ -248,6 +248,19 @@
 					<img class="middle-img2" src="resources/image/서비스안내2.png" />
 				</div>
 			</div>
+			<section class="drive-inner">
+			<div class="drive-inner-in">
+			<div class="drive-inner-head"></div>
+			<div class="drive-inner-main"></div>
+			<div class="drive-inner-foot"></div>
+			</div>
+			
+			
+			
+			</section>
+			
+			
+			
 		</div>
 		<!-- 버튼 클릭시 모달창 오픈-->
 
@@ -328,6 +341,20 @@
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
+	
+		
+			function movedrive(){
+				
+				 $('.middle').css('display','none');
+				 $('.drive-inner').css('display','block');
+					
+			}
+			
+			
+			
+			
+	
+	
 		function registerService() {
 
 			console.log($('#id2').val());

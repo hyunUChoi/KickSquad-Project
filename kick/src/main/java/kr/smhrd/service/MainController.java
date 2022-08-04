@@ -1,5 +1,7 @@
 package kr.smhrd.service;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,6 +28,18 @@ public class MainController {
 		System.out.println("주행종료화면");
 		return "quit";
 	}
+	
+	@RequestMapping("/logout.do")
+	public String logout(HttpSession session) {
+		
+		session.invalidate(); //세션자체를 무효화
+		
+		
+		return "redirect:/basic.do";
+		
+	}
+	
+	
 	
 	
 }
