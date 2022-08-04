@@ -47,7 +47,7 @@ var icons = document.querySelector('.main .middle .menubar .material-icons');
 
  const modal = document.querySelector('.modal');
  const btnOpenPopup = document.querySelector('.btn-open-popup');
- const btnOpenPopup1 = document.querySelector('.btn-open-popup1');
+ const btnOpenPopup1 = document.querySelector('.popup1-btn');
  const btnclosePop = document.querySelector('body > div > div.modal > span')
  
  btnOpenPopup.addEventListener('click', () => {

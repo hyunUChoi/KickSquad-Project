@@ -92,13 +92,14 @@
 				<div class="body2">
 					<div class="inner">
 						<div class="inner-top">
-							<img class="img1" src="resources/image/운행내역2.jpg" alt="" />
+							
 						</div>
 						<div class="inner-top">
-							<img class="img2" src="resources/image/주차가이드.png" alt="" />
+							
 						</div>
 						<div  class="inner-drive">
-							ㅇ <img  onclick="alert12()" class="dri" src="resources/image/메뉴바8246.png" alt="" />
+							ㅇ <img  onclick="alert12()" class="dri" src="resources/image/btn1.png" alt="" />
+							<div class="btn1">주행하기</div>
 						</div>
 					</div>
 			</c:if>
@@ -106,20 +107,21 @@
 			<div class="body2">
 				<div class="inner">
 					<div class="inner-top">
-						<img class="img1" src="resources/image/운행내역2.jpg" alt="" />
+						
 					</div>
 					<div class="inner-top">
-						<img class="img2" src="resources/image/주차가이드.png" alt="" />
+						
 					</div>
 					<div  class="inner-drive">
-						ㅇ <img class="dri" src="resources/image/메뉴바8246.png" alt="" />
+						ㅇ <img class="dri" src="resources/image/btn1.png" alt="" />
+							<div class="btn1">주행하기</div>
 					</div>
 				</div>
 					</c:if>
 				<div class="inner2">
 					<div class="inner-middle1">
 						<div class="middle1-inner1">
-							<div class="text-group">
+							<div class="text-group1">
 								<c:if test="${!empty mvo.name}">
 									<span>${mvo.name}님이</span>
 									<p>지구를 아껴준 시간</p>
@@ -190,7 +192,10 @@
 								</c:when>
 
 								<c:otherwise>
-									<div class="btn-open-popup1">로그인이필요합니다.</div>
+									<div class="btn-open-popup1">
+									</div>
+										<div class="popup1-btn">로그인이 필요한 서비스입니다.
+										<span>Login</span> <span class="material-icons">login</span></div>
 								</c:otherwise>
 							</c:choose>
 						</div>

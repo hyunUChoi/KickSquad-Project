@@ -10,12 +10,51 @@ a {
 	text-decoration: none;
 	color: #333;
 }
+	
+body > div > div.middle > div.head > div > span.material-icons{
+	position: relative;
+    top: 7px;
+	
+}	
+.btn1{
+   color: #FFF;
+    z-index: 1;
+    top: 65%;
+    position: absolute;
+    left: 30%;
+    cursor: pointer;
+    font-size: 20px;
+}
+.btn1:hover{
+	color:#19B652;
+}
+.popup1-btn:hover{
+	color:#89898E; 
+}
+.popup1-btn{
+	position: absolute;
+    top: -50px;
+    left: 50px;
+    background-color: #fff;
+    width: 280px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #DEDFE3;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    cursor: pointer;
+    z-index: 1;
+	
+}
 .pointbar{
 	background-color:#fff;
 	width:75%;
 	height:10px;
 	border-radius:4%;
 	overflow:hidden;
+	margin-top: 10px;
 	
 }
 .pointbar .bar{
@@ -61,12 +100,13 @@ a {
 
 
 body > div > div.middle > div.body2 > div.inner2 > div.inner-middle2 > div > .btn-open-popup1{
-	width:180px;
-	
-	position:absolute;
-	top:0;
-	left:0;
-	z-index: 1;
+	width: 100%;
+    height: 200px;
+    position: absolute;
+    top: -85px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
 
 .modal {
@@ -300,8 +340,8 @@ img {
 }
 
 .promotion .swiper-container .swiper-wrapper .swiper-slide img {
-	width: 100px;
-	height: 100px;
+	width: 130px;
+	height: 130px;
 }
 
 .main .middle {
@@ -453,9 +493,15 @@ body>div>div.middle>div.sidebar>ul>li:hover {
     display: flex;
     flex-wrap:wrap;
 }
+body > div > div.middle > div.body2 > div.inner2 > div.inner-middle1 > div.middle1-inner1 > .text-group1{
+	font-size:25px;
+	position:absolute;
+	top:15px;
+	left:15px;
+}
 body > div > div.middle > div.body2 > div.inner2 > div.inner-middle1 > div.middle1-inner1 > .text-group{
 	
-	font-size:25px;
+	font-size:16px;
 	position:absolute;
 	top:15px;
 	left:15px;
@@ -582,7 +628,8 @@ body > div > div.middle > div.body2 > div.inner2 > div.inner-middle2 > .text-gro
 	width: 100px;
 	position: absolute;
 	top: 0;
-	left: 0px;
+	left: -20px;
+	border-radius:10px;
 }
 
 .promotion .swiper-slide-active {
@@ -677,15 +724,19 @@ body > div > div.middle > div.body2 > div.inner2 > div.inner-middle2 > .text-gro
 	top: -70px;
 	cursor: pointer;
 }
-
+.main .body2 .inner .inner-top:first-child{
+	margin-bottom:10px;
+	
+}
 .main .body2 .inner .inner-top {
-	width: 200px;
-	height: 100px;
-	box-sizing: border-box;
-	padding: 10px;
-	cursor: pointer;
-	background-color: #45b6ed;
-	overflow: hidden;
+	width: 180px;
+    height: 93px;
+    box-sizing: border-box;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #F1F2F4;
+    border: 2px solid #DEDFE3;
+    border-radius: 10px;
 }
 
 .main .body2 .inner .inner-top .img1 {
