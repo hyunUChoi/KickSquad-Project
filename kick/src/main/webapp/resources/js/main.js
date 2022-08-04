@@ -73,14 +73,7 @@ var icons = document.querySelector('.main .middle .menubar .material-icons');
  });
  
  
- btnOpenPopup1.addEventListener('click', () => {
-   
-function openModal(){
-    modal.style.display = 'block';
-};
 
- });
- 
  
  
 

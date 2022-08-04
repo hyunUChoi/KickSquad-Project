@@ -10,6 +10,21 @@ a {
 	text-decoration: none;
 	color: #333;
 }
+.pointbar{
+	background-color:#fff;
+	width:75%;
+	height:10px;
+	border-radius:4%;
+	overflow:hidden;
+	
+}
+.pointbar .bar{
+	background-color:#19B652;
+	height:10px;
+	border-radius:4%;
+	
+	
+}
 
 .btn {
 	width: 130px;
