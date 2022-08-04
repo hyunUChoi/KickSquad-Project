@@ -47,16 +47,42 @@ var icons = document.querySelector('.main .middle .menubar .material-icons');
 
  const modal = document.querySelector('.modal');
  const btnOpenPopup = document.querySelector('.btn-open-popup');
+ const btnOpenPopup1 = document.querySelector('.btn-open-popup1');
  const btnclosePop = document.querySelector('body > div > div.modal > span')
+ 
  btnOpenPopup.addEventListener('click', () => {
      modal.style.display = 'block';
-
+     console.log("팝업");
  });
+ 
  btnclosePop.addEventListener('click', () => {
      modal.style.display = 'none';
 
 
  });
+ 
+ 
+  btnOpenPopup1.addEventListener('click', () => {
+  	console.log("팝업1클릭");
+  	
+
+		modal.style.display = 'block';
+
+     
+
+ });
+ 
+ 
+ btnOpenPopup1.addEventListener('click', () => {
+   
+function openModal(){
+    modal.style.display = 'block';
+};
+
+ });
+ 
+ 
+ 
 
  const login = document.querySelector('.modal > div > div.modal_header > h3:nth-child(1)');
  const register = document.querySelector('.modal > div > div.modal_header > h3:nth-child(2)');

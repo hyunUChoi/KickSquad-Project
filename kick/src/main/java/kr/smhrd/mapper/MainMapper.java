@@ -11,4 +11,6 @@ public interface MainMapper {
 	
 	public MemberVO login(MemberVO mvo);
 
+	public int check(MemberVO mvo);
+
 }

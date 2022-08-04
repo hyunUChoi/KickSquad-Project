@@ -3,8 +3,8 @@ package kr.smhrd.service;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.smhrd.model.MemberVO;
@@ -28,5 +28,12 @@ public class MainRESTController {
 		service.loginAjax(mvo, session);
 		
 	}
-
+	
+	@RequestMapping("/checkid.do")
+	public int checkAjax(MemberVO mvo) {
+		int cnt =service.checkAjax(mvo);
+		
+		return cnt;
+	}
+	
 }
