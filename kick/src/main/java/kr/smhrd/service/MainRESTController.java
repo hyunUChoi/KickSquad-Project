@@ -36,4 +36,14 @@ public class MainRESTController {
 		return cnt;
 	}
 	
+//	@RequestMapping("/play.do")
+//	public int playCheck(Member) {
+//		
+//		int cnt = service.playCheck();
+//		
+//		
+//		return cnt;
+//	}
+//	
+	
 }

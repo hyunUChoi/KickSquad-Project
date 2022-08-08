@@ -33,6 +33,7 @@
 
 <!--자바스크립트 -->
 <!-- youtube 스크립트 -->
+
 <script defer src="resources/js/main.js"></script>
 <link rel="stylesheet" href="resources/css/main.css" />
 </head>
@@ -46,11 +47,15 @@
 		</div>
 		<div class="middle">
 			<div class="head">
-				<h2> <a href="http://localhost:8090/web/basic.do"> KickSquad</a> </h2>
+				<h2>
+					<a href="http://localhost:8090/web/basic.do"> KickSquad</a>
+				</h2>
 
 				<c:if test="${!empty mvo}">
 					<div class="session">
-						<span class="material-icons">person</span> <span>${mvo.name}님</span> <span onclick='location.href="${cpath}/logout.do"' class="material-icons">logout</span>
+						<span class="material-icons">person</span> <span>${mvo.name}님</span>
+						<span onclick='location.href="${cpath}/logout.do"'
+							class="material-icons">logout</span>
 					</div>
 				</c:if>
 				<c:if test="${empty mvo}">
@@ -58,357 +63,359 @@
 						<span class="material-icons">person</span> <span></span>
 					</div>
 				</c:if>
+
 			</div>
-			
-			<div class="head-middle" > <span>공지사항</span>
-			<span onclick="slidedown()" class="material-icons">vertical_align_bottom</span>
-			<span onclick="slideup()"  id="top" class="material-icons">vertical_align_top</span>
-			 </div>
-			 <div  class="swiper-container">
+
+			<div class="head-middle">
+				<span>공지사항</span> <span onclick="slidedown()" class="material-icons">vertical_align_bottom</span>
+				<span onclick="slideup()" id="top" class="material-icons">vertical_align_top</span>
+			</div>
+			<div class="swiper-container">
 				<div class="swiper-wrapper">
-				
+
 					<div class="swiper-slide">
-						<a  href="javascript:void(0)">공지사항1</a>
-					
+						<a href="javascript:void(0)">공지사항1</a>
+
 					</div>
 					<div class="swiper-slide">
-						<a  href="javascript:void(0)">공지사항2</a>
-						
+						<a href="javascript:void(0)">공지사항2</a>
+
 					</div>
 					<div class="swiper-slide">
-						<a  href="javascript:void(0)">공지사항3</a>
-						
+						<a href="javascript:void(0)">공지사항3</a>
+
 					</div>
 					<div class="swiper-slide">
-						<a  href="javascript:void(0)">공지사항4</a>
-						
+						<a href="javascript:void(0)">공지사항4</a>
+
 					</div>
 				</div>
 			</div>
-			 <div class="modal-slide-down">
-			  <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
-      </div>
-      <div class="swiper-scrollbar"></div>
-    </div>
-			 </div>
-			
-		
-		
-			<c:if test= "${empty mvo.name}">
+			<div class="modal-slide-down">
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">Slide 1</div>
+						<div class="swiper-slide">Slide 2</div>
+						<div class="swiper-slide">Slide 3</div>
+						<div class="swiper-slide">Slide 4</div>
+						<div class="swiper-slide">Slide 5</div>
+						<div class="swiper-slide">Slide 6</div>
+						<div class="swiper-slide">Slide 7</div>
+						<div class="swiper-slide">Slide 8</div>
+						<div class="swiper-slide">Slide 9</div>
+					</div>
+					<div class="swiper-scrollbar"></div>
+				</div>
+			</div>
+
+
+
+			<c:if test="${empty mvo.name}">
 				<div class="body2">
 					<div onclick="alert12()" class="inner">
-						<div class="inner-top">
-							운행내역
-						</div>
-						<div class="inner-top">
-						지쿠터찾기
-						</div>
-						<div  class="inner-drive">
-							ㅇ <img   class="dri" src="resources/image/btn1.png" alt="" />
-							<div  class="btn1">주행하기</div>
+						<div class="inner-top">운행내역</div>
+						<div class="inner-top">지쿠터찾기</div>
+						<div class="inner-drive">
+							ㅇ <img class="dri" src="resources/image/btn1.png" alt="" />
+							<div class="btn1">주행하기</div>
 						</div>
 					</div>
 			</c:if>
-			<c:if test= "${!empty mvo.name}">
-			<div class="body2">
-				<div class="inner">
-					<div class="inner-top">
-						운행내역
-					</div>
-					<div class="inner-top">
-						지쿠터찾기
-					</div>
-					<div  class="inner-drive">
-						ㅇ <img class="dri" src="resources/image/btn1.png" alt="" />
+			<c:if test="${!empty mvo.name}">
+				<div class="body2">
+					<div class="inner">
+						<div class="inner-top">운행내역</div>
+						<div class="inner-top">지쿠터찾기</div>
+						<div class="inner-drive">
+							ㅇ <img class="dri" src="resources/image/btn1.png" alt="" />
 							<div onclick="movedrive()" class="btn1">주행하기</div>
+						</div>
+					</div>
+			</c:if>
+			<div class="inner2">
+				<div class="inner-middle1">
+					<div class="middle1-inner1">
+						<div class="text-group1">
+							<c:if test="${!empty mvo.name}">
+								<span>${mvo.name}님이</span>
+								<p>지구를 아껴준 시간</p>
+							</c:if>
+						</div>
+					</div>
+					<div class="middle1-inner2"></div>
+				</div>
+				<div class="inner-middle2">
+					<div class="text-group">
+						<c:choose>
+							<c:when test="${mvo.grade == 'white'}">
+								<div>
+									<span class="getgrade" >${mvo.grade}등급</span> <span> (다음등급까지 <c:set
+											var="add" value="${100 - mvo.point}">
+										</c:set> ${add}P)
+									</span>
+								</div>
+								<div class="point-box">
+									<span class="point1">${mvo.point}</span> <span class="point2">/100P</span>
+								</div>
+								<div class="pointbar">
+
+									<div style="width:${mvo.point}%" class="bar"></div>
+								</div>
+							</c:when>
+
+							<c:when test="${mvo.grade == 'gold'}">
+								<div>
+									<span class="getgrade">${mvo.grade}등급</span> <span>(다음등급까지<c:set
+											var="add" value="${300 - mvo.point}"></c:set>${add}P)</span>
+								</div>
+								<div class="point-box">
+									<span class="point1">${mvo.point}</span> <span class="point2">/300P</span>
+								</div>
+								<div class="pointbar">
+									<c:set var="point" value="${(mvo.point-100)/2}">
+									</c:set>
+									<div style="width:${point}%" class="bar"></div>
+								</div>
+							</c:when>
+
+							<c:when test="${mvo.grade == 'vip'}">
+								<div>
+									<span class="getgrade">${mvo.grade}등급</span> <span>(다음등급까지<c:set
+											var="add" value="${500 - mvo.point}"></c:set>${add}P)</span>
+								</div>
+								<div class="point-box">
+									<span class="point1">${mvo.point}</span> <span class="point2">/500P</span>
+								</div>
+								<div class="pointbar">
+									<c:set var="point" value="${(mvo.point -300)/2}">
+									</c:set>
+									<div style="width:${point}%" class="bar"></div>
+								</div>
+							</c:when>
+
+							<c:when test="${mvo.grade == 'vvip'}">
+								<div>
+									<span class="getgrade">${mvo.grade}</span> <span>(마지막등급입니다.)</span>
+								</div>
+								<div class="point-box">
+									<span class="point1">${mvo.point}</span>
+								</div>
+								<div class="pointbar">
+									<div style="width:${mvo.point}%" class="bar"></div>
+								</div>
+							</c:when>
+
+
+							<c:otherwise>
+								<div class="btn-open-popup">
+									<div class="popup1-btn">
+										로그인이 필요한 서비스입니다. <span>Login</span> <span
+											class="material-icons">login</span>
+									</div>
+								</div>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
-					</c:if>
-				<div  class="inner2">
-					<div class="inner-middle1">
-						<div class="middle1-inner1">
-							<div class="text-group1">
-								<c:if test="${!empty mvo.name}">
-									<span>${mvo.name}님이</span>
-									<p>지구를 아껴준 시간</p>
-								</c:if>
-							</div>
-						</div>
-						<div class="middle1-inner2"></div>
-					</div>
-					<div class="inner-middle2">
-						<div class="text-group">
-							<c:choose>
-								<c:when test="${mvo.grade == 'white'}">
-									<div>
-										<span>${mvo.grade}등급</span> <span> (다음등급까지 <c:set
-												var="add" value="${100 - mvo.point}">
-											</c:set> ${add}P)
-										</span>
-									</div>
-									<div class="point-box">
-										<span class="point1">${mvo.point}</span> <span class="point2">/100P</span>
-									</div>
-									<div class="pointbar">
-
-										<div style="width:${mvo.point}%" class="bar"></div>
-									</div>
-								</c:when>
-
-								<c:when test="${mvo.grade == 'gold'}">
-									<div>
-										<span>${mvo.grade}등급</span> <span>(다음등급까지<c:set
-												var="add" value="${300 - mvo.point}"></c:set>${add}P)</span>
-									</div>
-									<div class="point-box">
-										<span class="point1">${mvo.point}</span> <span class="point2">/300P</span>
-									</div>
-									<div class="pointbar">
-										<c:set var="point" value="${(mvo.point-100)/2}">
-										</c:set>
-										<div style="width:${point}%" class="bar"></div>
-									</div>
-								</c:when>
-
-								<c:when test="${mvo.grade == 'vip'}">
-									<div>
-										<span>${mvo.grade}등급</span> <span>(다음등급까지<c:set
-												var="add" value="${500 - mvo.point}"></c:set>${add}P)</span>
-									</div>
-									<div class="point-box">
-										<span class="point1">${mvo.point}</span> <span class="point2">/500P</span>
-									</div>
-									<div class="pointbar">
-										<c:set var="point" value="${(mvo.point -300)/2}">
-										</c:set>
-										<div style="width:${point}%" class="bar"></div>
-									</div>
-								</c:when>
-
-								<c:when test="${mvo.grade == 'vvip'}">
-									<div>
-										<span>${mvo.grade}등급</span> <span>(마지막등급입니다.)</span>
-									</div>
-									<div class="point-box">
-										<span class="point1">${mvo.point}</span>
-									</div>
-									<div class="pointbar">
-										<div style="width:${mvo.point}%" class="bar"></div>
-									</div>
-								</c:when>
-								
-
-								<c:otherwise>
-									<div  class="btn-open-popup">
-										<div class="popup1-btn">로그인이 필요한 서비스입니다.
-										<span>Login</span> <span class="material-icons">login</span></div>
-									</div>
-								</c:otherwise>
-							</c:choose>
-						</div>
-					</div>
-					<div class="inner-middle3">
-						<div class="middle3-inner1"></div>
-						<div class="middle3-inner2"></div>
-					</div>
-				</div>
-
-				<div class="promotion">
-					<div class="swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-									href="javascript:void(0)" class="btn">자세히 보기</a>
-							</div>
-							<div class="swiper-slide">
-								<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-									href="javascript:void(0)" class="btn">자세히 보기</a>
-							</div>
-							<div class="swiper-slide">
-								<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-									href="javascript:void(0)" class="btn">자세히 보기</a>
-							</div>
-							<div class="swiper-slide">
-								<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-									href="javascript:void(0)" class="btn">자세히 보기</a>
-							</div>
-							<div class="swiper-slide">
-								<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-									href="javascript:void(0)" class="btn">자세히 보기</a>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-pagination"></div>
-					<div class="swiper-prev">
-						<div class="material-icons">arrow_back</div>
-					</div>
-					<div class="swiper-next">
-						<div class="material-icons">arrow_forward</div>
-					</div>
+				<div class="inner-middle3">
+					<div class="middle3-inner1"></div>
+					<div class="middle3-inner2"></div>
 				</div>
 			</div>
-			<div class="footer">
+
+			<div class="promotion">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
+								href="javascript:void(0)" class="btn">자세히 보기</a>
+						</div>
+						<div class="swiper-slide">
+							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
+								href="javascript:void(0)" class="btn">자세히 보기</a>
+						</div>
+						<div class="swiper-slide">
+							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
+								href="javascript:void(0)" class="btn">자세히 보기</a>
+						</div>
+						<div class="swiper-slide">
+							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
+								href="javascript:void(0)" class="btn">자세히 보기</a>
+						</div>
+						<div class="swiper-slide">
+							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
+								href="javascript:void(0)" class="btn">자세히 보기</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-prev">
+					<div class="material-icons">arrow_back</div>
+				</div>
+				<div class="swiper-next">
+					<div class="material-icons">arrow_forward</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
 			<div class="footer-inner1">
-			 <img alt="" src="resources/image/서비스안내2.png">
-			  </div>
-			
-				
-				
+				<img alt="" src="resources/image/서비스안내2.png">
 			</div>
-			
-			
-			
-			
+
+
+
 		</div>
-		<!-- 버튼 클릭시 모달창 오픈-->
 
-		<div class="modal">
-			<div class="modal_body">
-				<div class="modal_header">
-					<h3>로그인</h3>
-					<h3>회원가입</h3>
-				</div>
-				<div class="modal_login">
-					<table>
-						<tr>
-							<td><span class="material-icons">person</span></td>
-							<td><input class="input-text1" type="text" id="id1"
-								name="id" placeholder="아이디를 입력해주세요." /></td>
-						</tr>
 
-						<tr>
-							<td><span class="material-icons">lock</span></td>
-							<td><input class="input-text1" type="password" id="pw1"
-								name="pw" placeholder="비밀번호를 입력해주세요." /></td>
-						</tr>
-						<tr>
-							<td><button onclick="loginService()">로그인</button></td>
-						</tr>
-					</table>
-				</div>
-				<div class="modal_middle">
-					<table>
-						<tr>
-							<td><span class="material-icons">person</span></td>
-							<td><input id="id2" class="input-text" name="id" type="text"
-								autocomplete="username" required oninput="checkId()"
-								placeholder="아이디를 입력하세요(필수)" /></td>
-						</tr>
-						<tr>
-							<td><span class="id_ok"> 사용 가능한 아이디입니다.</span> <span
-								class="id_already"> 누군가 이 아이디를 사용하고 있어요.</span></td>
-						</tr>
-						<tr>
-							<td><span class="material-icons">lock</span></td>
-							<td><input id="pw2" class="input-text" name="pw"
-								type="password" placeholder="비밀번호를 입력해주세요(필수)" /></td>
-						</tr>
-						<tr>
-							<td><span class="material-icons">badge</span></td>
-							<td><input id="name2" class="input-text" name="name"
-								type="text" placeholder="이름을 입력해주세요." /></td>
-						</tr>
-						<tr>
-							<td><span class="material-icons">call</span></td>
-							<td><input id="tel2" class="input-text" name="tel"
-								type="text" placeholder="전화번호를 입력해주세요." /></td>
-						</tr>
 
-						<tr>
-							<td><input type="checkbox" />이용약관 동의</td>
-							<td>보기</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" />개인정보수집이용 동의</td>
-							<td>보기</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" />만 16세이상입니다.</td>
-						</tr>
-						<tr>
-							<td>
-								<button onclick="registerService()">회원가입</button>
-							</td>
-						</tr>
-					</table>
-				</div>
+
+	</div>
+	<!-- 버튼 클릭시 모달창 오픈-->
+
+	<div class="modal">
+		<div class="modal_body">
+			<div class="modal_header">
+				<h3>로그인</h3>
+				<h3>회원가입</h3>
 			</div>
-			<span class="material-icons .btn-close">cancel</span>
+			<div class="modal_login">
+				<table>
+					<tr>
+						<td><span class="material-icons">person</span></td>
+						<td><input class="input-text1" type="text" id="id1" name="id"
+							placeholder="아이디를 입력해주세요." /></td>
+					</tr>
+
+					<tr>
+						<td><span class="material-icons">lock</span></td>
+						<td><input class="input-text1" type="password" id="pw1"
+							name="pw" placeholder="비밀번호를 입력해주세요." /></td>
+					</tr>
+					<tr>
+						<td><button onclick="loginService()">로그인</button></td>
+					</tr>
+				</table>
+			</div>
+			<div class="modal_middle">
+				<table>
+					<tr>
+						<td><span class="material-icons">person</span></td>
+						<td><input id="id2" class="input-text" name="id" type="text"
+							autocomplete="username" required oninput="checkId()"
+							placeholder="아이디를 입력하세요(필수)" /></td>
+					</tr>
+					<tr>
+						<td><span class="id_ok"> 사용 가능한 아이디입니다.</span> <span
+							class="id_already"> 누군가 이 아이디를 사용하고 있어요.</span></td>
+					</tr>
+					<tr>
+						<td><span class="material-icons">lock</span></td>
+						<td><input id="pw2" class="input-text" name="pw"
+							type="password" placeholder="비밀번호를 입력해주세요(필수)" /></td>
+					</tr>
+					<tr>
+						<td><span class="material-icons">badge</span></td>
+						<td><input id="name2" class="input-text" name="name"
+							type="text" placeholder="이름을 입력해주세요." /></td>
+					</tr>
+					<tr>
+						<td><span class="material-icons">call</span></td>
+						<td><input id="tel2" class="input-text" name="tel"
+							type="text" placeholder="전화번호를 입력해주세요." /></td>
+					</tr>
+
+					<tr>
+						<td><input type="checkbox" />이용약관 동의</td>
+						<td>보기</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" />개인정보수집이용 동의</td>
+						<td>보기</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" />만 16세이상입니다.</td>
+					</tr>
+					<tr>
+						<td>
+							<button onclick="registerService()">회원가입</button>
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
-		<section class="drive-inner">
-			<div class="drive-inner-in">
+		<span class="material-icons .btn-close">cancel</span>
+	</div>
+	<section class="drive-inner">
+		<div class="drive-inner-in">
 			<div class="drive-inner-head"></div>
 			<div class="drive-inner-main">
-			<div class="youtube">
-        <div class="youtube__area">
-            <div id="player"></div>
+				<video type="video/mp4" autoplay loop width="450" height="800"></video>
 
-        </div>
-        <div class="youtube__cover"></div>
-        <div class="inner">
-            
+				<div class="warning"></div>
 
 
-
-        </div>
-    </div>
 			</div>
 			<div class="drive-inner-foot">
-				<div class="foot-start">운행시작</div>
-				<div class="foot-end">운행종료</div>
+
+				<div class="footstart">운행시작</div>
 			</div>
-			</div>
-			
-			
-			
-			</section>
+		</div>
+
+
+
+	</section>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
-	
-   function	slidedown(){
-	   $(".modal-slide-down").slideDown(500);
-	   
-	   $('.head-middle span:nth-child(2)').css('display','none');
-	   $('#top').css('display','inline');
-	   if($(".modal-slide-down").css('display')=='block'){
-		   
-		   
-		   
-	   }
-	   
-   };
-		
-		   function slideup(){
-			   
-			   $(".modal-slide-down").slideUp(500);
-			   $('.head-middle span:nth-child(2)').css('display','inline');
-			   $('#top').css('display','none');
-		   };
-			function movedrive(){
-				
-				$(".middle").fadeOut("slow");
-				 $(".drive-inner").fadeIn("slow");
-				 
+		$('.footstart').click(function() {
 
-					
+			$('video').attr('src', 'resources/videos/video1.mp4');
+			$('.footstart').fadeOut(500);
+			$('.footstart').attr('class','footend');
+			$('.footstart').attr('onclick','footendbtn');
+			
+		    $('.footend').fadeIn(500);
+			$('.footend').css('display','flex');
+			
+			setInterval(function() {	
+
+					$('.warning').text('헬멧착용');
+					$('.warning').fadeIn(500);
+					$('.warning').fadeOut(1000);
+
+					},3000);
+		
+		});
+		
+		
+
+		
+		
+		
+		function slidedown() {
+			$(".modal-slide-down").slideDown(500);
+
+			$('.head-middle span:nth-child(2)').css('display', 'none');
+			$('#top').css('display', 'inline');
+			if ($(".modal-slide-down").css('display') == 'block') {
+
 			}
-			
-			
-			
-			
-	
-	
+
+		};
+
+		function slideup() {
+
+			$(".modal-slide-down").slideUp(500);
+			$('.head-middle span:nth-child(2)').css('display', 'inline');
+			$('#top').css('display', 'none');
+		};
+		function movedrive() {
+
+			$(".middle").fadeOut("slow");
+			$(".drive-inner").fadeIn("slow");
+
+		}
+
 		function registerService() {
 
 			console.log($('#id2').val());
@@ -479,12 +486,11 @@
 			alert('성공!');
 
 		}
-		
-		function alert12(){
-			
+
+		function alert12() {
+
 			alert('로그인이필요한 서비스입니다.');
-			
-			
+
 		}
 
 		function checkId() {
