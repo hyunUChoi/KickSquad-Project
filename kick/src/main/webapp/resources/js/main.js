@@ -3,6 +3,17 @@
 // direction : 방향
 //autoplay : true, 자동재생 여부
 //loop : true  반복재생 여부
+
+var swiper = new Swiper(".mySwiper", {
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          hide: true,
+        },
+      });
+
+
+
+
 new Swiper('.main .middle>.swiper-container', {
     direction :'vertical',
     autoplay : true,
@@ -30,48 +41,24 @@ new Swiper('.main .middle>.swiper-container', {
     }
 
  });
-var icons = document.querySelector('.main .middle .menubar .material-icons');
- var sidebar2 = document.querySelector('.main .middle .sidebar');
 
- function sidebar(){
-    if(sidebar2.style.display == 'none'){
-    document.querySelector('.main .middle .sidebar').style.display='block'
-
-    }else{
-        document.querySelector('.main .middle .sidebar').style.display='none';
-    }
- };
 
 
 //   modal 창 실행
 
  const modal = document.querySelector('.modal');
- const btnOpenPopup = document.querySelector('.btn-open-popup');
- const btnOpenPopup1 = document.querySelector('.popup1-btn');
+ const btnOpenPopup = document.querySelector('.text-group  > .btn-open-popup');
  const btnclosePop = document.querySelector('body > div > div.modal > span')
  
- btnOpenPopup.addEventListener('click', () => {
-     modal.style.display = 'block';
-     console.log("팝업");
+btnOpenPopup.addEventListener('click', () => {
+   
+   $('.modal').fadeIn("slow");
+   
  });
- 
- btnclosePop.addEventListener('click', () => {
-     modal.style.display = 'none';
-
-
+btnclosePop.addEventListener('click', () => {
+   $('.modal').fadeOut("slow");
+   
  });
- 
- 
-  btnOpenPopup1.addEventListener('click', () => {
-  	console.log("팝업1클릭");
-  	
-
-		modal.style.display = 'block';
-
-     
-
- });
- 
  
 
  
@@ -100,5 +87,8 @@ var icons = document.querySelector('.main .middle .menubar .material-icons');
         inputEls2[i].value = '';}
    
  });
+ 
+ 
+
  
  

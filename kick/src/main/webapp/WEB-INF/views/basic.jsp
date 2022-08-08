@@ -32,7 +32,7 @@
 <!--부스스트랩 모달-->
 
 <!--자바스크립트 -->
-
+<!-- youtube 스크립트 -->
 <script defer src="resources/js/main.js"></script>
 <link rel="stylesheet" href="resources/css/main.css" />
 </head>
@@ -41,12 +41,12 @@
 	<div class="main">
 		<div>
 			<img src="resources/image/상단바2.png" alt="header" class="main-img1" />
-			<img src="resources/image/out-line.png" alt="header"
+			<img src="resources/image/out-line2.png" alt="header"
 				class="main-img2" />
 		</div>
 		<div class="middle">
 			<div class="head">
-				<h2>KickSquad</h2>
+				<h2> <a href="http://localhost:8090/web/basic.do"> KickSquad</a> </h2>
 
 				<c:if test="${!empty mvo}">
 					<div class="session">
@@ -59,47 +59,63 @@
 					</div>
 				</c:if>
 			</div>
-			<div class="swiper-container">
+			
+			<div class="head-middle" > <span>공지사항</span>
+			<span onclick="slidedown()" class="material-icons">vertical_align_bottom</span>
+			<span onclick="slideup()"  id="top" class="material-icons">vertical_align_top</span>
+			 </div>
+			 <div  class="swiper-container">
 				<div class="swiper-wrapper">
+				
 					<div class="swiper-slide">
-						<a href="javascript:void(0)">공지사항1</a>
+						<a  href="javascript:void(0)">공지사항1</a>
+					
 					</div>
 					<div class="swiper-slide">
-						<a href="javascript:void(0)">공지사항2</a>
+						<a  href="javascript:void(0)">공지사항2</a>
+						
 					</div>
 					<div class="swiper-slide">
-						<a href="javascript:void(0)">공지사항3</a>
+						<a  href="javascript:void(0)">공지사항3</a>
+						
 					</div>
 					<div class="swiper-slide">
-						<a href="javascript:void(0)">공지사항4</a>
+						<a  href="javascript:void(0)">공지사항4</a>
+						
 					</div>
 				</div>
 			</div>
-			<div class="menubar">
-				<div id="sidebar" onclick="sidebar()" class="material-icons">
-					menu</div>
-			</div>
-			<div class="sidebar">
-				<ul class="sidebar-list">
-					<li></li>
-					<li id="sign-in" class="btn-open-popup">로그인</li>
-					<li>나의정보</li>
-					<li>고객센터</li>
-					<li>서비스 안내</li>
-				</ul>
-			</div>
+			 <div class="modal-slide-down">
+			  <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-scrollbar"></div>
+    </div>
+			 </div>
+			
+		
+		
 			<c:if test= "${empty mvo.name}">
 				<div class="body2">
-					<div class="inner">
+					<div onclick="alert12()" class="inner">
 						<div class="inner-top">
-							
+							운행내역
 						</div>
 						<div class="inner-top">
-							
+						지쿠터찾기
 						</div>
 						<div  class="inner-drive">
-							ㅇ <img  onclick="alert12()" class="dri" src="resources/image/btn1.png" alt="" />
-							<div onclick="movedrive()" class="btn1">주행하기</div>
+							ㅇ <img   class="dri" src="resources/image/btn1.png" alt="" />
+							<div  class="btn1">주행하기</div>
 						</div>
 					</div>
 			</c:if>
@@ -107,18 +123,18 @@
 			<div class="body2">
 				<div class="inner">
 					<div class="inner-top">
-						
+						운행내역
 					</div>
 					<div class="inner-top">
-						
+						지쿠터찾기
 					</div>
 					<div  class="inner-drive">
 						ㅇ <img class="dri" src="resources/image/btn1.png" alt="" />
-							<div class="btn1">주행하기</div>
+							<div onclick="movedrive()" class="btn1">주행하기</div>
 					</div>
 				</div>
 					</c:if>
-				<div class="inner2">
+				<div  class="inner2">
 					<div class="inner-middle1">
 						<div class="middle1-inner1">
 							<div class="text-group1">
@@ -190,12 +206,13 @@
 										<div style="width:${mvo.point}%" class="bar"></div>
 									</div>
 								</c:when>
+								
 
 								<c:otherwise>
-									<div class="btn-open-popup1">
-									</div>
+									<div  class="btn-open-popup">
 										<div class="popup1-btn">로그인이 필요한 서비스입니다.
 										<span>Login</span> <span class="material-icons">login</span></div>
+									</div>
 								</c:otherwise>
 							</c:choose>
 						</div>
@@ -241,23 +258,14 @@
 				</div>
 			</div>
 			<div class="footer">
-				<div class="foot-menu1">
-					<img class="middle-img1" src="resources/image/고객센터1.png" alt="고객센터" />
-				</div>
-				<div class="foot-menu2">
-					<img class="middle-img2" src="resources/image/서비스안내2.png" />
-				</div>
-			</div>
-			<section class="drive-inner">
-			<div class="drive-inner-in">
-			<div class="drive-inner-head"></div>
-			<div class="drive-inner-main"></div>
-			<div class="drive-inner-foot"></div>
+			<div class="footer-inner1">
+			 <img alt="" src="resources/image/서비스안내2.png">
+			  </div>
+			
+				
+				
 			</div>
 			
-			
-			
-			</section>
 			
 			
 			
@@ -337,16 +345,62 @@
 			</div>
 			<span class="material-icons .btn-close">cancel</span>
 		</div>
-	</div>
+		<section class="drive-inner">
+			<div class="drive-inner-in">
+			<div class="drive-inner-head"></div>
+			<div class="drive-inner-main">
+			<div class="youtube">
+        <div class="youtube__area">
+            <div id="player"></div>
+
+        </div>
+        <div class="youtube__cover"></div>
+        <div class="inner">
+            
+
+
+
+        </div>
+    </div>
+			</div>
+			<div class="drive-inner-foot">
+				<div class="foot-start">운행시작</div>
+				<div class="foot-end">운행종료</div>
+			</div>
+			</div>
+			
+			
+			
+			</section>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 	
+   function	slidedown(){
+	   $(".modal-slide-down").slideDown(500);
+	   
+	   $('.head-middle span:nth-child(2)').css('display','none');
+	   $('#top').css('display','inline');
+	   if($(".modal-slide-down").css('display')=='block'){
+		   
+		   
+		   
+	   }
+	   
+   };
 		
+		   function slideup(){
+			   
+			   $(".modal-slide-down").slideUp(500);
+			   $('.head-middle span:nth-child(2)').css('display','inline');
+			   $('#top').css('display','none');
+		   };
 			function movedrive(){
 				
-				 $('.middle').css('display','none');
-				 $('.drive-inner').css('display','block');
+				$(".middle").fadeOut("slow");
+				 $(".drive-inner").fadeIn("slow");
+				 
+
 					
 			}
 			
