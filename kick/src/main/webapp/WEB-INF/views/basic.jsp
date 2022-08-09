@@ -227,24 +227,24 @@
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-								href="javascript:void(0)" class="btn">자세히 보기</a>
+							<img src="resources/image/일러스트0.png" alt="슬라이드1" /> <a
+							 class="btn">자세히 보기</a>
 						</div>
 						<div class="swiper-slide">
 							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-								href="javascript:void(0)" class="btn">자세히 보기</a>
+								 class="btn">자세히 보기</a>
 						</div>
 						<div class="swiper-slide">
-							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-								href="javascript:void(0)" class="btn">자세히 보기</a>
+							<img src="resources/image/일러스트2.jpg" alt="슬라이드1" /> <a
+								 class="btn">자세히 보기</a>
 						</div>
 						<div class="swiper-slide">
-							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-								href="javascript:void(0)" class="btn">자세히 보기</a>
+							<img src="resources/image/일러스트3.jpg" alt="슬라이드1" /> <a
+							 class="btn">자세히 보기</a>
 						</div>
 						<div class="swiper-slide">
-							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-								href="javascript:void(0)" class="btn">자세히 보기</a>
+							<img src="resources/image/일러스트4.jpg" alt="슬라이드1" /> <a
+								 class="btn">자세히 보기</a>
 						</div>
 					</div>
 				</div>
@@ -493,17 +493,17 @@
 					<li>???</li>
 				</ul>
 				<ul class="inner3-list">
-			<li>??????</li>
-			<li>?????</li>
-			</ul>
+					<li>??????</li>
+					<li>?????</li>
+				</ul>
 
 
 
 
 			</div>
 			<div class="inner4">
-			
-			<ul>감지 정보
+
+				<ul>감지 정보
 				</ul>
 				<ul class="inner4-list">
 					<li>주행 번호</li>
@@ -518,35 +518,33 @@
 					<li>???</li>
 				</ul>
 				<ul class="inner4-list">
-			<li>??????</li>
-			<li>?????</li>
-			</ul>
-			
-			
-			
-			
-			
+					<li>??????</li>
+					<li>?????</li>
+				</ul>
+
+
+
+
+
 			</div>
-			<div class="inner5">
-			홈으로 돌아가기
-			
-			</div>
-			
-			
+			<div class="inner5">홈으로 돌아가기</div>
+
+
 		</div>
 
 
 
 	</section>
-	
+
 	<!-- 공지사항 open-->
 	<section class="openlist">
-	
-	
-	
-	
-	
-	
+
+		<img alt="사진들어올곳" src="">
+		<span id="btn-close" class="material-icons">close</span>
+
+
+
+
 	</section>
 
 
@@ -555,27 +553,89 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 		
-	$('.swiper-slide.swiper-slide-active .btn').click(function(){
+	$('#btn-close').click(function() {
+		
+		$('.openlist').fadeOut(200);
 		
 		
 		
 		
 		
-		
-	})
-	
-	
-	
-	$('.inner5').click(function() {
-
-		$('.drive-record').fadeOut(300);
-		$('.middle').fadeIn(300);
-
 	});
 	
 	
+	var btns = document.querySelectorAll('.btn');
+	var path1 = ['resources/image/일러스트0.png',
+				'resources/image/일러스트1.png',
+				'resources/image/일러스트2.jpg',
+				'resources/image/일러스트3.jpg',
+				'resources/image/일러스트4.jpg']
+
+		
+		btns[0].addEventListener('click', () => {
+		    
+			$('.openlist').fadeIn(200);
+			
+		
+			$('.openlist>img').attr('src',path1[0]);
+			
+			
+		   
+      });
 	
-	
+		btns[1].addEventListener('click', () => {
+		    
+			$('.openlist').fadeIn(200);
+			
+		
+			$('.openlist>img').attr('src',path1[1]);
+			
+			
+		   
+      });
+		btns[2].addEventListener('click', () => {
+		    
+			$('.openlist').fadeIn(200);
+			
+			
+			$('.openlist>img').attr('src',path1[2]);
+			
+			
+		   
+      });
+		
+		btns[3].addEventListener('click', () => {
+		    
+			$('.openlist').fadeIn(200);
+			
+			
+			$('.openlist>img').attr('src',path1[3]);
+			
+			
+		   
+      });
+		
+		btns[4].addEventListener('click', () => {
+		    
+			$('.openlist').fadeIn(200);
+			
+		
+			$('.openlist>img').attr('src',path1[4]);
+			
+			
+		   
+      });
+
+			  
+
+		
+		$('.inner5').click(function() {
+
+			$('.drive-record').fadeOut(300);
+			$('.middle').fadeIn(300);
+
+		});
+
 		$('.circle-btn').click(function() {
 
 			$('.parking').fadeOut(300);

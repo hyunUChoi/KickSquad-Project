@@ -1199,22 +1199,48 @@ body > div > section.drive-record > div > div.inner2 > div.inner-middle2 > div >
 }
 
 
-/* OPEN LIST*/
+/* OPEN LIST */
 .openlist{
-	    position: relative;
-    top: -950px;
-    left: 0;
-    width: 450px;
-    height: 960px;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 7%;
-    z-index: 9;
+	display:none;
+	z-index:2;
+	position: absolute;
+    top: 50%;
+    left: 47%;
+    width: 300px;
+    height: 500px;
+    padding: 40px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgb(34 36 38 / 15%);
+    transform: translateX(-50%) translateY(-50%);
 	
 	
 	
 	
 }
-
+.openlist img{
+	
+	width:350px;
+	height:500px;
+	margin: -10px -20px;
+}
+.openlist span {
+	position: relative;
+    top: 20px;
+    right: 0px;
+    cursor: pointer;
+    color: #fff;
+    background: #333;
+    border-radius: 50%;
+	
+	
+	
+}
+.openlist span:hover{
+	font-weight:900;
+	
+	
+}
 
 
