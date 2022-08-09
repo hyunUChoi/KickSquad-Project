@@ -127,7 +127,7 @@
 						<div class="inner-top">운행내역</div>
 						<div class="inner-top">지쿠터찾기</div>
 						<div class="inner-drive">
-							ㅇ <img class="dri" src="resources/image/btn1.png" alt="" />
+							
 							<div onclick="movedrive()" class="btn1">주행하기</div>
 						</div>
 					</div>
