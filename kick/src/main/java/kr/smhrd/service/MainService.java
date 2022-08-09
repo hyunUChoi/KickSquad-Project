@@ -7,10 +7,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.smhrd.mapper.MainMapper;
+import kr.smhrd.model.DrivingVO;
 import kr.smhrd.model.MemberVO;
 
 @Service
@@ -49,6 +51,7 @@ public class MainService {
 		}
 
 	}
+	
 	@ResponseBody
 	public int checkAjax(MemberVO mvo) {
 	
@@ -64,6 +67,11 @@ public class MainService {
 		
 		return cnt;
 	}
+
+	
+		
+		
+
 
 	
 	

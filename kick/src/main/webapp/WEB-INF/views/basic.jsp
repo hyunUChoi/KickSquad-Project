@@ -114,7 +114,7 @@
 				<div class="body2">
 					<div onclick="alert12()" class="inner">
 						<div class="inner-top">운행내역</div>
-						<div class="inner-top">지쿠터찾기</div>
+						<div class="inner-top">킥보드찾기</div>
 						<div class="inner-drive">
 							ㅇ <img class="dri" src="resources/image/btn1.png" alt="" />
 							<div class="btn1">주행하기</div>
@@ -149,8 +149,8 @@
 						<c:choose>
 							<c:when test="${mvo.grade == 'white'}">
 								<div>
-									<span class="getgrade" >${mvo.grade}등급</span> <span> (다음등급까지 <c:set
-											var="add" value="${100 - mvo.point}">
+									<span class="getgrade">${mvo.grade}등급</span> <span>
+										(다음등급까지 <c:set var="add" value="${100 - mvo.point}">
 										</c:set> ${add}P)
 									</span>
 								</div>
@@ -345,53 +345,266 @@
 		</div>
 		<span class="material-icons .btn-close">cancel</span>
 	</div>
+
+	<!--  운행시작-종료 페이지  -->
 	<section class="drive-inner">
 		<div class="drive-inner-in">
 			<div class="drive-inner-head"></div>
 			<div class="drive-inner-main">
 				<video type="video/mp4" autoplay loop width="450" height="800"></video>
-
 				<div class="warning"></div>
-
-
 			</div>
 			<div class="drive-inner-foot">
 
 				<div class="footstart">운행시작</div>
+				<div class="footend">운행종료</div>
 			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+	<!-- 주차 등록 페이지 -->
+	<section class="parking">
+
+		<div class="parking-body">
+
+			<div class="body-top"></div>
+			<div class="body-middle">
+				<div class="middle-left"></div>
+				<div class="middle-middle">
+					<div class="middle-outline">
+						<div class="middle-alert">
+							<p>킥보드를 네모 영역에 맞춰 촬영해주세요</p>
+						</div>
+
+					</div>
+				</div>
+				<div class="middle-right"></div>
+			</div>
+			<div class="body-foot">
+				<div class="circle">
+					<div class="circle-btn"></div>
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</section>
+
+	<!-- 주행기록 페이지 -->
+	<section class="drive-record">
+		<div class="record">
+			<div class="inner1">
+				<div class="header">
+					<p>운행종료</p>
+				</div>
+
+			</div>
+
+			<div class="inner2">
+				<div class="inner-middle1">
+					<div class="middle1-inner1">
+						<div class="text-group1">
+							<c:if test="${!empty mvo.name}">
+								<span>${mvo.name}</span>
+								<p>님</p>
+							</c:if>
+						</div>
+					</div>
+					<div class="middle1-inner2"></div>
+				</div>
+				<div class="inner-middle2">
+					<div class="text-group">
+						<c:choose>
+							<c:when test="${mvo.grade == 'white'}">
+								<div>
+									<span class="getgrade">${mvo.grade}등급</span>
+								</div>
+
+								<div class="pointbar">
+
+									<div style="width:${mvo.point}%" class="bar"></div>
+								</div>
+							</c:when>
+
+							<c:when test="${mvo.grade == 'gold'}">
+								<div>
+									<span class="getgrade">${mvo.grade}등급</span>
+								</div>
+
+								<div class="pointbar">
+									<c:set var="point" value="${(mvo.point-100)/2}">
+									</c:set>
+									<div style="width:${point}%" class="bar"></div>
+								</div>
+							</c:when>
+
+							<c:when test="${mvo.grade == 'vip'}">
+								<div>
+									<span class="getgrade">${mvo.grade}등급</span>
+								</div>
+
+								<div class="pointbar">
+									<c:set var="point" value="${(mvo.point -300)/2}">
+									</c:set>
+									<div style="width:${point}%" class="bar"></div>
+								</div>
+							</c:when>
+
+							<c:when test="${mvo.grade == 'vvip'}">
+								<div>
+									<span class="getgrade">${mvo.grade}</span> <span>(마지막등급입니다.)</span>
+								</div>
+
+								<div class="pointbar">
+									<div style="width:${mvo.point}%" class="bar"></div>
+								</div>
+							</c:when>
+
+
+							<c:otherwise>
+
+							</c:otherwise>
+						</c:choose>
+					</div>
+				</div>
+
+			</div>
+			<div class="inner3">
+
+				<ul>이용내역
+				</ul>
+				<ul class="inner3-list">
+					<li>탑승자 아이디</li>
+					<li>????</li>
+				</ul>
+				<ul class="inner3-list">
+					<li>탑승 일자</li>
+					<li>????</li>
+				</ul>
+				<ul class="inner3-list">
+					<li>탑승시각</li>
+					<li>???</li>
+				</ul>
+				<ul class="inner3-list">
+			<li>??????</li>
+			<li>?????</li>
+			</ul>
+
+
+
+
+			</div>
+			<div class="inner4">
+			
+			<ul>감지 정보
+				</ul>
+				<ul class="inner4-list">
+					<li>주행 번호</li>
+					<li>????</li>
+				</ul>
+				<ul class="inner4-list">
+					<li>감지 시간</li>
+					<li>????</li>
+				</ul>
+				<ul class="inner4-list">
+					<li>감지 항목</li>
+					<li>???</li>
+				</ul>
+				<ul class="inner4-list">
+			<li>??????</li>
+			<li>?????</li>
+			</ul>
+			
+			
+			
+			
+			
+			</div>
+			<div class="inner5">
+			홈으로 돌아가기
+			
+			</div>
+			
+			
 		</div>
 
 
 
 	</section>
+	
+	<!-- 공지사항 open-->
+	<section class="openlist">
+	
+	
+	
+	
+	
+	
+	</section>
+
+
+
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
+		
+	$('.swiper-slide.swiper-slide-active .btn').click(function(){
+		
+		
+		
+		
+		
+		
+	})
+	
+	
+	
+	$('.inner5').click(function() {
+
+		$('.drive-record').fadeOut(300);
+		$('.middle').fadeIn(300);
+
+	});
+	
+	
+	
+	
+		$('.circle-btn').click(function() {
+
+			$('.parking').fadeOut(300);
+			$('.drive-record').fadeIn(300);
+
+		});
+
 		$('.footstart').click(function() {
 
 			$('video').attr('src', 'resources/videos/video1.mp4');
 			$('.footstart').fadeOut(500);
-			$('.footstart').attr('class','footend');
-			$('.footstart').attr('onclick','footendbtn');
-			
-		    $('.footend').fadeIn(500);
-			$('.footend').css('display','flex');
-			
-			setInterval(function() {	
 
-					$('.warning').text('헬멧착용');
-					$('.warning').fadeIn(500);
-					$('.warning').fadeOut(1000);
+			setInterval(function() {
 
-					},3000);
-		
+				$('.warning').text('헬멧착용');
+				$('.warning').fadeIn(500);
+				$('.warning').fadeOut(1000);
+
+			}, 3000);
+
 		});
-		
-		
 
-		
-		
-		
+		$('.footend').click(function() {
+			$('.footstart').fadeIn(1000);
+			$('.drive-inner').fadeOut(300);
+			$('.parking').fadeIn(300);
+
+		});
+
 		function slidedown() {
 			$(".modal-slide-down").slideDown(500);
 

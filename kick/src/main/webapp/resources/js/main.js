@@ -4,6 +4,13 @@
 //autoplay : true, 자동재생 여부
 //loop : true  반복재생 여부
 
+
+
+
+
+
+
+
 var swiper = new Swiper(".mySwiper", {
         scrollbar: {
           el: ".swiper-scrollbar",
@@ -87,6 +94,8 @@ btnclosePop.addEventListener('click', () => {
         inputEls2[i].value = '';}
    
  });
+ 
+ 
  
  
 
