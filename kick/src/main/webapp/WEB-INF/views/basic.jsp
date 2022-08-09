@@ -116,7 +116,7 @@
 						<div class="inner-top">운행내역</div>
 						<div class="inner-top">킥보드찾기</div>
 						<div class="inner-drive">
-							ㅇ <img class="dri" src="resources/image/btn1.png" alt="" />
+							
 							<div class="btn1">주행하기</div>
 						</div>
 					</div>

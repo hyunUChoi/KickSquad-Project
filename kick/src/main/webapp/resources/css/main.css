@@ -28,9 +28,9 @@ body>div>div.middle>div.head>div>span.material-icons {
 .btn1 {
 	color: #FFF;
 	z-index: 1;
-	top: 65%;
+	top: 60%;
 	position: absolute;
-	left: 30%;
+	left: 32%;
 	cursor: pointer;
 	font-size: 20px;
 }
@@ -722,22 +722,13 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 	top: 0;
 	height: 200px;
 	width: 200px;
-	padding: 10px;
-	box-sizing: border-box;
-	overflow: hidden;
-	border-radius: 25%;
+	border-radius: 100px;
+	background-image: url('../image/btn1.png');
+	background-size: cover;
+	background-position-x: -5px;
+    background-position-y: -5px;
 }
 
-.main .body2 .inner .inner-drive .dri {
-	width: 260px;
-	height: 260px;
-	z-index: 1;
-	position: relative;
-	left: -47.5px;
-	top: -70px;
-	cursor: pointer;
-	font-weight: 900;
-}
 
 .main .body2 .inner .inner-top:nth-child(2) {
 	width: 180px;
