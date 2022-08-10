@@ -27,5 +27,15 @@
     </select>
     
     
+    <insert id="drivingInsert" parameterType="kr.smhrd.model.DrivingVO" >
+        insert into driving(id, ddate, stime, ftime) values(#{id}, #{ddate}, #{stime}, #{ftime})
+    </insert>
+    
+    <select id="drivingSelect" resultType="int">
+        select drinum from driving where ftime= #{ftime}
+    </select>
+    
+    
+   
     
 </mapper>

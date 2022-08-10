@@ -8,8 +8,6 @@ public class ParkingVO {
 
 	private int pnum;  //주차번호
 	private String id; // ID
-	private int dnum; // 주행번호
-	private String img; // 사진URL
-	
+	private int drinum; // 주행번호
 	
 }

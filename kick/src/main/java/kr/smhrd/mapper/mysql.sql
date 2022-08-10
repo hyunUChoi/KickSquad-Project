@@ -2,7 +2,7 @@
 
 
 
-select * from member;
+select * from driving;
 
 drop table member
 

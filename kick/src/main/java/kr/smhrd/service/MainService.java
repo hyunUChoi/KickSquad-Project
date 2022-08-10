@@ -68,6 +68,13 @@ public class MainService {
 		return cnt;
 	}
 
+	public int driveInset(DrivingVO dvo) {
+		 mapper.drivingInsert(dvo);
+		 int drinum =  mapper.drivingSelect(dvo.getFtime());
+		 return drinum;
+	
+	}
+
 	
 		
 		
