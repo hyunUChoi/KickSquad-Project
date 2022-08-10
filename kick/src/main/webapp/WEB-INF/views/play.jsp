@@ -26,7 +26,7 @@
 		var reader = new FileReader();
 
 		$(document).ready(function() {
-			$("#sqoo_img").on("change", handleImgFileSelect);
+			$("#sqoo_img").on("change", handleImgFileSelect); //인풋태그
 		});
 
 		function handleImgFileSelect(e) {
@@ -49,7 +49,7 @@
 		}
 
 		function fn_submit() {
-			let file = $('#sqoo_img')[0].files[0]
+			let file = $('#sqoo_img')[0].files[0]  //input태그
 			let form_data = new FormData()
 			
 			form_data.append('file', file)

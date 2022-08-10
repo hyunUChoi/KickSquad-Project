@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=0.6" />
+<meta name="viewport" content="width=device-width, initial-scale=0.6 user-scalable=no" />
 <title>Document</title>
 <!-- 구글폰트-->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -375,8 +375,8 @@
 	<!-- 주차 등록 페이지 -->
 	<section class="parking">
 
+		<img class="parkingimage"  src="">
 		<div class="parking-body">
-
 			<div class="body-top"></div>
 			<div class="body-middle">
 				<div class="middle-left"></div>
@@ -392,7 +392,9 @@
 			</div>
 			<div class="body-foot">
 				<div class="circle">
-					<div class="circle-btn"></div>
+					<label class="circle-label" for="circle-btn"></label> <input
+						type="file" id="circle-btn" name="circle-btn" class="circle-btn">
+					<button class="circle-submit" id="btn_submit"></button>
 				</div>
 			</div>
 
@@ -557,8 +559,9 @@
 
 	<section class="map-inner">
 		<div class="map-box">
-			<div class="mbox1" id="map">맵출력해줄 공간</div>
-			<div onclick="movehome()" class="mbox2">홈으로돌아가기 넣어줄 공간</div>
+		<div class="box-head">킥보드 찾기</div>
+			<div class="mbox1" id="map"></div>
+			<div onclick="movehome()" class="mbox2"> <span class="material-icons home">home</span> </div>
 		</div>
 	</section>
 
@@ -566,6 +569,9 @@
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d75a41bbb55475bec63a4ca074a7d2e"></script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
 
 	<script>
 		
@@ -652,14 +658,80 @@
 
 		});
 
+		
+		//----------- 파일첨부 ---------------------
+		
 		$('.circle-btn').click(function() {
 
+			var sel_file;
+			var reader = new FileReader();
+
+		
+				$(".circle-btn").on("change", handleImgFileSelect);
+				$(".circle-submit").css("z-index","2");
+		
+		///---------미리보기 -------------------
+		
+			function handleImgFileSelect(e) {
+				var files = e.target.files;
+				var filesArr = Array.prototype.slice.call(files);
+				var reg = /(.*?)\/(jpg|jpeg|png|bmp)$/;
+
+				filesArr.forEach(function(f) {
+					if (!f.type.match(reg)) {
+						alert("이미지 확장자만 가능합니다 (jpg, jpeg, png, bmp)");
+						return;
+					}
+
+					sel_file = f;
+					reader.onload = function(e) {
+						console.log(e.target.result);
+						$(".parkingimage").css('opacity','1');
+						$(".parkingimage").attr("src", e.target.result);
+					}
+					reader.readAsDataURL(f);
+				});
+			}
+
+		});	
+			//-------- flask ------------------
+			
+			$(".circle-submit").on("click",function(){
+				
+				let file = $('.circle-btn')[0].files[0]
+				let form_data = new FormData()
+				
+				form_data.append('file', file)
+				
+				
+				$.ajax({
+					type : 'post',
+					url : 'http://172.30.1.19:3500/det-sqooter',
+					data : form_data,
+					cache : false,
+					contentType: false,
+			        processData: false,
+			        async : false,
+		 			success : function(res){
+		 				alert(res)
+		 				$(".parkingimage").attr("src", "resources/result/"+res);
+		 				
+		 				
+		 			},
+					error : function(){
+						alert('연결 오류');
+					}
+				});
+				
+				
 			
 			
 			
 			
 
 		});
+		
+		////-------------------------------------------------
 		
 		
 $('.footend').click(function(){
@@ -756,6 +828,15 @@ $('.footend').click(function(){
 			$('#top').css('display', 'inline');
 			if ($(".modal-slide-down").css('display') == 'block') {
 
+				var swiper = new Swiper(".mySwiper", {
+			        
+					scrollbar: {
+			          el: ".swiper-scrollbar",
+			          hide: true,
+			        },
+			      });
+
+				
 			}
 
 		};
