@@ -556,22 +556,14 @@
 
 	<section class="map-inner">
 		<div class="map-box">
-		
-		<div class="mbox1">맵출력해줄 공간</div>
-		<div onclick="movehome()" class="mbox2">홈으로돌아가기 넣어줄 공간</div>
-		
-		
-		
+			<div class="mbox1" id="map">맵출력해줄 공간</div>
+			<div onclick="movehome()" class="mbox2">홈으로돌아가기 넣어줄 공간</div>
 		</div>
-	
-	
-	
 	</section>
 
-
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d75a41bbb55475bec63a4ca074a7d2e"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
 	<script>
 		
 	$('#btn-close').click(function() {
@@ -707,7 +699,112 @@
 
 			$(".middle").fadeOut(300);
 			$(".map-inner").fadeIn(300);
+			
+			var container = document.getElementById('map');
+			var options = {
+				center: new kakao.maps.LatLng(35.11070947475487, 126.87780407320705), //지도의 중심좌표
+				level: 4 //지도의 레벨(확대, 축소 정도)
+			};
+			var map = new kakao.maps.Map(container, options);
+			
+			var positions = [
+			    {
+			        title: '킥보드1', 
+			        latlng: new kakao.maps.LatLng(35.11100073746635, 126.87614729722684)
+			    },
+			    {
+			        title: '킥보드2', 
+			        latlng: new kakao.maps.LatLng(35.109825405182264, 126.87708143957963)
+			    },
+			    {
+			        title: '킥보드3', 
+			        latlng: new kakao.maps.LatLng(35.11038154435669, 126.87886856195118)
+			    },
+			    {
+			        title: '킥보드4',
+			        latlng: new kakao.maps.LatLng(35.111875653865965, 126.87672734442789)
+			    },
+			    {
+			        title: '킥보드5',
+			        latlng: new kakao.maps.LatLng(35.10873375965866, 126.87610685165205)
+			    },
+			    {
+			        title: '킥보드6',
+			        latlng: new kakao.maps.LatLng(35.11239192598583, 126.87476305627516)
+			    },
+			    {
+			        title: '킥보드7',
+			        latlng: new kakao.maps.LatLng(35.10752441927655, 126.87463887855603)
+			    },
+			    {
+			        title: '킥보드8',
+			        latlng: new kakao.maps.LatLng(35.1126980722384, 126.87445544538991)
+			    },
+			    {
+			        title: '킥보드9',
+			        latlng: new kakao.maps.LatLng(35.11232208567883, 126.87697896655256)
+			    },
+			    {
+			        title: '킥보드10',
+			        latlng: new kakao.maps.LatLng(35.10765376945354, 126.8777318534288)
+			    },
+			    {
+			        title: '킥보드11',
+			        latlng: new kakao.maps.LatLng(35.10843137508623, 126.88016576632226)
+			    },
+			    {
+			        title: '킥보드12',
+			        latlng: new kakao.maps.LatLng(35.10736410967649, 126.87652573345994)
+			    },
+			    {
+			        title: '킥보드13',
+			        latlng: new kakao.maps.LatLng(35.10628258277558, 126.87663704971796)
+			    },
+			    {
+			        title: '킥보드14',
+			        latlng: new kakao.maps.LatLng(35.11183698533693, 126.87860314596998)
+			    },
+			    {
+			        title: '킥보드15',
+			        latlng: new kakao.maps.LatLng(35.10846208840922, 126.87487875645712)
+			    },
+			    {
+			        title: '킥보드16',
+			        latlng: new kakao.maps.LatLng(35.10956598419351, 126.87904527202753)
+			    },
+			    {
+			        title: '킥보드17',
+			        latlng: new kakao.maps.LatLng(35.111875653865965, 126.87672734442789)
+			    },
+				{
+			        title: '킥보드18',
+			        latlng: new kakao.maps.LatLng(35.1065866585952, 126.87431125781616)
+			    },
+			    {
+			        title: '킥보드19',
+			        latlng: new kakao.maps.LatLng(35.117612882769315, 126.86819498776724)
+			    },
+			    {
+			        title: '킥보드20',
+			        latlng: new kakao.maps.LatLng(35.11797136183733, 126.86630755668526)
+			    },
+			    {
+			        title: '킥보드21',
+			        latlng: new kakao.maps.LatLng(35.10399185769106, 126.87541206186094)
+			    },
+			    {
+			        title: '킥보드22',
+			        latlng: new kakao.maps.LatLng(35.1102861754955, 126.87814474567917)
+			    }
+			];
 
+			for (var i = 0; i < positions.length; i ++) {
+				var marker = new kakao.maps.Marker({
+			        map: map, // 마커를 표시할 지도
+			        position: positions[i].latlng, // 마커를 표시할 위치
+			        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+			    });
+			}
 		}
 		
 		function movehome() {
