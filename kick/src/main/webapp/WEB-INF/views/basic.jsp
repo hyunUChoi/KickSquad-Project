@@ -106,7 +106,7 @@
 						<div class="swiper-slide">Slide 9</div>
 					</div>
 					<div class="icons-outline">
-					<span class="material-icons">swipe</span>
+						<span class="material-icons">swipe</span>
 					</div>
 					<div class="swiper-scrollbar"></div>
 				</div>
@@ -120,7 +120,7 @@
 						<div class="inner-top">운행내역</div>
 						<div class="inner-top">킥보드찾기</div>
 						<div class="inner-drive">
-							
+
 							<div class="btn1">주행하기</div>
 						</div>
 					</div>
@@ -131,7 +131,7 @@
 						<div class="inner-top">운행내역</div>
 						<div onclick="movemap()" class="inner-top">킥보드찾기</div>
 						<div class="inner-drive">
-							
+
 							<div onclick="movedrive()" class="btn1">주행하기</div>
 						</div>
 					</div>
@@ -232,23 +232,23 @@
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<img src="resources/image/일러스트0.png" alt="슬라이드1" /> <a
-							 class="btn">자세히 보기</a>
+								class="btn">자세히 보기</a>
 						</div>
 						<div class="swiper-slide">
 							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
-								 class="btn">자세히 보기</a>
+								class="btn">자세히 보기</a>
 						</div>
 						<div class="swiper-slide">
 							<img src="resources/image/일러스트2.jpg" alt="슬라이드1" /> <a
-								 class="btn">자세히 보기</a>
+								class="btn">자세히 보기</a>
 						</div>
 						<div class="swiper-slide">
 							<img src="resources/image/일러스트3.jpg" alt="슬라이드1" /> <a
-							 class="btn">자세히 보기</a>
+								class="btn">자세히 보기</a>
 						</div>
 						<div class="swiper-slide">
 							<img src="resources/image/일러스트4.jpg" alt="슬라이드1" /> <a
-								 class="btn">자세히 보기</a>
+								class="btn">자세히 보기</a>
 						</div>
 					</div>
 				</div>
@@ -362,6 +362,7 @@
 
 				<div class="footstart">운행시작</div>
 				<div class="footend">운행종료</div>
+				<input id="mvoid" type="hidden" value="${mvo.id}">
 			</div>
 		</div>
 	</section>
@@ -543,8 +544,8 @@
 	<!-- 공지사항 open-->
 	<section class="openlist">
 
-		<img alt="사진들어올곳" src="">
-		<span id="btn-close" class="material-icons">close</span>
+		<img alt="사진들어올곳" src=""> <span id="btn-close"
+			class="material-icons">close</span>
 
 
 
@@ -552,7 +553,7 @@
 	</section>
 
 
-<!-- 킥보드 찾기 open-->
+	<!-- 킥보드 찾기 open-->
 
 	<section class="map-inner">
 		<div class="map-box">
@@ -561,9 +562,11 @@
 		</div>
 	</section>
 
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d75a41bbb55475bec63a4ca074a7d2e"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d75a41bbb55475bec63a4ca074a7d2e"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 	<script>
 		
 	$('#btn-close').click(function() {
@@ -651,32 +654,100 @@
 
 		$('.circle-btn').click(function() {
 
-			$('.parking').fadeOut(300);
-			$('.drive-record').fadeIn(300);
+			
+			
+			
+			
 
 		});
+		
+		
+$('.footend').click(function(){
+			
+	$('.drive-inner').fadeOut(300);
+	$('.parking').fadeIn(300);
+			
+			
+		});
+		
 
+		function getTodayType(){
+			var date = new Date();
+			arrDayStr = ['일','월','화','수','목','금','토'];
+			return date.getFullYear() + "-" + ("0"+(date.getMonth()+1)).slice(-2) + "-" + ("0"+date.getDate()).slice(-2)+"("+arrDayStr[date.getDay()]+")";
+			
+			
+		}
+		
+		function getTodayType2(){
+			var date = new Date();
+			return date.toLocaleString().slice(-10);
+			
+		}
+		
 		$('.footstart').click(function() {
 
 			$('video').attr('src', 'resources/videos/video1.mp4');
 			$('.footstart').fadeOut(500);
 
-			setInterval(function() {
-
-				$('.warning').text('헬멧착용');
-				$('.warning').fadeIn(500);
-				$('.warning').fadeOut(1000);
-
-			}, 3000);
-
+			 var today = getTodayType(); // 0000-00-00
+			 console.log(today);
+			 var thour = getTodayType2(); //  시 분 초
+			 console.log(thour)
+			
+			 
+			 
+			 return footend(today, thour)
 		});
 
-		$('.footend').click(function() {
-			$('.footstart').fadeIn(1000);
-			$('.drive-inner').fadeOut(300);
-			$('.parking').fadeIn(300);
-
-		});
+		
+		
+		function footend(today, thour){
+			console.log(today+"ss")
+			console.log(thour+"ss")
+			
+		$('.footend').click(function(){
+			var c = getTodayType2();
+				console.log(c);
+			var a =$('#mvoid').val();
+			
+			console.log(a);
+				$.ajax({
+					//서버 url
+					url : '${cpath}/insertDrive.do',
+					
+					data : {
+						'id' : a,
+						'ddate' : today,
+						'stime' : thour,
+						'ftime' : c
+					},
+					// 요청방식
+					type : 'post',
+					// 받아올 데이터 타입 지정
+					// 성공했을 때 실행할 함수
+					success : function(res){
+						
+						console.log(res);
+						
+						
+					},
+					// 실패했을 때 실행할 함수
+					error : function() {
+	
+						alert('실패!');
+					}
+				})
+				
+			
+			
+		})
+			
+		}
+			
+		
+		
+		
 
 		function slidedown() {
 			$(".modal-slide-down").slideDown(500);
@@ -688,6 +759,7 @@
 			}
 
 		};
+		
 
 		function slideup() {
 
@@ -695,6 +767,8 @@
 			$('.head-middle span:nth-child(2)').css('display', 'inline');
 			$('#top').css('display', 'none');
 		};
+		
+		
 		function movemap() {
 
 			$(".middle").fadeOut(300);
@@ -705,6 +779,9 @@
 				center: new kakao.maps.LatLng(35.11070947475487, 126.87780407320705), //지도의 중심좌표
 				level: 4 //지도의 레벨(확대, 축소 정도)
 			};
+			
+			
+			
 			var map = new kakao.maps.Map(container, options);
 			
 			var positions = [
@@ -820,6 +897,7 @@
 			$(".drive-inner").fadeIn("slow");
 
 		}
+		
 
 		function registerService() {
 

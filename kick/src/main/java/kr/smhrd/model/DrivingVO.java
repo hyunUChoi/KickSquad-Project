@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class DrivingVO {
 
-	private int dnum;  //주행번호
+	private int drinum;  //주행번호
 	private String id;  // ID
 	private String ddate; //이용날짜
 	private String stime; // 탑승시간
