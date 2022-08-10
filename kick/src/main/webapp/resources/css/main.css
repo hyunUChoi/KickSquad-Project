@@ -132,7 +132,24 @@ body>div>div.middle>div.head>div>span.material-icons {
 	-webkit-align-items: center;
 	align-items: center;
 }
-
+.middle > .modal-slide-down .icons-outline{
+	width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 10px;
+    z-index: 1;
+    left: 157px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.3);
+	
+}
+.middle > .modal-slide-down > div > div > span.material-icons{
+    font-size: 30px;
+}
 
 
 

@@ -91,6 +91,7 @@
 					</div>
 				</div>
 			</div>
+			<!--  공지사항 내부 입력창 -->
 			<div class="modal-slide-down">
 				<div class="swiper mySwiper">
 					<div class="swiper-wrapper">
@@ -103,6 +104,9 @@
 						<div class="swiper-slide">Slide 7</div>
 						<div class="swiper-slide">Slide 8</div>
 						<div class="swiper-slide">Slide 9</div>
+					</div>
+					<div class="icons-outline">
+					<span class="material-icons">swipe</span>
 					</div>
 					<div class="swiper-scrollbar"></div>
 				</div>
