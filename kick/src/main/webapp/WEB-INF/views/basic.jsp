@@ -129,7 +129,7 @@
 				<div class="body2">
 					<div class="inner">
 						<div class="inner-top">운행내역</div>
-						<div class="inner-top">지쿠터찾기</div>
+						<div onclick="movemap()" class="inner-top">킥보드찾기</div>
 						<div class="inner-drive">
 							
 							<div onclick="movedrive()" class="btn1">주행하기</div>
@@ -552,6 +552,23 @@
 	</section>
 
 
+<!-- 킥보드 찾기 open-->
+
+	<section class="map-inner">
+		<div class="map-box">
+		
+		<div class="mbox1">맵출력해줄 공간</div>
+		<div onclick="movehome()" class="mbox2">홈으로돌아가기 넣어줄 공간</div>
+		
+		
+		
+		</div>
+	
+	
+	
+	</section>
+
+
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -686,6 +703,20 @@
 			$('.head-middle span:nth-child(2)').css('display', 'inline');
 			$('#top').css('display', 'none');
 		};
+		function movemap() {
+
+			$(".middle").fadeOut(300);
+			$(".map-inner").fadeIn(300);
+
+		}
+		
+		function movehome() {
+
+			$(".map-inner").fadeOut(300);
+			$(".middle").fadeIn(300);
+
+		}
+		
 		function movedrive() {
 
 			$(".middle").fadeOut("slow");
