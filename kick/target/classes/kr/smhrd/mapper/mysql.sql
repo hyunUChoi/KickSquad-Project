@@ -2,7 +2,10 @@
 
 
 
-select * from ;
+select * from parking;
+select * from detecting;
+select * from parking;
+select * from driving;
 
 drop table member
 

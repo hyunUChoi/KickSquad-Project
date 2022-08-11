@@ -658,7 +658,7 @@
 
 		});
 
-		
+		var drinum = 0;
 		//----------- 파일첨부 ---------------------
 		
 		$('.circle-btn').click(function() {
@@ -694,32 +694,51 @@
 			}
 
 		});	
+		
+		
 			//-------- flask ------------------
 			
 			$(".circle-submit").on("click",function(){
 				
 				let file = $('.circle-btn')[0].files[0]
 				let form_data = new FormData()
+			
+				console.log(drinum);
+				
+			
+				
 				
 				form_data.append('file', file)
 				
 				
 				$.ajax({
 					type : 'post',
-					url : 'http://172.30.1.19:3500/det-sqooter',
+					url : 'http://172.30.1.25:3500/det-sqooter?drinum='+drinum,
 					data : form_data,
 					cache : false,
 					contentType: false,
 			        processData: false,
 			        async : false,
 		 			success : function(res){
-		 				alert(res)
+		 				console.log(res);
+		 				$(".parkingimage").css("position",'absolute');
+		 				$(".parkingimage").css("z-index",'2');
 		 				$(".parkingimage").attr("src", "resources/result/"+res);
+		 				
+		 				
+		 				
+		 				setTimeout(function() {
+		 					$('.parking').fadeOut(300);
+			 				$('.drive-record').fadeIn(300);
+		 				}, 1000);
 		 				
 		 				
 		 			},
 					error : function(){
-						alert('연결 오류');
+						
+						alert('접속실패')
+						
+						
 					}
 				});
 				
@@ -732,7 +751,10 @@
 		});
 		
 		////-------------------------------------------------
-		
+			function drivingnum(res){
+					
+					return res;
+				}
 		
 $('.footend').click(function(){
 			
@@ -753,7 +775,7 @@ $('.footend').click(function(){
 		
 		function getTodayType2(){
 			var date = new Date();
-			return date.toLocaleString().slice(-10);
+			return date.toLocaleString().slice(-11);
 			
 		}
 		
@@ -772,6 +794,7 @@ $('.footend').click(function(){
 			 return footend(today, thour)
 		});
 
+		
 		
 		
 		function footend(today, thour){
@@ -800,9 +823,9 @@ $('.footend').click(function(){
 					// 성공했을 때 실행할 함수
 					success : function(res){
 						
-						console.log(res);
-						
-						
+						console.log("주행번호"+res); // Driving 테이블의 주행번호
+						drinum = res;
+							
 					},
 					// 실패했을 때 실행할 함수
 					error : function() {
