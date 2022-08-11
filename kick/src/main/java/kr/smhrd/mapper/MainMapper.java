@@ -18,4 +18,6 @@ public interface MainMapper {
 
 	public int drivingSelect(String ftime);
 
+	public int checkParking(int dnum);
+
 }

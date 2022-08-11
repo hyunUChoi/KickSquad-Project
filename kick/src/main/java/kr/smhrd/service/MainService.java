@@ -75,6 +75,17 @@ public class MainService {
 	
 	}
 
+	public int checkParking(int dnum) {
+		
+		int cnt = mapper.checkParking(dnum);
+		
+	
+		return cnt;
+		
+		
+		
+	}
+
 	
 		
 		

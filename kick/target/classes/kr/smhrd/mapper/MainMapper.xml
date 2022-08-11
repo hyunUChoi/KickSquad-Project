@@ -35,7 +35,9 @@
         select drinum from driving where ftime= #{ftime}
     </select>
     
-    
+    <select id="checkParking" resultType="int">
+        select count(*) from detecting where drinum=#{drinum}
+    </select>
    
     
 </mapper>
