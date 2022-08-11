@@ -45,5 +45,15 @@ public class MainRESTController {
 		return drinum;
 	}
 	
+	@RequestMapping("/checkParking.do")
+	public int checkParkingAjax(int dnum) {
+		int dnum2 = service.checkParking(dnum);
+		return dnum2;
+	}
+	
+	
+	
+	
+	
 	
 }

@@ -727,15 +727,12 @@
 		 				
 		 				
 		 				
-		 				setTimeout(function() {
-		 					$('.parking').fadeOut(300);
-			 				$('.drive-record').fadeIn(300);
-		 				}, 1000);
+		 			 checkparking();
 		 				
 		 				
 		 			},
 					error : function(){
-						
+						$(".circle-submit").css("z-index","1");
 						alert('접속실패')
 						
 						
@@ -750,6 +747,56 @@
 
 		});
 		
+			//-------------디텍딩 테이블에 insert가 되어있는지 안되어있는지 판단--------------------\
+			
+			function checkparking(){
+				console.log('체크파킹()');
+				
+				$.ajax({
+					//서버 url
+					url : '${cpath}/checkParking.do',
+					
+					data : {
+						'dnum' : drinum},
+					// 요청방식
+					type : 'post', 
+					// 받아올 데이터 타입 지정
+					// 성공했을 때 실행할 함수
+					success : function(res){
+						
+						if(res>0){
+							alert('주차성공')
+							
+							
+						}else{
+							console.log('주차실패');
+							$(".parkingimage").css('opacity','0');
+							$(".parkingimage").css('position',"");
+							$(".parkingimage").attr("src", "");
+							
+							
+						}
+						
+						
+						
+						
+					},
+					// 실패했을 때 실행할 함수
+					error : function() {
+	
+						alert('실패!');
+					}
+				})
+				
+				
+				
+				
+				
+			}
+			
+			
+			
+			
 		////-------------------------------------------------
 			function drivingnum(res){
 					
