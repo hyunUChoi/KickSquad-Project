@@ -48,7 +48,7 @@ new Swiper('.main .middle>.swiper-container', {
 //   modal 창 실행
 
  const modal = document.querySelector('.modal');
- const btnOpenPopup = document.querySelector('.text-group  > .btn-open-popup');
+ let btnOpenPopup = document.querySelector('.text-group  > .btn-open-popup');
  const btnclosePop = document.querySelector('body > div > div.modal > span')
  
 btnOpenPopup.addEventListener('click', () => {
@@ -65,12 +65,12 @@ btnclosePop.addEventListener('click', () => {
  
  
 
- const login = document.querySelector('.modal > div > div.modal_header > h3:nth-child(1)');
- const register = document.querySelector('.modal > div > div.modal_header > h3:nth-child(2)');
- const body1 = document.querySelector('.modal_login');
- const body2 = document.querySelector('.modal_middle');
- const inputEls1 = document.getElementsByClassName('input-text1');
- const inputEls2 = document.getElementsByClassName('input-text');
+ let login = document.querySelector('.modal > div > div.modal_header > h3:nth-child(1)');
+ let register = document.querySelector('.modal > div > div.modal_header > h3:nth-child(2)');
+ let body1 = document.querySelector('.modal_login');
+ let body2 = document.querySelector('.modal_middle');
+ let inputEls1 = document.getElementsByClassName('input-text1');
+ let inputEls2 = document.getElementsByClassName('input-text');
  login.addEventListener('click', () => {
     body1.style.display = 'block'
     login.style.color = '#45b6ed'

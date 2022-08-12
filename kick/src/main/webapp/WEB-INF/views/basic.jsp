@@ -659,6 +659,7 @@
 		});
 
 		var drinum = 0;
+		var detsrc = "";
 		//----------- 파일첨부 ---------------------
 		
 		$('.circle-btn').click(function() {
@@ -721,11 +722,9 @@
 			        async : false,
 		 			success : function(res){
 		 				console.log(res);
-		 				$(".parkingimage").css("position",'absolute');
-		 				$(".parkingimage").css("z-index",'2');
-		 				$(".parkingimage").attr("src", "resources/result/"+res);
 		 				
 		 				
+		 				detsrc = res;
 		 				
 		 			 checkparking();
 		 				
@@ -766,10 +765,24 @@
 						
 						if(res>0){
 							alert('주차성공')
+							console.log(detsrc);
+							
+							
+							$('circle-label').css('z-index','2');
+							$('circle-submit').css('z-index','1');
+							
+							//-- 디텍딩된 사진 출력
+							$(".parkingimage").attr("src", "resources/result/"+detsrc);
+							
+							//-- 주차화면에서 주행기록 페이지로
+						
+							
 							
 							
 						}else{
 							console.log('주차실패');
+							$('circle-label').css('z-index','2');
+							$('circle-submit').css('z-index','1');
 							$(".parkingimage").css('opacity','0');
 							$(".parkingimage").css('position',"");
 							$(".parkingimage").attr("src", "");
