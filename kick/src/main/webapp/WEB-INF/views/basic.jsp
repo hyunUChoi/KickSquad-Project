@@ -385,6 +385,8 @@
 						<div class="middle-alert">
 							<p>킥보드를 네모 영역에 맞춰 촬영해주세요</p>
 						</div>
+						
+							<div class="parkingFail">킥보드를 인식하지못하였습니다</div>
 
 					</div>
 				</div>
@@ -585,6 +587,8 @@
 		
 	});
 	
+
+	
 	
 	var btns = document.querySelectorAll('.btn');
 	var path1 = ['resources/image/일러스트0.png',
@@ -669,7 +673,9 @@
 
 		
 				$(".circle-btn").on("change", handleImgFileSelect);
-				$(".circle-submit").css("z-index","2");
+				$(".circle-btn").css("z-index","0");
+				$(".circle-submit").css("z-index","1");
+				
 		
 		///---------미리보기 -------------------
 		
@@ -723,7 +729,8 @@
 		 			success : function(res){
 		 				console.log(res);
 		 				
-		 				
+		 				$(".circle-btn").css("z-index","1");
+						$(".circle-submit").css("z-index","0");
 		 				detsrc = res;
 		 				
 		 			 checkparking();
@@ -731,8 +738,9 @@
 		 				
 		 			},
 					error : function(){
-						$(".circle-submit").css("z-index","1");
 						alert('접속실패')
+						$(".circle-btn").css("z-index","1");
+						$(".circle-submit").css("z-index","0");
 						
 						
 					}
@@ -766,10 +774,16 @@
 						if(res>0){
 							alert('주차성공')
 							console.log(detsrc);
-							
-							
-							$('circle-label').css('z-index','2');
-							$('circle-submit').css('z-index','1');
+							$('.middle-outline').css('border','10px solid #19B652');
+							$('.parkingimage').css('position','relative');
+							$('.parkingimage').css('z-index','2');
+						
+							setTimeout(function() {
+			 					$('.parking').fadeOut(300);
+			 					$('.parkingimage').css('position','');
+								$('.parkingimage').css('z-index','0');
+				 				$('.drive-record').fadeIn(300);
+			 				}, 1000);
 							
 							//-- 디텍딩된 사진 출력
 							$(".parkingimage").attr("src", "resources/result/"+detsrc);
@@ -781,8 +795,14 @@
 							
 						}else{
 							console.log('주차실패');
-							$('circle-label').css('z-index','2');
-							$('circle-submit').css('z-index','1');
+							
+							$('.parkingFail').fadeIn(1500);
+							$('.parkingFail').fadeOut(1500);
+							$('.parkingFail').fadeIn(1500);
+							$('.parkingFail').fadeOut(1500);
+							$('.middle-outline').css('border','10px solid orangered');
+							$('.circle-label').css('z-index','1');
+							$('.circle-submit').css('z-index','0');
 							$(".parkingimage").css('opacity','0');
 							$(".parkingimage").css('position',"");
 							$(".parkingimage").attr("src", "");
@@ -820,6 +840,7 @@ $('.footend').click(function(){
 			
 	$('.drive-inner').fadeOut(300);
 	$('.parking').fadeIn(300);
+	$('.footstart').css('display','flex').delay(500);
 			
 			
 		});
@@ -1059,6 +1080,14 @@ $('.footend').click(function(){
 
 			$(".middle").fadeOut("slow");
 			$(".drive-inner").fadeIn("slow");
+			
+			if($('.drive-inner').css('display') == 'block'){
+				 
+				 $('.main').css( { transition: "transform 0.5s",
+		             transform:  "rotate(" + -90 + "deg)" } );
+
+		setTimeout( function() { $('.drive-inner').css( { transition: "none" } ) }, 500 );
+			 }
 
 		}
 		

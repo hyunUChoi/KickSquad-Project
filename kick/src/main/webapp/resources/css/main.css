@@ -971,7 +971,7 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 	padding-left: 5px;
     padding-right: 5px;
     overflow: hidden;
-    border-radius: 35px;
+    border-radius: 65px;
 }
 
 .parkingimage {
@@ -1033,7 +1033,7 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 .parking .parking-body .body-middle .middle-middle .middle-outline .middle-alert
 	{
 	background-color: #333;
-	color: #fff;
+	color: #19B652;
 	border-radius: 15px;
 	position: absolute;
 	top: 350px;
@@ -1043,6 +1043,18 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 	font-size: 20px;
 	display: flex;
 	align-items: center;
+}
+.parking .parking-body .body-middle .middle-middle .middle-outline .parkingFail{
+	display:none;
+	position: absolute;
+    height: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto 5px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #272727;
+	
 }
 
 .parking .parking-body .body-middle .middle-right {
