@@ -32,7 +32,6 @@
 <!--부스스트랩 모달-->
 
 <!--자바스크립트 -->
-<!-- youtube 스크립트 -->
 
 <script defer src="resources/js/main.js"></script>
 <link rel="stylesheet" href="resources/css/main.css" />
@@ -45,6 +44,7 @@
 			<img src="resources/image/out-line2.png" alt="header"
 				class="main-img2" />
 		</div>
+		<!-- 메인화면 페이지 -->
 		<div class="middle">
 			<div class="head">
 				<h2>
