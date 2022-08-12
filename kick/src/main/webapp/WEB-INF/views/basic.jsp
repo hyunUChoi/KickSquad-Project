@@ -841,7 +841,17 @@ $('.footend').click(function(){
 	$('.drive-inner').fadeOut(300);
 	$('.parking').fadeIn(300);
 	$('.footstart').css('display','flex').delay(500);
+	
+	
+	if($('.parking').css('display') == 'block'){
+		 
+	 $('.main').css( { transition: "transform 0.5s",
+	                  transform:  "rotate(" + 0 + "deg)" } );
+
+	setTimeout( function() { $('.drive-inner').css( { transition: "none" } ) }, 500 );
+			 }
 			
+	
 			
 		});
 		
