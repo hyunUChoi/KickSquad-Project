@@ -1093,9 +1093,11 @@ $('.footend').click(function(){
 			
 			if($('.drive-inner').css('display') == 'block'){
 				 
-				 $('.main').css( { transition: "transform 0.5s",
-		             transform:  "rotate(" + -90 + "deg)" } );
-
+				 $('.main').css( { transition: "transform 0.5s",transform:  "rotate(" + -90 + "deg)" } );
+				 $('.drive-inner-main').css( { transition: "transform 0.5s",transform:  "rotate(" + -90 + "deg)" } );
+				 $('.drive-inner-foot').css('height','800');
+				 $('.footstart').css( { transition: "transform 0.5s",transform:  "rotate(" + 90 + "deg)" } );
+				 $('.footend').css( { transition: "transform 0.5s",transform:  "rotate(" + 90 + "deg)" } );
 		setTimeout( function() { $('.drive-inner').css( { transition: "none" } ) }, 500 );
 			 }
 
