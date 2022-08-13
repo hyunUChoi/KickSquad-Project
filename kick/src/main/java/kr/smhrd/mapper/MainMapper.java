@@ -23,5 +23,10 @@ public interface MainMapper {
 	public int cntDrinum(int dnum);
 	
 	public int cntDrinumHelmet(int dnum);
+	
+	public int cntDrinumHead(int dnum);
+	
+	public int cntDrinumTwo(int dnum);
 
+	
 }
