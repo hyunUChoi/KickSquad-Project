@@ -518,20 +518,16 @@
 				<ul>감지 정보
 				</ul>
 				<ul class="inner4-list">
-					<li>주행 번호</li>
+					<li>헬멧 착용</li>
 					<li>????</li>
 				</ul>
 				<ul class="inner4-list">
-					<li>감지 시간</li>
+					<li>동반 탑승</li>
 					<li>????</li>
 				</ul>
 				<ul class="inner4-list">
-					<li>감지 항목</li>
+					<li>주차 여부</li>
 					<li>???</li>
-				</ul>
-				<ul class="inner4-list">
-					<li>??????</li>
-					<li>?????</li>
 				</ul>
 
 
@@ -851,20 +847,17 @@
 				console.log(drinum);
 				
 				$.ajax({
-					//서버 url
 					url : '${cpath}/illegalCheck.do',
-					
-					data : {
-					'drinum' : drinum
-					},
-					// 요청방식
+					dataType: 'json',
+					data : {'drinum' : 1},
 					type : 'post',
-					// 받아올 데이터 타입 지정
-					// 성공했을 때 실행할 함수
 					success : function(res){
+					
 						
-						console.log(""+res); // Driving 테이블의 주행번호
-						drinum = res;
+						
+						
+						
+						
 							
 					},
 					// 실패했을 때 실행할 함수

@@ -1207,10 +1207,11 @@ body>div>section.drive-record>div>div.inner2>div.inner-middle2>div>div.pointbar>
 .drive-record .record .inner4, .drive-record .record .inner3 {
 	display: flex;
 	flex-direction: column;
-	margin: 60px 20px;
+	margin: 30px 20px;
 }
 
-.drive-record .record .inner4 ul:first-child, .drive-record .record .inner3 ul:first-child
+.drive-record .record .inner4 ul:first-child,
+.drive-record .record .inner3 ul:first-child
 	{
 	height: 30px;
 	font-weight: 900;
