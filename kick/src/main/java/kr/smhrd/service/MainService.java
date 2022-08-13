@@ -90,7 +90,7 @@ public class MainService {
 		
 		double t70 = total/10*7;
 		if(t70 <= helmet) {
-			return 0;
+			return 0;  // 
 		} else {
 			return 1;
 		}
