@@ -39,6 +39,7 @@
         select count(*) from detecting where drinum=#{drinum}
     </select>
    
+    
     <select id="cntDrinum" resultType="int">
 		select count(*) from detecting where drinum=#{drinum}       
     </select>

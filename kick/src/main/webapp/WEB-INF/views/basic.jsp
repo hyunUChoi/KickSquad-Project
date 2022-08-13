@@ -8,7 +8,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=0.6 user-scalable=no" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=0.6 user-scalable=no" />
 <title>Document</title>
 <!-- 구글폰트-->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -264,8 +265,7 @@
 		<div class="footer">
 			<div class="footer-inner1">
 				<div class="foot-text-group">
-					<span class="material-icons">article</span>
-					<span>서비스 안내</span>
+					<span class="material-icons">article</span> <span>서비스 안내</span>
 				</div>
 			</div>
 
@@ -378,7 +378,7 @@
 	<!-- 주차 등록 페이지 -->
 	<section class="parking">
 
-		<img class="parkingimage"  src="">
+		<img class="parkingimage" src="">
 		<div class="parking-body">
 			<div class="body-top"></div>
 			<div class="body-middle">
@@ -388,8 +388,8 @@
 						<div class="middle-alert">
 							<p>킥보드를 네모 영역에 맞춰 촬영해주세요</p>
 						</div>
-						
-							<div class="parkingFail">킥보드를 인식하지못하였습니다</div>
+
+						<div class="parkingFail">킥보드를 인식하지못하였습니다</div>
 
 					</div>
 				</div>
@@ -518,20 +518,16 @@
 				<ul>감지 정보
 				</ul>
 				<ul class="inner4-list">
-					<li>주행 번호</li>
+					<li>헬멧 착용</li>
 					<li>????</li>
 				</ul>
 				<ul class="inner4-list">
-					<li>감지 시간</li>
+					<li>동반 탑승</li>
 					<li>????</li>
 				</ul>
 				<ul class="inner4-list">
-					<li>감지 항목</li>
+					<li>주차 여부</li>
 					<li>???</li>
-				</ul>
-				<ul class="inner4-list">
-					<li>??????</li>
-					<li>?????</li>
 				</ul>
 
 
@@ -564,9 +560,11 @@
 
 	<section class="map-inner">
 		<div class="map-box">
-		<div class="box-head">킥보드 찾기</div>
+			<div class="box-head">킥보드 찾기</div>
 			<div class="mbox1" id="map"></div>
-			<div onclick="movehome()" class="mbox2"> <span class="material-icons home">home</span> </div>
+			<div onclick="movehome()" class="mbox2">
+				<span class="material-icons home">home</span>
+			</div>
 		</div>
 	</section>
 
@@ -791,7 +789,9 @@
 							//-- 디텍딩된 사진 출력
 							$(".parkingimage").attr("src", "resources/result/"+detsrc);
 							
-							//-- 주차화면에서 주행기록 페이지로
+							//-- 주차화면에서 주행기록 페이지에서 넘어갈때  감지테이블 셀렉 ajax 실행할 함수
+							
+							illegalcheck();
 						
 							
 							
@@ -833,11 +833,48 @@
 			
 			
 			
-		////-------------------------------------------------
+//--------------------주행번호---------------------
 			function drivingnum(res){
 					
 					return res;
 				}
+		
+//---------------감지테이블 셀렉----------------------
+		
+			function illegalcheck(){
+				
+				
+				console.log(drinum);
+				
+				$.ajax({
+					url : '${cpath}/illegalCheck.do',
+					dataType: 'json',
+					data : {'drinum' : 1},
+					type : 'post',
+					success : function(res){
+					
+						
+						
+						
+						
+						
+							
+					},
+					// 실패했을 때 실행할 함수
+					error : function() {
+	
+						alert('실패!');
+					}
+				})
+				
+				
+				
+				
+			}
+		
+//---------------------------------------------------------------------------------
+		
+		
 		
 $('.footend').click(function(){
 			

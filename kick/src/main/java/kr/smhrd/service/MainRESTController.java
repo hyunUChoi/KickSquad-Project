@@ -54,8 +54,9 @@ public class MainRESTController {
 	}
 	
 	@RequestMapping("/illegalCheck.do")
-	public ArrayList<String> illegalCheckAjax(int dnum) {
-		ArrayList<String> list = service.illegalCheck(dnum);
+	public ArrayList<String> illegalCheckAjax(int drinum) {
+		System.out.println(drinum);
+		ArrayList<String> list = service.illegalCheck(drinum);
 		return list;
 	}
 	
