@@ -214,7 +214,7 @@
 								<div class="btn-open-popup">
 									<div class="popup1-btn">
 										로그인이 필요한 서비스입니다. <span>Login</span> <span
-											class="material-icons">login</span>
+											class="material-icons" id="mlogin">login</span>
 									</div>
 								</div>
 							</c:otherwise>
@@ -263,7 +263,10 @@
 		</div>
 		<div class="footer">
 			<div class="footer-inner1">
-				<img alt="" src="resources/image/서비스안내2.png">
+				<div class="foot-text-group">
+					<span class="material-icons">article</span>
+					<span>서비스 안내</span>
+				</div>
 			</div>
 
 
