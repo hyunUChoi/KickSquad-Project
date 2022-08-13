@@ -1,17 +1,21 @@
 @font-face {
-	font-family: 'BM-JUA';
-	src: url('https://cdn.jsdelivr.net/gh/wizfile/font/BM-JUA.eot');
-	src: url('https://cdn.jsdelivr.net/gh/wizfile/font/BM-JUA.woff')
-		format('woff');
-	font-style: normal;
+    font-family: 'Roboto';
+    src: url('Roboto-ThinItalic-webfont.eot');
+    src: url('Roboto-ThinItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Roboto-ThinItalic-webfont.woff') format('woff'),
+         url('Roboto-ThinItalic-webfont.ttf') format('truetype'),
+         url('Roboto-ThinItalic-webfont.svg#RobotoThinItalic') format('svg'); (under the Apache Software License);
+    font-weight: 200;
+    font-style: italic;
 }
+
 
 body {
 	color: #333;
 	font-size: 20px;
 	font-weight: 700;
 	line-height: 1.5;
-	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -60,6 +64,12 @@ body>div>div.middle>div.head>div>span.material-icons {
 	cursor: pointer;
 	z-index: 1;
 }
+.popup1-btn .material-icons{
+	font-size:25px;
+	color: #676C74;
+	
+	
+}
 
 .pointbar {
 	background-color: #fff;
@@ -74,6 +84,8 @@ body>div>div.middle>div.head>div>span.material-icons {
 	background-color: #19B652;
 	height: 10px;
 	border-radius: 4%;
+	width:0%;
+	transition: width 0.25s ease-in-out;
 }
 
 .btn {
@@ -570,6 +582,11 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 	font-size: 16px;
 	color: #676C74;
 }
+#mlogin{
+	font-size: 25px;
+	color: #676C74;
+	
+}
 
 .main .body2 .inner2 .inner-middle1 .middle1-inner1 {
 	width: 50%;
@@ -839,6 +856,23 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 	border-radius: 10px;
 	position: absolute;
 	left: 95px;
+}
+.footer-inner1 .foot-text-group{
+	position:relative;
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	
+	
+	
+}
+.footer-inner1 .foot-text-group .material-icons{
+	color:#19B652;
+	font-size: 35px;
+	margin: 0 10px 0 0;
+	
 }
 
 .head-middle {
