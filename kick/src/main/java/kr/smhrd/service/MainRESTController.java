@@ -1,5 +1,7 @@
 package kr.smhrd.service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,9 +54,9 @@ public class MainRESTController {
 	}
 	
 	@RequestMapping("/illegalCheck.do")
-	public int illegalCheckAjax(int dnum) {
-		int res = service.illegalCheck(dnum);
-		return res;
+	public ArrayList<String> illegalCheckAjax(int dnum) {
+		ArrayList<String> list = service.illegalCheck(dnum);
+		return list;
 	}
 	
 	

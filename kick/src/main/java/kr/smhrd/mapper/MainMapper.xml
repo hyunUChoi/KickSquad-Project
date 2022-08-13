@@ -48,6 +48,16 @@
 		select count(*) from detecting 
 		where drinum=#{drinum} and detname = 'helmet' and detcnt = 1       
     </select>
+    <select id="cntDrinumHead" resultType="int">
+		select count(*) from detecting 
+		where drinum=#{drinum} and detname = 'head' and detcnt = 1       
+    </select>
+    <select id="cntDrinumTwo" resultType="int">
+		select count(*) from detecting 
+		where drinum=#{drinum} and (detname = 'helmet' or detname='head')
+		and detcnt > 1       
+    </select>
     
+
     
 </mapper>
