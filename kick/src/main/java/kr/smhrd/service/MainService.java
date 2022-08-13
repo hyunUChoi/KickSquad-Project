@@ -101,6 +101,13 @@ public class MainService {
 		return list;
 		
 	}
+
+	public DrivingVO searchDrinum(int dnum) {
+		
+		DrivingVO dvo = mapper.searchDrinum(dnum);
+		
+		return dvo;
+	}
 		
 		
 

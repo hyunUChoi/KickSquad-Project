@@ -59,6 +59,11 @@ public class MainRESTController {
 		return list;
 	}
 	
+	@RequestMapping("/searchDrinum.do")
+	public DrivingVO searchDrinumAjax(int dnum) {
+		DrivingVO dvo = service.searchDrinum(dnum);
+		return dvo;
+	}
 	
 	
 	
