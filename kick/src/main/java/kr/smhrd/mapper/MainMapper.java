@@ -19,5 +19,9 @@ public interface MainMapper {
 	public int drivingSelect(String ftime);
 
 	public int checkParking(int dnum);
+	
+	public int cntDrinum(int dnum);
+	
+	public int cntDrinumHelmet(int dnum);
 
 }

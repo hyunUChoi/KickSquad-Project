@@ -79,14 +79,22 @@ public class MainService {
 		
 		int cnt = mapper.checkParking(dnum);
 		
-	
 		return cnt;
-		
-		
 		
 	}
 
-	
+	public int illegalCheck(int dnum) {
+		
+		double total = mapper.cntDrinum(dnum);
+		int helmet = mapper.cntDrinumHelmet(dnum);
+		
+		double t70 = total/10*7;
+		if(t70 <= helmet) {
+			return 0;
+		} else {
+			return 1;
+		}
+	}
 		
 		
 

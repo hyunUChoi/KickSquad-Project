@@ -51,7 +51,11 @@ public class MainRESTController {
 		return dnum2;
 	}
 	
-	
+	@RequestMapping("/illegalCheck.do")
+	public int illegalCheckAjax(int dnum) {
+		int res = service.illegalCheck(dnum);
+		return res;
+	}
 	
 	
 	
