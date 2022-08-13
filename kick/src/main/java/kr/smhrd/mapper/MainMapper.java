@@ -18,6 +18,15 @@ public interface MainMapper {
 
 	public int drivingSelect(String ftime);
 
-	public int checkParking(int dnum);
+	public int checkParking(int drinum);
+	
+	public int cntDrinum(int drinum);
+	
+	public int cntDrinumHelmet(int drinum);
+	
+	public int cntDrinumHead(int drinum);
+	
+	public int cntDrinumTwo(int drinum);
 
+	public DrivingVO searchDrinum(int drinum);
 }

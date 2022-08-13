@@ -8,7 +8,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=0.6 user-scalable=no" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=0.6 user-scalable=no" />
 <title>Document</title>
 <!-- 구글폰트-->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -32,7 +33,6 @@
 <!--부스스트랩 모달-->
 
 <!--자바스크립트 -->
-<!-- youtube 스크립트 -->
 
 <script defer src="resources/js/main.js"></script>
 <link rel="stylesheet" href="resources/css/main.css" />
@@ -45,6 +45,7 @@
 			<img src="resources/image/out-line2.png" alt="header"
 				class="main-img2" />
 		</div>
+		<!-- 메인화면 페이지 -->
 		<div class="middle">
 			<div class="head">
 				<h2>
@@ -214,7 +215,7 @@
 								<div class="btn-open-popup">
 									<div class="popup1-btn">
 										로그인이 필요한 서비스입니다. <span>Login</span> <span
-											class="material-icons">login</span>
+											class="material-icons" id="mlogin">login</span>
 									</div>
 								</div>
 							</c:otherwise>
@@ -263,7 +264,9 @@
 		</div>
 		<div class="footer">
 			<div class="footer-inner1">
-				<img alt="" src="resources/image/서비스안내2.png">
+				<div class="foot-text-group">
+					<span class="material-icons">article</span> <span>서비스 안내</span>
+				</div>
 			</div>
 
 
@@ -375,7 +378,7 @@
 	<!-- 주차 등록 페이지 -->
 	<section class="parking">
 
-		<img class="parkingimage"  src="">
+		<img class="parkingimage" src="">
 		<div class="parking-body">
 			<div class="body-top"></div>
 			<div class="body-middle">
@@ -385,6 +388,8 @@
 						<div class="middle-alert">
 							<p>킥보드를 네모 영역에 맞춰 촬영해주세요</p>
 						</div>
+
+						<div class="parkingFail">킥보드를 인식하지못하였습니다</div>
 
 					</div>
 				</div>
@@ -460,7 +465,8 @@
 								<div class="pointbar">
 									<c:set var="point" value="${(mvo.point -300)/2}">
 									</c:set>
-									<div style="width:${point}%" class="bar"></div>
+									<div style="width:${point}%" class="bar">
+									<div class="finishbar"></div></div> 
 								</div>
 							</c:when>
 
@@ -489,19 +495,16 @@
 				</ul>
 				<ul class="inner3-list">
 					<li>탑승자 아이디</li>
-					<li>????</li>
 				</ul>
 				<ul class="inner3-list">
 					<li>탑승 일자</li>
-					<li>????</li>
 				</ul>
 				<ul class="inner3-list">
-					<li>탑승시각</li>
-					<li>???</li>
+					<li>주행 시작</li>
+	
 				</ul>
 				<ul class="inner3-list">
-					<li>??????</li>
-					<li>?????</li>
+					<li>주행 종료</li>
 				</ul>
 
 
@@ -513,28 +516,22 @@
 				<ul>감지 정보
 				</ul>
 				<ul class="inner4-list">
-					<li>주행 번호</li>
-					<li>????</li>
+					<li>헬멧 착용</li>
 				</ul>
 				<ul class="inner4-list">
-					<li>감지 시간</li>
-					<li>????</li>
+					<li>동반 탑승</li>
 				</ul>
 				<ul class="inner4-list">
-					<li>감지 항목</li>
-					<li>???</li>
+					<li>주차 여부</li>
 				</ul>
-				<ul class="inner4-list">
-					<li>??????</li>
-					<li>?????</li>
-				</ul>
-
 
 
 
 
 			</div>
-			<div class="inner5">홈으로 돌아가기</div>
+			<div class="inner5">
+				<span  onclick="movehome()" class="material-icons home">home</span>
+			</div>
 
 
 		</div>
@@ -559,9 +556,11 @@
 
 	<section class="map-inner">
 		<div class="map-box">
-		<div class="box-head">킥보드 찾기</div>
+			<div class="box-head">킥보드 찾기</div>
 			<div class="mbox1" id="map"></div>
-			<div onclick="movehome()" class="mbox2"> <span class="material-icons home">home</span> </div>
+			<div onclick="movehome()" class="mbox2">
+				<span class="material-icons home">home</span>
+			</div>
 		</div>
 	</section>
 
@@ -584,6 +583,8 @@
 		
 		
 	});
+	
+
 	
 	
 	var btns = document.querySelectorAll('.btn');
@@ -669,7 +670,9 @@
 
 		
 				$(".circle-btn").on("change", handleImgFileSelect);
-				$(".circle-submit").css("z-index","2");
+				$(".circle-btn").css("z-index","0");
+				$(".circle-submit").css("z-index","1");
+				
 		
 		///---------미리보기 -------------------
 		
@@ -723,7 +726,8 @@
 		 			success : function(res){
 		 				console.log(res);
 		 				
-		 				
+		 				$(".circle-btn").css("z-index","1");
+						$(".circle-submit").css("z-index","0");
 		 				detsrc = res;
 		 				
 		 			 checkparking();
@@ -731,8 +735,9 @@
 		 				
 		 			},
 					error : function(){
-						$(".circle-submit").css("z-index","1");
 						alert('접속실패')
+						$(".circle-btn").css("z-index","1");
+						$(".circle-submit").css("z-index","0");
 						
 						
 					}
@@ -766,23 +771,44 @@
 						if(res>0){
 							alert('주차성공')
 							console.log(detsrc);
-							
-							
-							$('circle-label').css('z-index','2');
-							$('circle-submit').css('z-index','1');
+							$('.middle-outline').css('border','10px solid #19B652');
+							$('.parkingimage').css('position','relative');
+							$('.parkingimage').css('z-index','2');
+						
+							setTimeout(function() {
+			 					$('.parking').fadeOut(300);
+			 					$('.parkingimage').css('position','');
+			 					$(".parkingimage").attr("src", "");
+								$('.parkingimage').css('z-index','0');
+				 				$('.drive-record').fadeIn(300);
+			 				}, 1000);
 							
 							//-- 디텍딩된 사진 출력
 							$(".parkingimage").attr("src", "resources/result/"+detsrc);
 							
-							//-- 주차화면에서 주행기록 페이지로
+							//-- 주차화면에서 주행기록 페이지에서 넘어갈때  감지테이블 셀렉 ajax 실행할 함수
+							
+							
+							//탑승자 아이디 정보
+							searchDrinum();
+							
+							
+							// 감지테이블 정보
+							illegalcheck();
 						
 							
 							
 							
 						}else{
 							console.log('주차실패');
-							$('circle-label').css('z-index','2');
-							$('circle-submit').css('z-index','1');
+							
+							$('.parkingFail').fadeIn(1500);
+							$('.parkingFail').fadeOut(1500);
+							$('.parkingFail').fadeIn(1500);
+							$('.parkingFail').fadeOut(1500);
+							$('.middle-outline').css('border','10px solid orangered');
+							$('.circle-label').css('z-index','1');
+							$('.circle-submit').css('z-index','0');
 							$(".parkingimage").css('opacity','0');
 							$(".parkingimage").css('position',"");
 							$(".parkingimage").attr("src", "");
@@ -810,17 +836,165 @@
 			
 			
 			
-		////-------------------------------------------------
+//--------------------주행번호---------------------
 			function drivingnum(res){
 					
 					return res;
 				}
 		
+//------------주차테이블 셀렉-----------------
+		
+			function searchDrinum(){
+					
+				
+				$.ajax({
+					url : '${cpath}/searchDrinum.do',
+					dataType : 'json',
+					data : {'drinum' : drinum},
+					type : 'post',
+					success : function(res){
+					
+						console.log(res.ddate);
+						var id = '<li>'+res['id']+'</li>';
+						var date ='<li>'+res['ddate']+'</li>';
+						var stime ='<li>'+res['stime']+'</li>';
+						var ftime = '<li>'+res['ftime']+'</li>';
+						
+						$('.inner3 .inner3-list:nth-child(2) li').after(id);
+						$('.inner3 .inner3-list:nth-child(3) li').after(date);
+						$('.inner3 .inner3-list:nth-child(4) li').after(stime);
+						$('.inner3 .inner3-list:nth-child(5) li').after(ftime);	
+						
+						
+							
+					},
+					// 실패했을 때 실행할 함수
+					error : function() {
+	
+						alert('실패!');
+					}
+				})
+	
+	
+	
+	
+				}
+		
+		
+		
+		
+		
+//---------------감지테이블 셀렉----------------------
+		
+			function illegalcheck(){
+				
+				
+				console.log(drinum);
+				
+				$.ajax({
+					url : '${cpath}/illegalCheck.do',
+					data : {'drinum' : drinum},
+					dataType:'json',
+					type : 'post',
+					success : function(res){
+					console.log(res);
+					
+					
+					var all = res[0];
+					var helmet = res[1];
+					 var head = res[2];
+					var two = res[3];
+					
+					var add = "";
+					var add2 = "";
+					
+					var greencheck = "<li><span style = 'color:#19B652' class='material-icons'>done</span></li> <li class='flexbox'> <span>point+</span><span class='pointbold'>3</span></li>"
+					var redcheck = "<li><span style = 'color:red' class='material-icons'>done</span></li> <li class='flexbox'> <span>point+</span><span class='pointbold'>0</span></li>"
+					
+					var greenX = "<li><span style = 'color:#19B652' class='material-icons'>close</span></li>  <li class='flexbox'><span>point+</span><span class='pointbold'>3</span><li>"
+					var redX = "<li><span style = 'color:red' class='material-icons'>close</span></li> <li class='flexbox'> <span>point+</span><span class='pointbold'>0</span></li>"
+					//70프로 이상
+					
+					if((all*0.7) <helmet){
+						
+						
+						
+						if((all*0.05) <two){
+							
+						add= greencheck;
+						add2= redcheck;
+						
+						}else{
+							
+							add= greencheck;
+							add2= greenX;
+						
+						}
+						
+						
+						
+					}else if((all*0.3) <head){
+						
+						if((all*0.05) <two){
+							
+							add = redX;
+							add2 = redcheck;
+							
+						}else{
+							
+							add = redX;
+							add2 = redcheck;
+						
+						}
+						
+						
+					}
+					
+					console.log(add);
+					console.log(add2);
+					
+					
+					
+					$('.inner4 .inner4-list:nth-child(2) li').after(add);
+					$('.inner4 .inner4-list:nth-child(3) li').after(add2);
+					$('.inner4 .inner4-list:nth-child(4) li').after(greencheck);
+					
+					
+					
+					
+					},
+					// 실패했을 때 실행할 함수
+					error : function() {
+	
+						alert('실패!');
+					}
+				})
+				
+				
+				
+				
+			}
+		
+//---------------------------------------------------------------------------------
+		
+		
+		
 $('.footend').click(function(){
 			
 	$('.drive-inner').fadeOut(300);
 	$('.parking').fadeIn(300);
+	$('.footstart').css('display','flex').delay(500);
+	
+	
+	if($('.parking').css('display') == 'block'){
+		 
+	 $('.main').css( { transition: "transform 0.5s",
+	                  transform:  "rotate(" + 0 + "deg)" } );
+
+	setTimeout( function() { $('.drive-inner').css( { transition: "none" } ) }, 500 );
+			 }
 			
+	
 			
 		});
 		
@@ -1049,7 +1223,7 @@ $('.footend').click(function(){
 		}
 		
 		function movehome() {
-
+			$(".drive-record").fadeOut(300);
 			$(".map-inner").fadeOut(300);
 			$(".middle").fadeIn(300);
 
@@ -1059,6 +1233,16 @@ $('.footend').click(function(){
 
 			$(".middle").fadeOut("slow");
 			$(".drive-inner").fadeIn("slow");
+			
+			if($('.drive-inner').css('display') == 'block'){
+				 
+				 $('.main').css( { transition: "transform 0.5s",transform:  "rotate(" + -90 + "deg)" } );
+				 $('.drive-inner-main').css( { transition: "transform 0.5s",transform:  "rotate(" + -90 + "deg)" } );
+				 $('.drive-inner-foot').css('height','800');
+				 $('.footstart').css( { transition: "transform 0.5s",transform:  "rotate(" + 90 + "deg)" } );
+				 $('.footend').css( { transition: "transform 0.5s",transform:  "rotate(" + 90 + "deg)" } );
+		setTimeout( function() { $('.drive-inner').css( { transition: "none" } ) }, 500 );
+			 }
 
 		}
 		

@@ -1,5 +1,7 @@
 package kr.smhrd.service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,8 +53,18 @@ public class MainRESTController {
 		return dnum2;
 	}
 	
+	@RequestMapping("/illegalCheck.do")
+	public ArrayList<String> illegalCheckAjax(int drinum) {
+		System.out.println(drinum);
+		ArrayList<String> list = service.illegalCheck(drinum);
+		return list;
+	}
 	
-	
+	@RequestMapping("/searchDrinum.do")
+	public DrivingVO searchDrinumAjax(int drinum) {
+		DrivingVO dvo = service.searchDrinum(drinum);
+		return dvo;
+	}
 	
 	
 	

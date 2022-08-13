@@ -1,5 +1,6 @@
 package kr.smhrd.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -79,14 +80,34 @@ public class MainService {
 		
 		int cnt = mapper.checkParking(dnum);
 		
-	
 		return cnt;
-		
-		
 		
 	}
 
-	
+	public ArrayList<String> illegalCheck(int dnum) {
+		
+		String total = Integer.toString(mapper.cntDrinum(dnum));
+		String helmet = Integer.toString(mapper.cntDrinumHelmet(dnum));
+		String head = Integer.toString(mapper.cntDrinumHead(dnum));
+		String two = Integer.toString(mapper.cntDrinumTwo(dnum));
+		
+		ArrayList<String> list = new ArrayList<String>();
+		
+		list.add(total);
+		list.add(helmet);
+		list.add(head);
+		list.add(two);
+		
+		return list;
+		
+	}
+
+	public DrivingVO searchDrinum(int dnum) {
+		
+		DrivingVO dvo = mapper.searchDrinum(dnum);
+		
+		return dvo;
+	}
 		
 		
 
