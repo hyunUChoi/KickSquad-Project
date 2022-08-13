@@ -465,7 +465,8 @@
 								<div class="pointbar">
 									<c:set var="point" value="${(mvo.point -300)/2}">
 									</c:set>
-									<div style="width:${point}%" class="bar"></div>
+									<div style="width:${point}%" class="bar">
+									<div class="finishbar"></div></div> 
 								</div>
 							</c:when>
 
@@ -494,19 +495,16 @@
 				</ul>
 				<ul class="inner3-list">
 					<li>탑승자 아이디</li>
-					<li>????</li>
 				</ul>
 				<ul class="inner3-list">
 					<li>탑승 일자</li>
-					<li>????</li>
 				</ul>
 				<ul class="inner3-list">
-					<li>탑승시각</li>
-					<li>???</li>
+					<li>주행 시작</li>
+	
 				</ul>
 				<ul class="inner3-list">
-					<li>??????</li>
-					<li>?????</li>
+					<li>주행 종료</li>
 				</ul>
 
 
@@ -519,23 +517,21 @@
 				</ul>
 				<ul class="inner4-list">
 					<li>헬멧 착용</li>
-					<li>????</li>
 				</ul>
 				<ul class="inner4-list">
 					<li>동반 탑승</li>
-					<li>????</li>
 				</ul>
 				<ul class="inner4-list">
 					<li>주차 여부</li>
-					<li>???</li>
 				</ul>
-
 
 
 
 
 			</div>
-			<div class="inner5">홈으로 돌아가기</div>
+			<div class="inner5">
+				<span  onclick="movehome()" class="material-icons home">home</span>
+			</div>
 
 
 		</div>
@@ -782,6 +778,7 @@
 							setTimeout(function() {
 			 					$('.parking').fadeOut(300);
 			 					$('.parkingimage').css('position','');
+			 					$(".parkingimage").attr("src", "");
 								$('.parkingimage').css('z-index','0');
 				 				$('.drive-record').fadeIn(300);
 			 				}, 1000);
@@ -791,6 +788,12 @@
 							
 							//-- 주차화면에서 주행기록 페이지에서 넘어갈때  감지테이블 셀렉 ajax 실행할 함수
 							
+							
+							//탑승자 아이디 정보
+							searchDrinum();
+							
+							
+							// 감지테이블 정보
 							illegalcheck();
 						
 							
@@ -839,6 +842,48 @@
 					return res;
 				}
 		
+//------------주차테이블 셀렉-----------------
+		
+			function searchDrinum(){
+					
+				
+				$.ajax({
+					url : '${cpath}/searchDrinum.do',
+					dataType : 'json',
+					data : {'drinum' : drinum},
+					type : 'post',
+					success : function(res){
+					
+						console.log(res.ddate);
+						var id = '<li>'+res['id']+'</li>';
+						var date ='<li>'+res['ddate']+'</li>';
+						var stime ='<li>'+res['stime']+'</li>';
+						var ftime = '<li>'+res['ftime']+'</li>';
+						
+						$('.inner3 .inner3-list:nth-child(2) li').after(id);
+						$('.inner3 .inner3-list:nth-child(3) li').after(date);
+						$('.inner3 .inner3-list:nth-child(4) li').after(stime);
+						$('.inner3 .inner3-list:nth-child(5) li').after(ftime);	
+						
+						
+							
+					},
+					// 실패했을 때 실행할 함수
+					error : function() {
+	
+						alert('실패!');
+					}
+				})
+	
+	
+	
+	
+				}
+		
+		
+		
+		
+		
 //---------------감지테이블 셀렉----------------------
 		
 			function illegalcheck(){
@@ -848,17 +893,75 @@
 				
 				$.ajax({
 					url : '${cpath}/illegalCheck.do',
-					dataType: 'json',
-					data : {'drinum' : 1},
+					data : {'drinum' : drinum},
+					dataType:'json',
 					type : 'post',
 					success : function(res){
+					console.log(res);
 					
+					
+					var all = res[0];
+					var helmet = res[1];
+					 var head = res[2];
+					var two = res[3];
+					
+					var add = "";
+					var add2 = "";
+					
+					var greencheck = "<li><span style = 'color:#19B652' class='material-icons'>done</span></li> <li class='flexbox'> <span>point+</span><span class='pointbold'>3</span></li>"
+					var redcheck = "<li><span style = 'color:red' class='material-icons'>done</span></li> <li class='flexbox'> <span>point+</span><span class='pointbold'>0</span></li>"
+					
+					var greenX = "<li><span style = 'color:#19B652' class='material-icons'>close</span></li>  <li class='flexbox'><span>point+</span><span class='pointbold'>3</span><li>"
+					var redX = "<li><span style = 'color:red' class='material-icons'>close</span></li> <li class='flexbox'> <span>point+</span><span class='pointbold'>0</span></li>"
+					//70프로 이상
+					
+					if((all*0.7) <helmet){
 						
 						
 						
-						
-						
+						if((all*0.05) <two){
 							
+						add= greencheck;
+						add2= redcheck;
+						
+						}else{
+							
+							add= greencheck;
+							add2= greenX;
+						
+						}
+						
+						
+						
+					}else if((all*0.3) <head){
+						
+						if((all*0.05) <two){
+							
+							add = redX;
+							add2 = redcheck;
+							
+						}else{
+							
+							add = redX;
+							add2 = redcheck;
+						
+						}
+						
+						
+					}
+					
+					console.log(add);
+					console.log(add2);
+					
+					
+					
+					$('.inner4 .inner4-list:nth-child(2) li').after(add);
+					$('.inner4 .inner4-list:nth-child(3) li').after(add2);
+					$('.inner4 .inner4-list:nth-child(4) li').after(greencheck);
+					
+					
+					
+					
 					},
 					// 실패했을 때 실행할 함수
 					error : function() {
@@ -1120,7 +1223,7 @@ $('.footend').click(function(){
 		}
 		
 		function movehome() {
-
+			$(".drive-record").fadeOut(300);
 			$(".map-inner").fadeOut(300);
 			$(".middle").fadeIn(300);
 

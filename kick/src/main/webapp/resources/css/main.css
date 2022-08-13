@@ -1166,7 +1166,7 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 .drive-record .record .inner1 {
 	position: relative;
 	width: 100%;
-	height: 65px;
+	height:30%;
 	top: 38px;
 	display: flex;
 	justify-content: center;
@@ -1180,7 +1180,7 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 
 .drive-record .record .inner2 {
 	width: 90%;
-	height: 200px;
+	height:100%;
 	margin: 10px 20px;
 	display: flex;
 	flex-direction: column;
@@ -1193,6 +1193,7 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 	background-color: #fff;
 	width: 90%;
 	height: 20px;
+	border: 2px solid #DEDFE3;
 	border-top-right-radius: 20px;
 	border-bottom-right-radius: 20px;
 	overflow: hidden;
@@ -1204,10 +1205,43 @@ body>div>section.drive-record>div>div.inner2>div.inner-middle2>div>div.pointbar>
 	height: 20px;
 }
 
-.drive-record .record .inner4, .drive-record .record .inner3 {
+.drive-record .record .inner4{
 	display: flex;
 	flex-direction: column;
-	margin: 30px 20px;
+	margin: 0 20px 160px 20px;
+	height:100%;
+	justify-content: space-evenly;
+	
+}
+ .drive-record .record .inner3 {
+	display: flex;
+	flex-direction: column;
+	margin:30px 20px 30px 20px;
+	height:100%;
+	justify-content: space-evenly;
+}
+
+.inner3::after {
+    content: "";
+    width: 91.2%;
+    height: 4px;
+    background-color: #DEDFE3;
+    position: absolute;
+    top:345px;
+    left: 20px;
+}
+.inner4::after {
+    content: "";
+    width: 91.2%;
+    height: 4px;
+    background-color: #DEDFE3;
+    position: absolute;
+    top: 560px;
+    left: 20px;
+}
+.pointbold{
+	color:#19B652;
+	
 }
 
 .drive-record .record .inner4 ul:first-child,
@@ -1220,27 +1254,47 @@ body>div>section.drive-record>div>div.inner2>div.inner-middle2>div>div.pointbar>
 	border-radius: 5%;
 }
 
-.drive-record .record .inner4 .inner4-list, .drive-record .record .inner3 .inner3-list
+
+.drive-record .record .inner3 .inner3-list
 	{
 	display: flex;
 	justify-content: space-between;
 }
 
-.drive-record .record .inner5 {
-	background-color: #F1F2F4;
-	border: 2px solid #DEDFE3;
-	border-radius: 25px;
-	margin: 20px 40px;
-	height: 40px;
+.drive-record .record .inner4 .inner4-list{
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 1;
+}
+.inner4-list .material-icons{
+	font-weight:900;
+	font-size:35px;
+}
+.inner4-list .flexbox{
+    justify-self: self-end;
+    display: flex;
+    width: 70%;
+    justify-content: end;
+	
+	
 }
 
-.drive-record .record .inner5:hover {
-	color: #fff;
-	background-color: #333;
+
+.drive-record .record .inner5 {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45%;
+    color: #333;
+    background: #f1f2f4;
+    cursor: pointer;
+    border-bottom-left-radius: 55px;
+    border-bottom-right-radius: 55px;
+    border-top: 2px solid #DEDFE3;
+}
+.drive-record .record .inner5 span{
+	
+	font-size: 40px;
+    z-index: 1;
+	
 }
 
 /* OPEN LIST */
