@@ -23,11 +23,11 @@
     </select>
     
     <select id="check" parameterType="kr.smhrd.model.MemberVO" resultType="int">
-        select count(id) from member where id= #{id}
+        select count(*) from member where id= #{id}
     </select>
     
     
-    <insert id="drivingInsert" parameterType="kr.smhrd.model.DrivingVO" >
+    <insert id="insertDriving" parameterType="kr.smhrd.model.DrivingVO">
         insert into driving(id, ddate, stime, ftime) values(#{id}, #{ddate}, #{stime}, #{ftime})
     </insert>
     
@@ -60,7 +60,7 @@
 		and detcnt > 1       
     </select>
     
-    <select id="searchDrinum" resultType="kr.smhrd.model.DrivingVO">
+    <select id="checkDrinving" resultType="kr.smhrd.model.DrivingVO">
         select * from driving where drinum = #{drinum}
     </select>
 

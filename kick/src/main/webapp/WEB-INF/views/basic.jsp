@@ -758,7 +758,7 @@
 				
 				$.ajax({
 					//서버 url
-					url : '${cpath}/checkParking.do',
+					url : '${cpath}/check/parking.do',
 					
 					data : {
 						'dnum' : drinum},
@@ -848,7 +848,7 @@
 					
 				
 				$.ajax({
-					url : '${cpath}/searchDrinum.do',
+					url : '${cpath}/check/detection.do',
 					dataType : 'json',
 					data : {'drinum' : drinum},
 					type : 'post',
@@ -892,7 +892,7 @@
 				console.log(drinum);
 				
 				$.ajax({
-					url : '${cpath}/illegalCheck.do',
+					url : '${cpath}/check/detection.do',
 					data : {'drinum' : drinum},
 					dataType:'json',
 					type : 'post',
@@ -1043,7 +1043,7 @@ $('.footend').click(function(){
 			console.log(a);
 				$.ajax({
 					//서버 url
-					url : '${cpath}/insertDrive.do',
+					url : '${cpath}/create-driving.do',
 					
 					data : {
 						'id' : a,
@@ -1328,7 +1328,7 @@ $('.footend').click(function(){
 
 			var id = $('#id2').val();
 			$.ajax({
-				url : '${cpath}/checkid.do',
+				url : '${cpath}/check/id.do',
 				type : 'post',
 				data : {
 					'id' : id

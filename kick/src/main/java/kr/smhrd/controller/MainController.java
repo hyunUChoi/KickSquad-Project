@@ -1,4 +1,4 @@
-package kr.smhrd.service;
+package kr.smhrd.controller;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,35 +8,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 	
-	//@Autowired
-	// private BoardMapper mapper;
-		
+	@RequestMapping("/")
+	public String root() {
+		return "basic";
+	}
+	
 	@RequestMapping("/basic.do")
 	public String basic() {
 		System.out.println("메인화면");
 		return "basic";
 	}
 	
-	@RequestMapping("/play.do")
+	@RequestMapping("/guide.do")
 	public String play() {
-		System.out.println("주행화면");
-		return "play";
+		System.out.println("안내화면");
+		return "guide";
 	}
-	
-	@RequestMapping("/quit.do")
-	public String quit() {
-		System.out.println("주행종료화면");
-		return "quit";
-	}
-	
+		
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
 		
+		System.out.println("로그아웃");
 		session.invalidate(); //세션자체를 무효화
 		
-		
-		return "redirect:/basic.do";
-		
+		return "basic";
 	}
 	
 	
