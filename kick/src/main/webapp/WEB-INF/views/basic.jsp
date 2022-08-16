@@ -588,6 +588,7 @@
 	
 		btns[1].addEventListener('click', () => {
 		    
+			
 			$('.openlist').fadeIn(200);
 			
 		
@@ -697,7 +698,7 @@
 				
 				$.ajax({
 					type : 'post',
-					url : 'http://172.30.1.19:3500/det-scooter?drinum='+drinum,
+					url : 'http://172.30.1.25:3500/det-scooter?drinum='+drinum,
 					data : form_data,
 					cache : false,
 					contentType: false,
@@ -710,7 +711,7 @@
 						$(".circle-submit").css("z-index","0");
 		 				detsrc = res;
 		 				
-		 			 checkparking();
+		 			 	checkparking();
 		 				
 		 				
 		 			},
@@ -875,13 +876,8 @@
 				console.log(drinum);
 				
 				$.ajax({
-<<<<<<< HEAD
 					url : '${cpath}/check/detection.do',
 					data : {'drinum' : drinum},
-=======
-					url : '${cpath}/illegalCheck.do',
-					data : {'drinum' : 1},
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/kick2.git
 					dataType:'json',
 					type : 'post',
 					success : function(res){
@@ -1007,7 +1003,7 @@
 			console.log("업데이트될id "+'${mvo.id}');	
 			console.log("업데이트될포인트 "+point);	
 			$.ajax({
-				url : '${cpath}/updatePoint.do',
+				url : '${cpath}/update-point.do',
 				data : {'id' : '${mvo.id}',
 						'point' : point},
 				type : 'post',
@@ -1096,7 +1092,7 @@ $('.footend').click(function(){
 			console.log(a);
 				$.ajax({
 					//서버 url
-					url : '${cpath}/create-driving.do',
+					url : '${cpath}/insert-driving.do',
 					
 					data : {
 						'id' : a,
@@ -1116,7 +1112,8 @@ $('.footend').click(function(){
 					},
 					// 실패했을 때 실행할 함수
 					error : function() {
-	
+						
+						console.log("주행번호"+res)
 						alert('실패!');
 					}
 				})

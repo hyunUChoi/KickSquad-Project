@@ -31,11 +31,11 @@ public class MainRESTController {
 	}
 
 	@RequestMapping("/insert-driving.do")
-	public int driveAjax(DrivingVO dvo) {
+	public String insertDriving(DrivingVO dvo) {
 		
 		int drinum = service.driveInsert(dvo);
 		
-		return drinum;
+		return Integer.toString(drinum);
 	}
 	
 	@RequestMapping("/update-point.do")

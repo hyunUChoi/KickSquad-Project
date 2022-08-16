@@ -72,11 +72,12 @@ public class MainService {
 		} else {
 			System.out.println("insert driving_tb fail, cnt -> " + cnt);
 		}
-
+		System.out.println(dvo.getFtime());
 		// 2. 주행정보_tb에 주행시작시간으로 검색해서
 		// 방금 생긴 데이터의 주행번호를 리턴
 		int drinum = mapper.drivingSelect(dvo.getFtime());
-
+		
+		System.out.println(drinum);
 		return drinum;
 
 	}
