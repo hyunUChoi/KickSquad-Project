@@ -1,5 +1,7 @@
 package kr.smhrd.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.smhrd.model.DrivingVO;
@@ -37,6 +39,8 @@ public interface MainMapper {
 	public void point9(String id);
 
 	public MemberVO sessionUpdate(String id);
+
+	public List<DrivingVO> checkRecord(String id);
 
 
 }

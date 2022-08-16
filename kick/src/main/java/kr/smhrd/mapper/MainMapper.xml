@@ -90,6 +90,11 @@
         
     </select>
     
+      <select id="checkRecord" resultType="kr.smhrd.model.DrivingVO">
+        select * from driving where id= #{id}
+        
+        
+    </select>
     
     
     

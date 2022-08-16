@@ -509,20 +509,9 @@
 		<div class="swiper mySwiper">
 			<div class="swiper-wrapper">
 
-				<div class="swiper-slide">
+				<div id="inner-slide" class="swiper-slide">
 
-					<div class="slide-box1">
-
-
-						<div class="slide-box2">
-
-							<div class="box2-inner">날짜들어올곳</div>
-							<div class="box2-inner">주행번호들어올곳</div>
-
-						</div>
-						<div class="slide-box3">상세보기</div>
-					</div>
-					
+				
 					
 					
 			
@@ -537,7 +526,7 @@
 
 		</div>
 		<div class="box-foot">
-			<span class="material-icons">home</span>
+			<span onclick="movehome()" class="material-icons">home</span>
 		</div>
 
 	</section>
@@ -1272,6 +1261,7 @@ $('.footend').click(function(){
 		
 		function movehome() {
 			
+			$(".total-record").fadeOut(300);
 			$(".map-inner").fadeOut(300);
 			$(".middle").fadeIn(300);
 
@@ -1469,29 +1459,10 @@ $('.footend').click(function(){
 								
 								
 								blist += "<div class= 'slide-box1'>"
-								blist += "<td>"+ board.idx + "</td>"
-								blist += "<td><a href='javascript:viewContent("+board.idx+")'>" + board.title + "</a></td>"
-								blist += "<td>" + board.writer + "</td>"
-								blist += "<td>" + board.indate + "</td>"
-								
-								if('${mvo.id}'==board.id){
-								blist += "<td><button onclick='boardDelete("+board.idx+")' class = 'btn-sm btn-danger btn'>삭제</button></td>"
-								}else{
-								blist += "<td><button disabled onclick='boardDelete("+board.idx+")' class = 'btn-sm btn-danger btn'>삭제</button></td>"
-									
-								}
-								blist += "</tr>"
-								
-								blist += "<tr class= 'innerContent' id= 'vc"+board.idx+"' style = 'display:none'>"
-								blist += "<td colspan= '5' >"
-								blist += "<textarea id= 'ct"+board.idx+"' rows = '5' class= 'form-control' >"+board.contents+"</textarea>"
-								blist +="<br>"
-								blist +="&nbsp<button onclick='boardUpdate("+board.idx+")'   class= 'btn-primary btn btn-sm'>수정</button>"
-								blist +="<button onclick='closed("+board.idx+")' class= 'btn-warning btn btn-sm'>닫기</button>"
-																	
-								
-								
-								blist += "</td>"
+								blist += "<div class='slide-box2'>"
+								blist += "<div class='box2-inner'>주행날짜<br>"+board.ddate+"</div>"
+								blist += "<div class='box2-inner'>주행번호"+board.drinum+"</div></div>"
+								blist += "<div onclick='viewChart()' class='slide-box3'>자세히보기</div>"
 								blist += "</div>"
 								
 								
@@ -1500,9 +1471,20 @@ $('.footend').click(function(){
 							})
 
 			//heading이라는 class 명을 가진 tr태그 다음에 blist를 추가하기!
-			$('total-record .swiper-slide').after(blist);
+			$('#inner-slide').append(blist);
 
 		}
+		function viewChart(){
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		};
 		
 		
 		
