@@ -37,5 +37,22 @@ public class MainRESTController {
 		
 		return drinum;
 	}
+	
+	@RequestMapping("/update-point.do")
+	public void pointUpdate(int point,String id) {
+		
+		service.updatePoint(id,point);
+		
+		
+	}
+	
+	@RequestMapping("/update-session.do")
+	public void sessionUpdate(String id,HttpSession session) {
+		
+		service.updateSession(id,session);
+		
+		
+	}
+	
 
 }

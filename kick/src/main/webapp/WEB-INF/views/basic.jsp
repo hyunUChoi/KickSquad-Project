@@ -26,6 +26,8 @@
 <!-- SWIPER -->
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
 <!--jQuery CDN-->
 <script
@@ -68,26 +70,26 @@
 			</div>
 
 			<div class="head-middle">
-				<span>공지사항</span> <span onclick="slidedown()" class="material-icons">vertical_align_bottom</span>
-				<span onclick="slideup()" id="top" class="material-icons">vertical_align_top</span>
+				<span>공지사항</span> <span onclick="slidedown()" class="material-icons">swipe_down</span>
+				<span onclick="slideup()" id="top" class="material-icons">swipe_up</span>
 			</div>
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
 
 					<div class="swiper-slide">
-						<a href="javascript:void(0)">공지사항1</a>
+						<a href="javascript:void(0)">서비스 안내</a>
 
 					</div>
 					<div class="swiper-slide">
-						<a href="javascript:void(0)">공지사항2</a>
+						<a href="javascript:void(0)">주차 가이드</a>
 
 					</div>
 					<div class="swiper-slide">
-						<a href="javascript:void(0)">공지사항3</a>
+						<a href="javascript:void(0)">회원등급 안내</a>
 
 					</div>
 					<div class="swiper-slide">
-						<a href="javascript:void(0)">공지사항4</a>
+						<a href="javascript:void(0)">킥보드 법규가이드</a>
 
 					</div>
 				</div>
@@ -118,7 +120,9 @@
 			<c:if test="${empty mvo.name}">
 				<div class="body2">
 					<div onclick="alert12()" class="inner">
-						<div class="inner-top">운행내역</div>
+						<div class="inner-top">
+							<span class="material-icons">storage</span> 운행내역
+						</div>
 						<div class="inner-top">킥보드찾기</div>
 						<div class="inner-drive">
 
@@ -129,7 +133,9 @@
 			<c:if test="${!empty mvo.name}">
 				<div class="body2">
 					<div class="inner">
-						<div class="inner-top">운행내역</div>
+						<div onclick="movetotalrecord()" class="inner-top">
+							<span class="material-icons">storage</span>운행내역
+						</div>
 						<div onclick="movemap()" class="inner-top">킥보드찾기</div>
 						<div class="inner-drive">
 
@@ -419,76 +425,7 @@
 
 			</div>
 
-			<div class="inner2">
-				<div class="inner-middle1">
-					<div class="middle1-inner1">
-						<div class="text-group1">
-							<c:if test="${!empty mvo.name}">
-								<span>${mvo.name}</span>
-								<p>님</p>
-							</c:if>
-						</div>
-					</div>
-					<div class="middle1-inner2"></div>
-				</div>
-				<div class="inner-middle2">
-					<div class="text-group">
-						<c:choose>
-							<c:when test="${mvo.grade == 'white'}">
-								<div>
-									<span class="getgrade">${mvo.grade}등급</span>
-								</div>
 
-								<div class="pointbar">
-
-									<div style="width:${mvo.point}%" class="bar"></div>
-								</div>
-							</c:when>
-
-							<c:when test="${mvo.grade == 'gold'}">
-								<div>
-									<span class="getgrade">${mvo.grade}등급</span>
-								</div>
-
-								<div class="pointbar">
-									<c:set var="point" value="${(mvo.point-100)/2}">
-									</c:set>
-									<div style="width:${point}%" class="bar"></div>
-								</div>
-							</c:when>
-
-							<c:when test="${mvo.grade == 'vip'}">
-								<div>
-									<span class="getgrade">${mvo.grade}등급</span>
-								</div>
-
-								<div class="pointbar">
-									<c:set var="point" value="${(mvo.point -300)/2}">
-									</c:set>
-									<div style="width:${point}%" class="bar">
-									<div class="finishbar"></div></div> 
-								</div>
-							</c:when>
-
-							<c:when test="${mvo.grade == 'vvip'}">
-								<div>
-									<span class="getgrade">${mvo.grade}</span> <span>(마지막등급입니다.)</span>
-								</div>
-
-								<div class="pointbar">
-									<div style="width:${mvo.point}%" class="bar"></div>
-								</div>
-							</c:when>
-
-
-							<c:otherwise>
-
-							</c:otherwise>
-						</c:choose>
-					</div>
-				</div>
-
-			</div>
 			<div class="inner3">
 
 				<ul>이용내역
@@ -501,7 +438,7 @@
 				</ul>
 				<ul class="inner3-list">
 					<li>주행 시작</li>
-	
+
 				</ul>
 				<ul class="inner3-list">
 					<li>주행 종료</li>
@@ -530,7 +467,7 @@
 
 			</div>
 			<div class="inner5">
-				<span  onclick="movehome()" class="material-icons home">home</span>
+				<span onclick="movehome2()" class="material-icons home">home</span>
 			</div>
 
 
@@ -558,11 +495,54 @@
 		<div class="map-box">
 			<div class="box-head">킥보드 찾기</div>
 			<div class="mbox1" id="map"></div>
-			<div onclick="movehome()" class="mbox2">
+			<div onclick="movehome2()" class="mbox2">
 				<span class="material-icons home">home</span>
 			</div>
 		</div>
 	</section>
+
+	<!--  운행내역 페이지 open -->
+	<section class="total-record">
+
+		<div class="box-top">운행 내역</div>
+
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+
+				<div class="swiper-slide">
+
+					<div class="slide-box1">
+
+
+						<div class="slide-box2">
+
+							<div class="box2-inner">날짜들어올곳</div>
+							<div class="box2-inner">주행번호들어올곳</div>
+
+						</div>
+						<div class="slide-box3">상세보기</div>
+					</div>
+					
+					
+					
+			
+
+
+
+				</div>
+
+				<div class="swiper-scrollbar"></div>
+			</div>
+
+
+		</div>
+		<div class="box-foot">
+			<span class="material-icons">home</span>
+		</div>
+
+	</section>
+
+
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d75a41bbb55475bec63a4ca074a7d2e"></script>
@@ -717,7 +697,7 @@
 				
 				$.ajax({
 					type : 'post',
-					url : 'http://172.30.1.25:3500/det-sqooter?drinum='+drinum,
+					url : 'http://172.30.1.19:3500/det-scooter?drinum='+drinum,
 					data : form_data,
 					cache : false,
 					contentType: false,
@@ -844,6 +824,7 @@
 		
 //------------주차테이블 셀렉-----------------
 		
+		var id2="";
 			function searchDrinum(){
 					
 				
@@ -855,7 +836,7 @@
 					success : function(res){
 					
 						console.log(res.ddate);
-						var id = '<li>'+res['id']+'</li>';
+						id = '<li>'+res['id']+'</li>';
 						var date ='<li>'+res['ddate']+'</li>';
 						var stime ='<li>'+res['stime']+'</li>';
 						var ftime = '<li>'+res['ftime']+'</li>';
@@ -865,6 +846,7 @@
 						$('.inner3 .inner3-list:nth-child(4) li').after(stime);
 						$('.inner3 .inner3-list:nth-child(5) li').after(ftime);	
 						
+						id2 = res['id'];
 						
 							
 					},
@@ -885,6 +867,7 @@
 		
 		
 //---------------감지테이블 셀렉----------------------
+	var point = "";
 		
 			function illegalcheck(){
 				
@@ -892,8 +875,13 @@
 				console.log(drinum);
 				
 				$.ajax({
+<<<<<<< HEAD
 					url : '${cpath}/check/detection.do',
 					data : {'drinum' : drinum},
+=======
+					url : '${cpath}/illegalCheck.do',
+					data : {'drinum' : 1},
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-6/kick2.git
 					dataType:'json',
 					type : 'post',
 					success : function(res){
@@ -907,6 +895,7 @@
 					
 					var add = "";
 					var add2 = "";
+				
 					
 					var greencheck = "<li><span style = 'color:#19B652' class='material-icons'>done</span></li> <li class='flexbox'> <span>point+</span><span class='pointbold'>3</span></li>"
 					var redcheck = "<li><span style = 'color:red' class='material-icons'>done</span></li> <li class='flexbox'> <span>point+</span><span class='pointbold'>0</span></li>"
@@ -921,30 +910,38 @@
 						
 						if((all*0.05) <two){
 							
-						add= greencheck;
-						add2= redcheck;
+						add= greencheck; //헬멧   포인트 3점
+						add2= redcheck;  //동반탑승  포인트 0점
+						
+						point =6;
 						
 						}else{
 							
-							add= greencheck;
-							add2= greenX;
+							add= greencheck; //헬멧  포인트 3점
+							add2= greenX;    //동반탑승  포인트 3점
 						
+							point =9;
 						}
 						
 						
 						
 					}else if((all*0.3) <head){
 						
+						
+						
 						if((all*0.05) <two){
 							
-							add = redX;
-							add2 = redcheck;
+							add = redX;        //헬멧 포인트 0 점
+							add2 = redcheck;   //동반탑승 포인트 0 점
+							
+							point = 3;
 							
 						}else{
 							
-							add = redX;
-							add2 = redcheck;
+							add = redX;        // 헬멧  포인트 0 점
+							add2 = greencheck;  // 동반탑승  포인트 3점
 						
+							point =6;
 						}
 						
 						
@@ -959,7 +956,7 @@
 					$('.inner4 .inner4-list:nth-child(3) li').after(add2);
 					$('.inner4 .inner4-list:nth-child(4) li').after(greencheck);
 					
-					
+					updatePoint();
 					
 					
 					},
@@ -976,6 +973,64 @@
 			}
 		
 //---------------------------------------------------------------------------------
+
+
+		function loginService(id, pw) {
+
+			
+			$.ajax({
+			
+				url : '${cpath}/login.do',
+		
+				data : {
+					'id' : $('#id1').val(),
+					'pw' : $('#pw1').val()
+				},
+				type : 'post',
+	
+				success : move,
+		
+				error : function() {
+
+					alert('실패!');
+				}
+			})
+
+		}
+
+
+
+		// 포인트 업데이트 
+		function updatePoint(id2){
+			
+			
+			console.log("업데이트될id "+'${mvo.id}');	
+			console.log("업데이트될포인트 "+point);	
+			$.ajax({
+				url : '${cpath}/updatePoint.do',
+				data : {'id' : '${mvo.id}',
+						'point' : point},
+				type : 'post',
+				success : function(){
+				
+					console.log("포인트 업데이트 성공");
+					
+					
+						
+				},
+				// 실패했을 때 실행할 함수
+				error : function() {
+
+					alert('실패!');
+				}
+			})
+	
+	
+	
+	
+	
+};
+		
 		
 		
 		
@@ -1032,8 +1087,6 @@ $('.footend').click(function(){
 		
 		
 		function footend(today, thour){
-			console.log(today+"ss")
-			console.log(thour+"ss")
 			
 		$('.footend').click(function(){
 			var c = getTodayType2();
@@ -1223,11 +1276,47 @@ $('.footend').click(function(){
 		}
 		
 		function movehome() {
-			$(".drive-record").fadeOut(300);
+			
 			$(".map-inner").fadeOut(300);
 			$(".middle").fadeIn(300);
 
 		}
+		
+		function movehome2(){
+			$(".drive-record").fadeOut(300);
+			
+			$.ajax({
+				url : '${cpath}/session-update.do',
+				type : 'post',
+				data : {
+					'id' : '${mvo.id}'
+				},
+				success : function() {
+				
+					
+					
+					
+					window.location.href = "http://localhost:8090/web/basic.do";
+					$(".middle").fadeIn(300);
+					
+					
+					
+				}
+
+				,
+
+				error : function() {
+					alert("에러입니다");
+				}
+
+			});
+			
+			
+			
+		
+			
+		}
+		
 		
 		function movedrive() {
 
@@ -1285,32 +1374,6 @@ $('.footend').click(function(){
 					})
 		}
 
-		function loginService(id, pw) {
-
-			$.ajax({
-				//서버 url
-				url : '${cpath}/login.do',
-				// data : 보내줄 데이터를 객체 형식으로 넘겨줬었음! {'idx ': }
-				// var formdata = $('#frm').serialize();
-				// form 태그 안에 있는 input, textarea등등에 name값이 달려있는 태그들의 값을 가져와서
-				// 직렬화 시키는 함수!
-				data : {
-					'id' : $('#id1').val(),
-					'pw' : $('#pw1').val()
-				},
-				// 요청방식
-				type : 'post',
-				// 받아올 데이터 타입 지정
-				// 성공했을 때 실행할 함수
-				success : move,
-				// 실패했을 때 실행할 함수
-				error : function() {
-
-					alert('실패!');
-				}
-			})
-
-		}
 
 		function move() {
 			window.location.href = "http://localhost:8090/web/basic.do";
@@ -1354,6 +1417,102 @@ $('.footend').click(function(){
 
 			});
 		};
+		
+		
+		//운행내역 페이지 이동
+		
+		
+		function movetotalrecord(){
+			
+			$(".middle").fadeOut(300);
+			$(".total-record").fadeIn(300);
+			
+
+			var swiper = new Swiper(".total-record .mySwiper", {
+			        direction: "vertical",
+			        slidesPerView: "auto",
+			        freeMode: true,
+			        scrollbar: {
+			          el: ".swiper-scrollbar",
+			        },
+			        mousewheel: true,
+			      });
+
+			
+			
+			$.ajax({
+				url : '${cpath}/checkRecord.do',
+				dataType : 'json',
+				type : 'post',
+				data : {
+					'id' : '${mvo.id}'
+				},
+				success : listView
+				,
+
+				error : function() {
+					alert("에러입니다");
+				}
+
+			});
+			
+			
+			
+			
+		}
+		
+		function listView(data) {
+
+			console.log(data);
+			//내가 화면에 출력해줄 tr 태그들의 모음
+			var blist = "";
+			// for-each문을 사용하는 방법
+			// $.each(어떤 데이터를 가지고 반복, 어떤 함수로 처리해줄건지)
+			$.each(data,function(index, board) {
+								// function(인덱스 번호, data안에 들어있는 각각의 값들을 어떤 변수로 받아줄 건지)
+								
+								
+								
+								blist += "<div class= 'slide-box1'>"
+								blist += "<td>"+ board.idx + "</td>"
+								blist += "<td><a href='javascript:viewContent("+board.idx+")'>" + board.title + "</a></td>"
+								blist += "<td>" + board.writer + "</td>"
+								blist += "<td>" + board.indate + "</td>"
+								
+								if('${mvo.id}'==board.id){
+								blist += "<td><button onclick='boardDelete("+board.idx+")' class = 'btn-sm btn-danger btn'>삭제</button></td>"
+								}else{
+								blist += "<td><button disabled onclick='boardDelete("+board.idx+")' class = 'btn-sm btn-danger btn'>삭제</button></td>"
+									
+								}
+								blist += "</tr>"
+								
+								blist += "<tr class= 'innerContent' id= 'vc"+board.idx+"' style = 'display:none'>"
+								blist += "<td colspan= '5' >"
+								blist += "<textarea id= 'ct"+board.idx+"' rows = '5' class= 'form-control' >"+board.contents+"</textarea>"
+								blist +="<br>"
+								blist +="&nbsp<button onclick='boardUpdate("+board.idx+")'   class= 'btn-primary btn btn-sm'>수정</button>"
+								blist +="<button onclick='closed("+board.idx+")' class= 'btn-warning btn btn-sm'>닫기</button>"
+																	
+								
+								
+								blist += "</td>"
+								blist += "</div>"
+								
+								
+								
+								
+							})
+
+			//heading이라는 class 명을 가진 tr태그 다음에 blist를 추가하기!
+			$('total-record .swiper-slide').after(blist);
+
+		}
+		
+		
+		
+		
+		
 	</script>
 </body>
 

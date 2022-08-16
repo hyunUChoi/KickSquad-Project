@@ -29,4 +29,14 @@ public interface MainMapper {
 	public int cntDrinumTwo(int drinum);
 
 	public DrivingVO checkDriving(int drinum);
+
+	public void point3(String id);
+
+	public void point6(String id);
+
+	public void point9(String id);
+
+	public MemberVO sessionUpdate(String id);
+
+
 }

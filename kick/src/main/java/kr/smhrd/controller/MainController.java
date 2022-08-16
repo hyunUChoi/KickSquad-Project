@@ -19,10 +19,10 @@ public class MainController {
 		return "basic";
 	}
 	
-	@RequestMapping("/guide.do")
+	@RequestMapping("/play.do")
 	public String play() {
 		System.out.println("안내화면");
-		return "guide";
+		return "play";
 	}
 		
 	@RequestMapping("/logout.do")
