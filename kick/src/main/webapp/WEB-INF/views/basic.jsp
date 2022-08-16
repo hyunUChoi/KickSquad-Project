@@ -270,8 +270,8 @@
 		</div>
 		<div class="footer">
 			<div class="footer-inner1">
-				<div onclick="moveServicepage()" class="foot-text-group">
-					<span class="material-icons">article</span> <span>서비스 안내</span>
+				<div onclick='location.href="${cpath}/play.do"' class="foot-text-group">
+					<span class="material-icons">article</span> <span >서비스 안내</span>
 				</div>
 			</div>
 
@@ -577,6 +577,7 @@
 	
 		btns[1].addEventListener('click', () => {
 		    
+			
 			$('.openlist').fadeIn(200);
 			
 		
@@ -686,7 +687,7 @@
 				
 				$.ajax({
 					type : 'post',
-					url : 'http://172.30.1.19:3500/det-scooter?drinum='+drinum,
+					url : 'http://172.30.1.25:3500/det-scooter?drinum='+drinum,
 					data : form_data,
 					cache : false,
 					contentType: false,
@@ -699,7 +700,7 @@
 						$(".circle-submit").css("z-index","0");
 		 				detsrc = res;
 		 				
-		 			 checkparking();
+		 			 	checkparking();
 		 				
 		 				
 		 			},
@@ -727,7 +728,7 @@
 				
 				$.ajax({
 					//서버 url
-					url : '${cpath}/checkParking.do',
+					url : '${cpath}/check/parking.do',
 					
 					data : {
 						'dnum' : drinum},
@@ -818,7 +819,7 @@
 					
 				
 				$.ajax({
-					url : '${cpath}/searchDrinum.do',
+					url : '${cpath}/check/detection.do',
 					dataType : 'json',
 					data : {'drinum' : drinum},
 					type : 'post',
@@ -864,8 +865,8 @@
 				console.log(drinum);
 				
 				$.ajax({
-					url : '${cpath}/illegalCheck.do',
-					data : {'drinum' : 1},
+					url : '${cpath}/check/detection.do',
+					data : {'drinum' : drinum},
 					dataType:'json',
 					type : 'post',
 					success : function(res){
@@ -991,7 +992,7 @@
 			console.log("업데이트될id "+'${mvo.id}');	
 			console.log("업데이트될포인트 "+point);	
 			$.ajax({
-				url : '${cpath}/updatePoint.do',
+				url : '${cpath}/update-point.do',
 				data : {'id' : '${mvo.id}',
 						'point' : point},
 				type : 'post',
@@ -1080,7 +1081,7 @@ $('.footend').click(function(){
 			console.log(a);
 				$.ajax({
 					//서버 url
-					url : '${cpath}/insertDrive.do',
+					url : '${cpath}/insert-driving.do',
 					
 					data : {
 						'id' : a,
@@ -1100,7 +1101,8 @@ $('.footend').click(function(){
 					},
 					// 실패했을 때 실행할 함수
 					error : function() {
-	
+						
+						console.log("주행번호"+res)
 						alert('실패!');
 					}
 				})
@@ -1271,7 +1273,7 @@ $('.footend').click(function(){
 			$(".drive-record").fadeOut(300);
 			
 			$.ajax({
-				url : '${cpath}/sessionUpdate.do',
+				url : '${cpath}/session-update.do',
 				type : 'post',
 				data : {
 					'id' : '${mvo.id}'
@@ -1376,7 +1378,7 @@ $('.footend').click(function(){
 
 			var id = $('#id2').val();
 			$.ajax({
-				url : '${cpath}/checkid.do',
+				url : '${cpath}/check/id.do',
 				type : 'post',
 				data : {
 					'id' : id
@@ -1426,8 +1428,7 @@ $('.footend').click(function(){
 			
 			
 			$.ajax({
-				url : '${cpath}/checkRecord.do',
-				dataType : 'json',
+				url : '${cpath}/check-record.do',
 				type : 'post',
 				data : {
 					'id' : '${mvo.id}'
@@ -1486,25 +1487,7 @@ $('.footend').click(function(){
 			
 		};
 		
-		function moveServicepage(){
-			
-			$.ajax({
-				url : '${cpath}/moveService.do',
-				type : 'post',
-				success :	{}
-					,
-				error : function() {
-					alert("에러입니다");
-				}
-
-			});
-			
-			
-			
-			
-			
-			
-		}
+	
 		
 		
 		

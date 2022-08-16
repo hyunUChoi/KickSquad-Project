@@ -1,6 +1,5 @@
-package kr.smhrd.service;
+package kr.smhrd.controller.rest;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import kr.smhrd.model.DrivingVO;
 import kr.smhrd.model.MemberVO;
+import kr.smhrd.service.MainService;
 
 @RestController
 public class MainRESTController {
@@ -27,44 +27,20 @@ public class MainRESTController {
 
 	@RequestMapping("/login.do")
 	public void loginAjax(MemberVO mvo, HttpSession session) {
-		System.out.println(mvo+"??");
+
 		service.loginAjax(mvo, session);
+
+	}
+
+	@RequestMapping("/insert-driving.do")
+	public String insertDriving(DrivingVO dvo) {
 		
-	}
-	
-	@RequestMapping("/checkid.do")
-	public int checkAjax(MemberVO mvo) {
-		int cnt =service.checkAjax(mvo);
+		int drinum = service.driveInsert(dvo);
 		
-		return cnt;
+		return Integer.toString(drinum);
 	}
 	
-	@RequestMapping("/insertDrive.do")
-	public int driveAjax(DrivingVO dvo) {
-		int drinum = service.driveInset(dvo);
-		return drinum;
-	}
-	
-	@RequestMapping("/checkParking.do")
-	public int checkParkingAjax(int dnum) {
-		int dnum2 = service.checkParking(dnum);
-		return dnum2;
-	}
-	
-	@RequestMapping("/illegalCheck.do")
-	public ArrayList<String> illegalCheckAjax(int drinum) {
-		System.out.println(drinum);
-		ArrayList<String> list = service.illegalCheck(drinum);
-		return list;
-	}
-	
-	@RequestMapping("/searchDrinum.do")
-	public DrivingVO searchDrinumAjax(int drinum) {
-		DrivingVO dvo = service.searchDrinum(drinum);
-		return dvo;
-	}
-	
-	@RequestMapping("/updatePoint.do")
+	@RequestMapping("/update-point.do")
 	public void pointUpdate(int point,String id) {
 		
 		service.updatePoint(id,point);
@@ -72,14 +48,15 @@ public class MainRESTController {
 		
 	}
 	
-	@RequestMapping("/sessionUpdate.do")
+	@RequestMapping("/update-session.do")
 	public void sessionUpdate(String id,HttpSession session) {
 		
 		service.updateSession(id,session);
 		
 		
 	}
-	@RequestMapping("/checkRecord.do")
+	
+	@RequestMapping("/check-record.do")
 	public  List<DrivingVO> checkRecord(String id) {
 		
 		List<DrivingVO> list = service.checkRecord(id);
@@ -89,4 +66,5 @@ public class MainRESTController {
 	
 	
 	
+
 }

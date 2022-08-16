@@ -16,11 +16,11 @@ public interface MainMapper {
 
 	public int check(MemberVO mvo);
 	
-	public void drivingInsert(DrivingVO dvo);
+	public int insertDriving(DrivingVO dvo);
 
 	public int drivingSelect(String ftime);
 
-	public int checkParking(int drinum);
+	public int checkParking(int drinum); 
 	
 	public int cntDrinum(int drinum);
 	
@@ -30,7 +30,7 @@ public interface MainMapper {
 	
 	public int cntDrinumTwo(int drinum);
 
-	public DrivingVO searchDrinum(int drinum);
+	public DrivingVO checkDriving(int drinum);
 
 	public void point3(String id);
 
