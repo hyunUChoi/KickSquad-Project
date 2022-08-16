@@ -3,23 +3,25 @@
 # 🚴🏻‍YOLOv5를 활용한 실시간 전동킥보드 운전자 모니터링 및 주차 인식 서비스
 
 
-*'KickSquad🚴' is a Electric kickboard law violation detection system.*
+*'KickSquad🚴' is a  detection system.*
 
- *It is a system that finds two or more people on the kickboard or who do not wear a helmet.*
+ **
 
  
  ## ⚡TEAM⚡
   
-  *StopKickrani started with NEXT LEVEL's vision to create a social atmosphere for riding a safe kickboard by establishing a systematic control system.*
+  **
   
  
-    :godmode:🏻 Junyoung Park(Team Leader) : https://github.com/kimminje0ng
+    😋 Junyoung Park(Team Leader) : https://github.com/
     
-    🕵🏼‍♀️ Chulwoong Choi(Team Member) : https://github.com/fairyroad
+    🕵🏼‍♀️ Chulwoong Choi(Team Member) : 
     
-    🙈 Yurim Kim(Team Member) : https://github.com/HyewonKkang
+    🙈 Yurim Kim(Team Member) : 
   
-    👩🏻‍🚀 Taemin Noh(Team Member) : https://github.com/sua1223
+    👩🏻‍🚀 Taemin Noh(Team Member) : 
+    
+    😎 Hyunwoo Choi(Team Member) : 
     
     
     
@@ -27,25 +29,22 @@
 
 ## 🏊🏼‍♂️Tech Stack
 ### *Version Control*
-    Git/Github
+    Github
 
 ### *Frontend*
-    Hybrid App : React
-    Web Server : Nginx
-
-### *Gateway*
-    WSGI : Gunicorn
+    Web Page : Html, CSS, JS
+    Web Server : Tomcat
 
 ### *Backend*
-    Framework : Django
+    Framework : Spring
 
 ### *DB*
-    Image Data : MySQL
+    MySQL
  
 ### *Development Environment*
     Visual studio code
-    Google colab
-    Google Cloud Platform
+    Pycharm
+    eclipse
     Yolo v5
     
     
