@@ -108,6 +108,34 @@ public class MainService {
 		
 		return dvo;
 	}
+
+	public void updatePoint(String id,int point) {
+
+		if(point == 3) {
+			
+			mapper.point3(id);
+			
+		}else if(point == 6) {
+			mapper.point6(id);
+			
+		}else if(point ==9) {
+			
+			mapper.point9(id);
+			
+		}
+		
+	}
+
+	
+	
+	public void updateSession(String id,HttpSession session) {
+		
+		MemberVO mvo2 = mapper.sessionUpdate(id);
+		
+		
+		session.setAttribute("mvo", mvo2);
+		
+	}
 		
 		
 

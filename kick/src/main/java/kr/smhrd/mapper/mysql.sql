@@ -6,7 +6,7 @@ select * from parking;
 select * from detecting;
 select * from parking;
 select * from driving;
-
+select * from member;
 drop table member
 
 create table member(

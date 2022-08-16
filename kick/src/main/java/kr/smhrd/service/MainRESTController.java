@@ -66,6 +66,21 @@ public class MainRESTController {
 		return dvo;
 	}
 	
+	@RequestMapping("/updatePoint.do")
+	public void pointUpdate(int point,String id) {
+		
+		service.updatePoint(id,point);
+		
+		
+	}
+	
+	@RequestMapping("/sessionUpdate.do")
+	public void sessionUpdate(String id,HttpSession session) {
+		
+		service.updateSession(id,session);
+		
+		
+	}
 	
 	
 }

@@ -13,8 +13,6 @@
 
 
 
-
-
 new Swiper('.main .middle>.swiper-container', {
     direction :'vertical',
     autoplay : true,
