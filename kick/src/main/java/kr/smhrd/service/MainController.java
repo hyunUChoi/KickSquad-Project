@@ -39,7 +39,15 @@ public class MainController {
 		
 	}
 	
-	
+	@RequestMapping("/moveService.do")
+	public String moveService() {
+		
+		
+		
+		
+		return "redirect:/play.do";
+		
+	}
 	
 	
 }

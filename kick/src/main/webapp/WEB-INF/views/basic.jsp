@@ -270,7 +270,7 @@
 		</div>
 		<div class="footer">
 			<div class="footer-inner1">
-				<div class="foot-text-group">
+				<div onclick="moveServicepage()" class="foot-text-group">
 					<span class="material-icons">article</span> <span>서비스 안내</span>
 				</div>
 			</div>
@@ -1486,7 +1486,25 @@ $('.footend').click(function(){
 			
 		};
 		
-		
+		function moveServicepage(){
+			
+			$.ajax({
+				url : '${cpath}/moveService.do',
+				type : 'post',
+				success :	{}
+					,
+				error : function() {
+					alert("에러입니다");
+				}
+
+			});
+			
+			
+			
+			
+			
+			
+		}
 		
 		
 		
