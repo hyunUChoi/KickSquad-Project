@@ -687,7 +687,7 @@
 				
 				$.ajax({
 					type : 'post',
-					url : 'http://172.30.1.25:3500/det-scooter?drinum='+drinum,
+					url : 'http://172.30.1.13:3500/det-scooter?drinum='+drinum,
 					data : form_data,
 					cache : false,
 					contentType: false,
@@ -728,7 +728,7 @@
 				
 				$.ajax({
 					//서버 url
-					url : '${cpath}/check/parking.do',
+					url : '${cpath}/check-parking.do',
 					
 					data : {
 						'dnum' : drinum},
@@ -819,13 +819,12 @@
 					
 				
 				$.ajax({
-					url : '${cpath}/check/detection.do',
-					dataType : 'json',
+					url : '${cpath}/check-driving.do',
 					data : {'drinum' : drinum},
 					type : 'post',
 					success : function(res){
-					
-						console.log(res.ddate);
+						console.log("res"+res)
+						console.log("res.ddate"+res.ddate);
 						id = '<li>'+res['id']+'</li>';
 						var date ='<li>'+res['ddate']+'</li>';
 						var stime ='<li>'+res['stime']+'</li>';
@@ -865,7 +864,7 @@
 				console.log(drinum);
 				
 				$.ajax({
-					url : '${cpath}/check/detection.do',
+					url : '${cpath}/check-detection.do',
 					data : {'drinum' : drinum},
 					dataType:'json',
 					type : 'post',
@@ -1273,7 +1272,7 @@ $('.footend').click(function(){
 			$(".drive-record").fadeOut(300);
 			
 			$.ajax({
-				url : '${cpath}/session-update.do',
+				url : '${cpath}/update-session.do',
 				type : 'post',
 				data : {
 					'id' : '${mvo.id}'
@@ -1378,7 +1377,7 @@ $('.footend').click(function(){
 
 			var id = $('#id2').val();
 			$.ajax({
-				url : '${cpath}/check/id.do',
+				url : '${cpath}/check-id.do',
 				type : 'post',
 				data : {
 					'id' : id

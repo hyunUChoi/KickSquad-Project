@@ -1,5 +1,6 @@
-package kr.smhrd.controller.rest;
+package kr.smhrd.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -63,7 +64,31 @@ public class MainRESTController {
 		
 		return list;
 	}
+	@RequestMapping("/check-parking.do")
+	public int checkParkingAjax(int dnum) {
+		System.out.println("restcontroller param drinum : "+dnum);
+		int cnt = service.checkParking(dnum);
+		return cnt;
+	}
 	
+	@RequestMapping("/check-detection.do")
+	public ArrayList<String> checkDetectionAjax(int drinum) {
+		System.out.println("check-detection.do param drinum : "+drinum);
+		ArrayList<String> list = service.checkDetect(drinum);
+		return list;
+	}
+	
+	@RequestMapping("/check-id.do")
+	public int checkAjax(MemberVO mvo) {
+		int cnt =service.checkAjax(mvo);
+		return cnt;
+	}
+	
+	@RequestMapping("/check-driving.do")
+	public DrivingVO checkDrivingAjax(int drinum) {
+		DrivingVO dvo = service.checkDriving(drinum);
+		return dvo;
+	}
 	
 	
 

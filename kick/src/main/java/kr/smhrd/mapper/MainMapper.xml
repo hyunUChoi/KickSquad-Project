@@ -60,7 +60,7 @@
 		and detcnt > 1       
     </select>
     
-    <select id="checkDrinving" resultType="kr.smhrd.model.DrivingVO">
+    <select id="checkDriving" resultType="kr.smhrd.model.DrivingVO">
         select * from driving where drinum = #{drinum}
     </select>
 
@@ -92,6 +92,7 @@
     
       <select id="checkRecord" resultType="kr.smhrd.model.DrivingVO">
         select * from driving where id= #{id}
+        order by drinum desc
         
         
     </select>
