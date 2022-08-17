@@ -775,6 +775,11 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 	background-position-x: -5px;
 	background-position-y: -5px;
 }
+.inner-top.fade-in,
+.inner-drive.fade-in{
+	opacity:0;
+	
+}
 
 .main .body2 .inner .inner-top:nth-child(2) {
 	width: 180px;

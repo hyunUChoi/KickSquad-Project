@@ -10,10 +10,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=0.6 user-scalable=no" />
-<title>Document</title>
+<title>KickSquad</title>
 
 <link rel="shortcut icon" href="resources/image/favicon.ico" type="image/x-icon">
 <link rel="icon" href="resources/image/favicon.ico" type="image/x-icon">
+<!-- Gsap & Scroll To Plugin-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js" integrity="sha512-lZACdYsy0W98dOcn+QRNHDxFuhm62lfs8qK5+wPp7X358CN3f+ml49HpnwzTiXFzETs4++fADePDI+L2zwlm7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- 구글폰트-->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -100,16 +103,9 @@
 			<div class="modal-slide-down">
 				<div class="swiper mySwiper">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-						</div>
+						<div class="swiper-slide"></div>
+						<div class="swiper-slide">Slide 1</div>
 						<div class="swiper-slide">Slide 2</div>
-						<div class="swiper-slide">Slide 3</div>
-						<div class="swiper-slide">Slide 4</div>
-						<div class="swiper-slide">Slide 5</div>
-						<div class="swiper-slide">Slide 6</div>
-						<div class="swiper-slide">Slide 7</div>
-						<div class="swiper-slide">Slide 8</div>
-						<div class="swiper-slide">Slide 9</div>
 					</div>
 					<div class="icons-outline">
 						<span class="material-icons">swipe</span>
@@ -123,11 +119,11 @@
 			<c:if test="${empty mvo.name}">
 				<div class="body2">
 					<div onclick="alert12()" class="inner">
-						<div class="inner-top">
+						<div class="inner-top fade-in">
 							<span class="material-icons">storage</span> 운행내역
 						</div>
-						<div class="inner-top">킥보드찾기</div>
-						<div class="inner-drive">
+						<div class="inner-top fade-in">킥보드찾기</div>
+						<div class="inner-drive fade-in">
 
 							<div class="btn1">주행하기</div>
 						</div>
@@ -136,11 +132,11 @@
 			<c:if test="${!empty mvo.name}">
 				<div class="body2">
 					<div class="inner">
-						<div onclick="movetotalrecord()" class="inner-top">
+						<div onclick="movetotalrecord()" class="inner-top fade-in">
 							<span class="material-icons">storage</span>운행내역
 						</div>
-						<div onclick="movemap()" class="inner-top">킥보드찾기</div>
-						<div class="inner-drive">
+						<div onclick="movemap()" class="inner-top fade-in">킥보드찾기</div>
+						<div class="inner-drive fade-in">
 
 							<div onclick="movedrive()" class="btn1">주행하기</div>
 						</div>
@@ -937,6 +933,9 @@
 						}
 						
 						
+					}else{
+						
+						point =3;
 					}
 					
 					console.log(add);
@@ -993,7 +992,7 @@
 
 
 		// 포인트 업데이트 
-		function updatePoint(id2){
+		function updatePoint(){
 			
 			
 			console.log("업데이트될id "+'${mvo.id}');	

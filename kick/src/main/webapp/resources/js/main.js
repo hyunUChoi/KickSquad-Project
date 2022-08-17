@@ -6,6 +6,19 @@
 
 
 
+const fadeEls = document.querySelectorAll('.fade-in');
+fadeEls.forEach(function (fadeEl, index) {
+    gsap.to(fadeEl, 1, {
+        delay: (index + 1) * .4, // 첫번째  0.4 초  .8 1.2
+        opacity: 1
+
+
+
+    });
+
+
+
+});
 
 
 
