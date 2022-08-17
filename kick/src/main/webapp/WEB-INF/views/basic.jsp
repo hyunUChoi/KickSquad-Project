@@ -11,6 +11,10 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=0.6 user-scalable=no" />
 <title>Document</title>
+
+<link rel="shortcut icon" href="resources/image/favicon.ico" type="image/x-icon">
+<link rel="icon" href="resources/image/favicon.ico" type="image/x-icon">
+
 <!-- 구글폰트-->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
@@ -520,7 +524,7 @@
 
 				</div>
 
-				<div class="swiper-scrollbar"></div>
+				<div id="scrollbar" class="swiper-scrollbar"></div>
 			</div>
 
 
@@ -1114,7 +1118,7 @@ $('.footend').click(function(){
 			
 		
 		
-		
+		// 공지사항 ----------------------
 
 		function slidedown() {
 			$(".modal-slide-down").slideDown(500);
@@ -1136,7 +1140,7 @@ $('.footend').click(function(){
 
 		};
 		
-
+// 공지사항 ------------------------
 		function slideup() {
 
 			$(".modal-slide-down").slideUp(500);
@@ -1312,7 +1316,7 @@ $('.footend').click(function(){
 			if($('.drive-inner').css('display') == 'block'){
 				 
 				 $('.main').css( { transition: "transform 0.5s",transform:  "rotate(" + -90 + "deg)" } );
-				 $('.drive-inner-main').css( { transition: "transform 0.5s",transform:  "rotate(" + -90 + "deg)" } );
+				 $('.drive-inner-main').css( { transition: "transform 0.5s",transform:  "rotate(" + 90 + "deg)" } );
 				 $('.drive-inner-foot').css('height','800');
 				 $('.footstart').css( { transition: "transform 0.5s",transform:  "rotate(" + 90 + "deg)" } );
 				 $('.footend').css( { transition: "transform 0.5s",transform:  "rotate(" + 90 + "deg)" } );
@@ -1347,11 +1351,7 @@ $('.footend').click(function(){
 						type : 'post',
 						// 받아올 데이터 타입 지정
 						// 성공했을 때 실행할 함수
-						success : function() {
-							window.location.href = "http://localhost:8090/web/basic.do";
-							alert('성공!');
-
-						},
+						success :move,
 						// 실패했을 때 실행할 함수
 						error : function() {
 
@@ -1419,7 +1419,7 @@ $('.footend').click(function(){
 			        slidesPerView: "auto",
 			        freeMode: true,
 			        scrollbar: {
-			          el: ".swiper-scrollbar",
+			          el: "#scrollbar",
 			        },
 			        mousewheel: true,
 			      });
@@ -1450,7 +1450,7 @@ $('.footend').click(function(){
 
 			console.log(data);
 			//내가 화면에 출력해줄 tr 태그들의 모음
-			var blist = "";
+			var dlist = "";
 			// for-each문을 사용하는 방법
 			// $.each(어떤 데이터를 가지고 반복, 어떤 함수로 처리해줄건지)
 			$.each(data,function(index, board) {
@@ -1458,23 +1458,59 @@ $('.footend').click(function(){
 								
 								
 								
-								blist += "<div class= 'slide-box1'>"
-								blist += "<div class='slide-box2'>"
-								blist += "<div class='box2-inner'>주행날짜<br>"+board.ddate+"</div>"
-								blist += "<div class='box2-inner'>주행번호"+board.drinum+"</div></div>"
-								blist += "<div onclick='viewChart()' class='slide-box3'>자세히보기</div>"
-								blist += "</div>"
+								dlist += "<div class= 'slide-box1'>"
+								dlist += "<div class='slide-box2'>"
+								dlist += "<div class='box2-inner'>주행날짜<br>"+board.ddate+"</div>"
+								dlist += "<div class='box2-inner'>탑승시간<br>"+board.stime+"</div></div>"
+								dlist += "<div  class='slide-box3'>자세히보기<input class='inval' type=hidden value="+board.drinum+">"				
+								dlist += "</div>"
+								dlist += "</div>"
 								
 								
 								
 								
 							})
 
-			//heading이라는 class 명을 가진 tr태그 다음에 blist를 추가하기!
-			$('#inner-slide').append(blist);
+			
+			$('#inner-slide').append(dlist);
+			
+			
+			
+			$('div.slide-box3').click(function() {
+				console.log(this);
+				if ($(this).hasClass('active')) {
+					$('div.slide-box3').removeClass('active');
+					
+					
+					
 
+				} else {
+					$('div.slide-box3').removeClass('active');
+
+					$(this).addClass('active');
+					
+					//선택한 요소에 active 클래스 추가하고 추가된 요소의 자식인 input타입의 value 값 
+					var drinum = $(this).find('.inval').val();
+			
+					var detlist= "";
+					
+					
+
+				
+					
+					
+					
+					
+					
+					
+
+				}
+			});
+			
+		
+
+		
 		}
-		function viewChart(){
 			
 			
 			
@@ -1484,7 +1520,7 @@ $('.footend').click(function(){
 			
 			
 			
-		};
+	
 		
 	
 		
