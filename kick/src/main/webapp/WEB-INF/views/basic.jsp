@@ -103,9 +103,51 @@
 			<div class="modal-slide-down">
 				<div class="swiper mySwiper">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide"></div>
-						<div class="swiper-slide">Slide 1</div>
-						<div class="swiper-slide">Slide 2</div>
+						<div class="swiper-slide">
+						<div class="slide-head">주차 가이드</div>
+						<div class="slide-content parking">
+						<ul class="box1">
+						<li class="cardlist">
+						<div class="cardlist-img"></div>
+						<div class="cardlist-text">버스/택시정류장<br>10m이내</div>
+						
+						</li>
+						<li class="cardlist">
+						<div class="cardlist-img"></div>
+						<div class="cardlist-text">교통 약자<br>엘리베이터 앞</div>
+						</li>
+						</ul>
+						<ul class="box1">
+						<li class="cardlist">
+						<div class="cardlist-img"></div>
+						<div class="cardlist-text">횡단보도 진입로</div>
+						</li>
+						<li class="cardlist">
+						<div class="cardlist-img"></div>
+						<div class="cardlist-text">차도, 자전거도로</div>
+						</li>
+						</ul>
+						<ul class="box1">
+						<li class="cardlist">
+						<div class="cardlist-img"></div>
+						<div class="cardlist-text">지하철 역 출구 앞</div>
+						</li>
+						<li class="cardlist">
+						<div class="cardlist-img"></div>
+						<div class="cardlist-text">점자 보도블럭 위</div>
+						</li>
+						</ul>
+					
+						</div>
+						</div>
+						<div class="swiper-slide">
+						<div class="slide-head">회원등급 안내</div>
+						<div class="slide-content"></div>
+						</div>
+						<div class="swiper-slide">
+						<div class="slide-head"></div>
+						<div class="slide-content"></div>
+						</div>
 					</div>
 					<div class="icons-outline">
 						<span class="material-icons">swipe</span>
@@ -242,7 +284,7 @@
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<img src="resources/image/일러스트0.png" alt="슬라이드1" /> <a
+							<img src="resources/image/일러스트0.png" alt="1" /> <a
 								class="btn">자세히 보기</a>
 						</div>
 						<div class="swiper-slide">
