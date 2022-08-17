@@ -544,7 +544,22 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle1>div.middle1-inner1>.t
 	top: 15px;
 	left: 15px;
 }
-
+body > div > div.middle > div.body2 > div.inner2 > div.inner-middle1 > div.middle1-inner1 > div > span.material-icons{
+	color:#19B652;
+	font-size:35px;
+	
+	
+}
+.m3-i2-inner{
+background-color: #89898e;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    width: 100px;
+    position: absolute;
+    left: 315px;
+    top: -1px;
+}
 body>div>div.middle>div.body2>div.inner2>div.inner-middle1>div.middle1-inner1>.text-group
 	{
 	font-size: 16px;

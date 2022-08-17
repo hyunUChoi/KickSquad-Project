@@ -61,8 +61,6 @@
 				<c:if test="${!empty mvo}">
 					<div class="session">
 						<span class="material-icons">person</span> <span>${mvo.name}님</span>
-						<span onclick='location.href="${cpath}/logout.do"'
-							class="material-icons">logout</span>
 					</div>
 				</c:if>
 				<c:if test="${empty mvo}">
@@ -102,7 +100,8 @@
 			<div class="modal-slide-down">
 				<div class="swiper mySwiper">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide">Slide 1</div>
+						<div class="swiper-slide">
+						</div>
 						<div class="swiper-slide">Slide 2</div>
 						<div class="swiper-slide">Slide 3</div>
 						<div class="swiper-slide">Slide 4</div>
@@ -152,8 +151,9 @@
 					<div class="middle1-inner1">
 						<div class="text-group1">
 							<c:if test="${!empty mvo.name}">
-								<span>${mvo.name}님이</span>
-								<p>지구를 아껴준 시간</p>
+								<p>${mvo.name}님의</p>
+								<span>Safety Reward</span>
+								<span class="material-icons">eco</span>
 							</c:if>
 						</div>
 					</div>
@@ -224,7 +224,7 @@
 							<c:otherwise>
 								<div class="btn-open-popup">
 									<div class="popup1-btn">
-										로그인이 필요한 서비스입니다. <span>Login</span> <span
+										로그인이 필요한 서비스입니다 <span>로그인</span> <span
 											class="material-icons" id="mlogin">login</span>
 									</div>
 								</div>
@@ -234,7 +234,11 @@
 				</div>
 				<div class="inner-middle3">
 					<div class="middle3-inner1"></div>
-					<div class="middle3-inner2"></div>
+					<div  class="middle3-inner2">
+					<c:if test="${!empty mvo.name}">
+					<div class="m3-i2-inner" onclick='location.href="${cpath}/logout.do"'>로그아웃</div>
+					</c:if>
+					</div>
 				</div>
 			</div>
 
