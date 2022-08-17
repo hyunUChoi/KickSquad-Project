@@ -142,10 +142,44 @@
 						</div>
 						<div class="swiper-slide">
 						<div class="slide-head">회원등급 안내</div>
-						<div class="slide-content"></div>
+						<div class="slide-content grade">
+						
+						<div class="grade-head">
+						 <h4>각 등급의 조건 충족 시 혜택이 제공됩니다.</h4>
+						</div>
+						<div class="grade-table">
+						<table class="grade-table-line">
+						<tr>
+						<td>등급</td>
+						<td>달성조건</td>
+						</tr>
+						<tr>
+						<td>WHITE</td>
+						<td>SAFETY 포인트 100점 달성</td>
+						</tr>
+						<tr>
+						<td>GOLD</td>
+						<td>SAFETY 포인트 300점 달성</td>
+						</tr>
+						<tr>
+						<td>VIP</td>
+						<td>SAFETY 포인트 500점 달성</td>
+						</tr>
+						<tr>
+						<td>VVIP</td>
+						<td>SAFETY 포인트 700점 달성</td>
+						</tr>
+						
+						
+						
+						
+						</table>
+						</div>
+										
+						</div>
 						</div>
 						<div class="swiper-slide">
-						<div class="slide-head"></div>
+						<div class="slide-head">미정</div>
 						<div class="slide-content"></div>
 						</div>
 					</div>
