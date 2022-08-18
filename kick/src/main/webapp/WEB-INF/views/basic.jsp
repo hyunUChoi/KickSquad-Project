@@ -54,7 +54,7 @@
 			<img src="resources/image/out-line2.png" alt="header"
 				class="main-img2" />
 		</div>
-		<!-- 메인화면 페이지 -->
+		<!-- main page ==================================== -->
 		<div class="middle">
 			<div class="head">
 				<h2>
@@ -196,7 +196,8 @@
 				<div class="body2">
 					<div onclick="alert12()" class="inner">
 						<div class="inner-top fade-in">
-							<span class="material-icons">storage</span> 운행내역
+							<span class="material-icons">storage</span>
+							<span>운행내역</span>
 						</div>
 						<div class="inner-top fade-in">킥보드찾기</div>
 						<div class="inner-drive fade-in">
@@ -204,12 +205,14 @@
 							<div class="btn1">주행하기</div>
 						</div>
 					</div>
+
 			</c:if>
 			<c:if test="${!empty mvo.name}">
 				<div class="body2">
 					<div class="inner">
 						<div onclick="movetotalrecord()" class="inner-top fade-in">
-							<span class="material-icons">storage</span>운행내역
+							<span class="material-icons">storage</span>
+							<span>운행내역</span>
 						</div>
 						<div onclick="movemap()" class="inner-top fade-in">킥보드찾기</div>
 						<div class="inner-drive fade-in">
@@ -217,6 +220,7 @@
 							<div onclick="movedrive()" class="btn1">주행하기</div>
 						</div>
 					</div>
+				
 			</c:if>
 			<div class="inner2">
 				<div class="inner-middle1">
@@ -348,6 +352,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- footer ====================================== -->
 		<div class="footer">
 			<div class="footer-inner1">
 				<div onclick='location.href="${cpath}/play.do"' class="foot-text-group">
@@ -363,7 +369,7 @@
 
 
 	</div>
-	<!-- 버튼 클릭시 모달창 오픈-->
+	<!-- modal================================================-->
 
 	<div class="modal">
 		<div class="modal_body">
@@ -439,7 +445,7 @@
 		<span class="material-icons .btn-close">cancel</span>
 	</div>
 
-	<!--  운행시작-종료 페이지  -->
+	<!--  운행시작-종료 페이지===================================  -->
 	<section class="drive-inner">
 		<div class="drive-inner-in">
 			<div class="drive-inner-head"></div>

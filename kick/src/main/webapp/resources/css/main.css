@@ -1,22 +1,16 @@
 @font-face {
-	font-family: 'Roboto';
-	src: url('Roboto-ThinItalic-webfont.eot');
-	src: url('Roboto-ThinItalic-webfont.eot?#iefix')
-		format('embedded-opentype'), url('Roboto-ThinItalic-webfont.woff')
-		format('woff'), url('Roboto-ThinItalic-webfont.ttf')
-		format('truetype'),
-		url('Roboto-ThinItalic-webfont.svg#RobotoThinItalic') format('svg'); (
-	under the Apache Software License);
-	font-weight: 200;
-	font-style: italic;
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
 	color: #333;
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 500;
 	line-height: 1.5;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Recipekorea', sans-serif;
 }
 
 a {
@@ -812,8 +806,14 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
 	align-items: center;
 	margin-bottom: 10px;
 }
-body > div > div.middle > div.body2 > div.inner > div:nth-child(1) > span{
+.middle > .body2 > .inner > div:nth-child(1) > span:first-child{
 	color:#19B652;
+	
+	
+}
+.middle > .body2 > .inner > div:nth-child(1) > span:nth-child(2){
+	position: relative;
+    top: 3px;	
 	
 	
 }
