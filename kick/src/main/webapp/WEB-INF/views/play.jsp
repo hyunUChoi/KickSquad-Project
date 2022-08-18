@@ -43,7 +43,7 @@
 			</div>
 
 			<div class="main-group">
-				<div class="title" style="font-size:2.0em; font-weight:1000; padding-top:200px; padding-bottom:80px; padding-left:55px; width:100%">
+				<div class="title">
 					<h1>안전한 전동킥보드 문화</h1>
 					<h1>함께 만들어가요!</h1>
 				</div>
@@ -87,6 +87,74 @@
 			</div>
 		</div>
 		<br><br><br>
+	</section>
+	
+	<section class="service3">
+	
+	<div class="inner">
+	
+	<h3>킥스쿼드와 안전한 주행</h3>
+	<div class="riding-navi">
+	<ul class="navi-list">
+	<li>
+	<p> <img alt="" src="resources/image/fig4_01.png"> </p>
+	<dl>
+	<dt>헬멧 착용 필수!</dt> <dd>안전을 위해서 헬멧을 꼭 착용해 주세요. </dd>
+	</dl>
+	</li> 
+	<li>
+	<p> <img alt="" src="resources/image/fig4_02.png"> </p> 
+	<dl>
+	<dt> 면허 취득 필수!</dt> <dd> 반드시 면허를 취득한 회원만 이용하세요.</dd>
+	</dl>
+	</li> 
+	<li> 
+	<p> <img alt="" src="resources/image/fig4_03.png"> </p>
+	<dl>
+	<dt>음주 후 이용 금지! </dt> <dd>음주 후 탑승은 법률에 의해처벌 대상에 해당돼요. </dd>
+	</dl>
+	</li> 
+	<li>
+	<p> <img alt="" src="resources/image/fig4_04.png"> </p>
+	<dl>
+	<dt> 동반 탑승 금지!</dt> <dd> 2인 이상 탑승은 위험해요.
+반드시 회원 본인만 탑승하세요.</dd>
+	</dl>
+	</li> 
+	<li>
+	<p> <img alt="" src="resources/image/fig4_05.png"> </p>
+	<dl>
+	<dt> 인도 주행 금지!</dt> <dd> 보행자 우선 지역입니다.
+킥보드는 주행하면 안 돼요!</dd>
+	</dl>
+	</li> 
+	<li>
+	<p> <img alt="" src="resources/image/fig4_06.png"> </p>
+	<dl>
+	<dt>돌발 행동 금지! </dt> <dd>갑작스러운 방향 전환, 급 감속,
+정지를 하면 안 돼요! </dd>
+	</dl>
+	</li> 
+	</ul>
+	
+	
+	
+	
+	
+	
+	
+	
+	</div>
+	
+	
+	
+	
+	
+	
+	</div>
+	
+	
+	
 	</section>
 
 	<script

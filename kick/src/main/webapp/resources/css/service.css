@@ -1,237 +1,293 @@
 @font-face {
-    font-family: 'Recipekorea';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Recipekorea';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
-
 
 /* COMMON */
 body {
-    color: #333;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    font-family: 'Recipekorea', sans-serif;
+	color: #333;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4;
+	font-family: 'Recipekorea', sans-serif;
 }
 
 /* 이미지태그의 인라인 속성 */
 img {
-    display: block;
-
+	display: block;
 }
 
 a {
-    text-decoration: none;
-
+	text-decoration: none;
 }
 
 .inner {
-    width: 1100px;
-    margin: 0 auto;
-    position: relative;
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
 }
 
-
 header {
-    width: 100%;
-    background-color: #f6f5f0;
-    border-bottom: 1px solid #c8c8c8;
-    position: fixed;
-    top: 0;
-    z-index: 99;
+	width: 100%;
+	background-color: #f6f5f0;
+	border-bottom: 1px solid #c8c8c8;
+	position: fixed;
+	top: 0;
+	z-index: 99;
 }
 
 header .inner {
-    height: 120px;
+	height: 120px;
 }
 
 .service1 {
-    background-image: url('../image/02.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+	background-image: url('../image/02.gif');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .service1 .inner {
-    position: relative;
-    height: 800px;
+	position: relative;
+	height: 800px;
 }
 
 .service1::before {
-    content: "";
-    background-image: url('../image/video_cover_pattern.png');
-    background-color: rgba(0, 0, 0, .3);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 400px;
-
+	content: "";
+	background-image: url('../image/video_cover_pattern.png');
+	background-color: rgba(0, 0, 0, .3);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 400px;
 }
 
 .service2 {
-    background-color: #ffffff;
-
+	background-color: #ffffff;
 }
 
 .service2 .inner {
-    height: 800px;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-
+	height: 900px;
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .service2 .inner .main-service {
-    width: 100%;
-    height: 100%;
-
-
+	width: 100%;
+	height: 100%;
 }
 
 .service2 .inner .main-service .phoneline {
-
-    background-image: url('../image/serviceline.png');
-    width: 424px;
-    height: 100%;
-    background-size: 390px;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    z-index: 10;
-    position: absolute;
+	background-image: url('../image/serviceline.png');
+	width: 424px;
+	height: 100%;
+	background-size: 390px;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	z-index: 10;
+	position: absolute;
 }
 
 .service2 .inner .main-service .phonebg {
-    width: 370px;
-    height: 765px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 2));
-
+	width: 370px;
+	height: 765px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 2));
 }
 
 .service2 .inner .main-service .phonebg .main {
-    background-image: url('../image/mainpage.png');
-    width: 370px;
-    height: 765px;
-    position: absolute;
-    top: 0;
+	background-image: url('../image/mainpage.png');
+	width: 370px;
+	height: 765px;
+	position: absolute;
+	top: 0;
 }
 
 .service2 .inner .main-service .phonebg .drive {
-    background-image: url('../image/drive.png');
-    width: 370px;
-    height: 765px;
-    position: absolute;
-    top: 0;
-    display: none;
+	background-image: url('../image/drive.png');
+	width: 370px;
+	height: 765px;
+	position: absolute;
+	top: 0;
+	display: none;
 }
 
 .service2 .inner .main-service .phonebg .parking {
-    background-image: url('../image/parking.png');
-    width: 370px;
-    height: 765px;
-    position: absolute;
-    top: 0;
-    display: none;
+	background-image: url('../image/parking.png');
+	width: 370px;
+	height: 765px;
+	position: absolute;
+	top: 0;
+	display: none;
 }
 
 .service2 .inner .main-service .phonebg .map {
-    background-image: url('../image/map.png');
-    width: 370px;
-    height: 765px;
-    position: absolute;
-    top: 0;
-    display: none;
+	background-image: url('../image/map.png');
+	width: 370px;
+	height: 765px;
+	position: absolute;
+	top: 0;
+	display: none;
 }
 
 .service2 .inner .main-group {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	cursor: pointer;
+	font-size: 1.5em;
+	font-weight: 600;
+}
 
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    cursor: pointer;
-    font-size: 1.5em;
-    font-weight: 600;
+.service2 .inner .main-group .title {
+	font-size: 2.0em;
+	font-weight: 1000;
+	padding-top: 200px;
+	padding-bottom: 80px;
+	padding-left: 55px;
+	width: 100%;
+	 line-height: 80px;
+}
 
+.service2 .inner .main-group .btn-groups {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: end;
+	justify-content: space-evenly;
 }
-.service2 .inner .main-group .btn-groups{
-    display:flex;
-    width: 100%;
-    height: 100%;
-    align-items: end;
-    justify-content: space-evenly;
-}
-.service2 .inner .main-group .main-content{
-   position: relative;
-    width: 100%;
-    height: 100%;
 
+.service2 .inner .main-group .main-content {
+	position: relative;
+	height: 100%;
+	width:100%;
+	line-height: 40px;
+	color: #53575e;
+}
 
+.service2 .inner .main-group .main-content .content1 {
+	margin: 40px 0 0 35px;
+	width: 100%;
+	height: 100%;
 }
-.service2 .inner .main-group .main-content .content1{
-    margin: 40px 0 0 35px;
-    width: 100%;
-    height: 100%;
 
+.service2 .inner .main-group .main-content .content2 {
+	margin: 40px 0 0 35px;
+	width: 100%;
+	height: 100%;
+	display: none;
 }
-.service2 .inner .main-group .main-content .content2{
-    margin: 40px 0 0 35px;
-    width: 100%;
-    height: 100%;
-    display:none;
-}
-.service2 .inner .main-group .main-content .content3{
-    margin: 40px 0 0 35px;
-    width: 100%;
-    height: 100%;
-    display:none;
-}
-.service2 .inner .main-group .main-content .content4{
-    margin: 40px 0 0 35px;
-    width: 100%;
-    height: 100%;
-    display:none;
-}
-.btn-group:hover{
-    color: #19B652;
-}
-.btn-group::after{
-    content: "";
-    width: 0;
 
+.service2 .inner .main-group .main-content .content3 {
+	margin: 40px 0 0 35px;
+	width: 100%;
+	height: 100%;
+	display: none;
 }
-.btn-group.active{
-    color: #19B652;
+
+.service2 .inner .main-group .main-content .content4 {
+	margin: 40px 0 0 35px;
+	width: 100%;
+	height: 100%;
+	display: none;
 }
-.btn-group.active::after{
-    content: "";
+
+.btn-group:hover {
+	color: #19B652;
+}
+
+.btn-group::after {
+	content: "";
+	width: 0;
+}
+
+.btn-group.active {
+	color: #19B652;
+}
+
+.btn-group.active::after {
+	content: "";
+	position: relative;
+	display: block;
+	width: 100%;
+	border-bottom: 3px solid #19B652;
+	transition: width 0.25s ease-in-out;
+	margin: 0 auto;
+}
+
+.service3 {
+	background-color: #f5f5f5;
+}
+
+.service3 .inner {
+	height: 900px;
+	width:100%;
+	
+}
+.service3 .inner h3{
+	
+	font-size: 48px;
+    margin: auto;
+    padding: 65px;
+    text-align: center;
     position: relative;
-    display: block;
-    width: 100%;
-    border-bottom: 3px solid #19B652;
-    transition: width 0.25s ease-in-out;
-    margin: 0 auto;
+    top: 50px;
+	
+	
+}
+.service3 .inner .riding-navi{
+	display: flex;
+    justify-content: center;
+    padding-bottom: 120px;
+	
+	
+	
+}
+.service3 .inner .riding-navi .navi-list{
+	
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+	
+	
+}
 
+.service3 .inner .riding-navi .navi-list li{
+	
+	display: flex;
+    width: 50%;
+    align-items: center;
+    padding-left: 60px;
+    box-sizing: border-box;
+    padding-top: 65px;
+	
+	
+}
+.service3 .inner .riding-navi .navi-list li dl{
+	padding-left: 25px;
+	
+	
+}
+.service3 .inner .riding-navi .navi-list li dl dt{
+	
+	font-weight:900;
+	font-size: 35px;
+	line-height: 60px;
+	
 }
 
 
 
-.service3{
-    background-color: #c8c8c8;
 
-
-}
-.service3 .inner{
-    height: 500px;
-
-
-}
