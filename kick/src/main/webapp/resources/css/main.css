@@ -113,7 +113,7 @@ body>div>div.middle>div.head>div>span.material-icons {
 	border-right: 2px solid #dedede;
 	position: relative;
 	top: 140px;
-	left: -83px;
+	left: -85px;
 }
 
 .modal-slide-down .swiper {
@@ -872,6 +872,7 @@ body > div > div.middle > div.body2 > div.inner > div:nth-child(1) > span{
     justify-content: center;
     align-items: center;
     font-size:25px;
+    color: #19B652;
 }
 .slide-content{
 	width:100%;
@@ -902,22 +903,33 @@ body > div > div.middle > div.body2 > div.inner > div:nth-child(1) > span{
 	
 }
 .slide-content.grade .grade-table .grade-table-line{
-	border:2px solid #DEDFE3;
 	text-align:center;
 	width:100%;
 	height:80%;
 	
 	
-	
 }
 .grade-table > table > tbody > tr{
 	border-bottom: 1px solid #DEDFE3;
-	
+	width:100%;
+	height:20%;
+	display:flex;
+	align-items:center;
 	
 }
-.grade-table > table > tbody > tr > td:nth-child(1){
+.grade-table > table > tbody > tr > td:first-child{
 	
 	background-color:#F8F8F8;
+	border-right:1px solid #DEDFE3;
+	width: 30%;
+    height: 100%;
+	
+}
+.grade-table > table > tbody > tr > td:nth-child(2){
+	
+	width:70%;
+	height:100%;
+	
 	
 	
 }
