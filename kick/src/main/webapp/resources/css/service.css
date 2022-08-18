@@ -260,7 +260,7 @@ header .inner {
 	display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-	
+	margin-left: 200px;
 	
 }
 
@@ -269,7 +269,7 @@ header .inner {
 	display: flex;
     width: 50%;
     align-items: center;
-    padding-left: 60px;
+    padding-left: 280px;
     box-sizing: border-box;
     padding-top: 65px;
 	
