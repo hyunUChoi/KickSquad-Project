@@ -874,6 +874,14 @@ body>div>div.middle>div.body2>div.inner2>div.inner-middle2>.text-group span:nth-
     font-size:25px;
     color: #19B652;
 }
+.slide-content.parking::before{
+	content:"*금지항목*";
+	top:0px;
+	font-size:20px;
+	position:relative;
+	
+	
+}
 .slide-content{
 	width:100%;
 	height:100%;
@@ -969,7 +977,7 @@ display:flex;
 }
 .slide-content.parking .box1 .cardlist{
 	padding: 3px;
-    border: 1px solid #DEDFE3;
+    border: 3px solid #DEDFE3;
     box-sizing: border-box;
     width: 95%;
     height: 95%;
@@ -1663,6 +1671,32 @@ body>div>section.map-inner {
 	color:#19B652;
 	
 }
+.btn-page{
+	z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    width: 300px;
+    height: 500px;
+    padding: 40px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgb(34 36 38 / 15%);
+    transform: translateX(-50%) translateY(-50%);
+	display:none;
+	
+}
+.btn-page .close{
+	position: absolute;
+    right: 0px;
+    top: -5px;
+    font-size: 40px;
+    cursor:pointer;
+	
+	
+}
+
 
 .swiper-slide .slide-box1{
 	display:flex;

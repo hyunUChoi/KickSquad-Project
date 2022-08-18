@@ -12,11 +12,18 @@
 	content="width=device-width, initial-scale=0.6 user-scalable=no" />
 <title>KickSquad</title>
 
-<link rel="shortcut icon" href="resources/image/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="resources/image/favicon.ico"
+	type="image/x-icon">
 <link rel="icon" href="resources/image/favicon.ico" type="image/x-icon">
 <!-- Gsap & Scroll To Plugin-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js" integrity="sha512-lZACdYsy0W98dOcn+QRNHDxFuhm62lfs8qK5+wPp7X358CN3f+ml49HpnwzTiXFzETs4++fADePDI+L2zwlm7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+	integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"
+	integrity="sha512-lZACdYsy0W98dOcn+QRNHDxFuhm62lfs8qK5+wPp7X358CN3f+ml49HpnwzTiXFzETs4++fADePDI+L2zwlm7Q=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- 구글폰트-->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -39,10 +46,10 @@
 <!--jQuery CDN-->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!--부스스트랩 모달-->
-
-<!--자바스크립트 -->
-
+<!-- chart.js -->
+>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!--자바스크립트,제이쿼리 -->
 <script defer src="resources/js/main.js"></script>
 <link rel="stylesheet" href="resources/css/main.css" />
 </head>
@@ -104,83 +111,87 @@
 				<div class="swiper mySwiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-						<div class="slide-head">주차 가이드</div>
-						<div class="slide-content parking">
-						<ul class="box1">
-						<li class="cardlist">
-						<div class="cardlist-img"></div>
-						<div class="cardlist-text">버스/택시정류장<br>10m이내</div>
-						
-						</li>
-						<li class="cardlist">
-						<div class="cardlist-img"></div>
-						<div class="cardlist-text">교통 약자<br>엘리베이터 앞</div>
-						</li>
-						</ul>
-						<ul class="box1">
-						<li class="cardlist">
-						<div class="cardlist-img"></div>
-						<div class="cardlist-text">횡단보도 진입로</div>
-						</li>
-						<li class="cardlist">
-						<div class="cardlist-img"></div>
-						<div class="cardlist-text">차도, 자전거도로</div>
-						</li>
-						</ul>
-						<ul class="box1">
-						<li class="cardlist">
-						<div class="cardlist-img"></div>
-						<div class="cardlist-text">지하철 역 출구 앞</div>
-						</li>
-						<li class="cardlist">
-						<div class="cardlist-img"></div>
-						<div class="cardlist-text">점자 보도블럭 위</div>
-						</li>
-						</ul>
-					
-						</div>
-						</div>
-						<div class="swiper-slide">
-						<div class="slide-head">회원등급 안내</div>
-						<div class="slide-content grade">
-						
-						<div class="grade-head">
-						 <h4>각 등급의 조건 충족 시 혜택이 제공됩니다.</h4>
-						</div>
-						<div class="grade-table">
-						<table class="grade-table-line">
-						<tr>
-						<td>등급</td>
-						<td>달성조건</td>
-						</tr>
-						<tr>
-						<td>WHITE</td>
-						<td>SAFETY 포인트 100점 달성</td>
-						</tr>
-						<tr>
-						<td>GOLD</td>
-						<td>SAFETY 포인트 300점 달성</td>
-						</tr>
-						<tr>
-						<td>VIP</td>
-						<td>SAFETY 포인트 500점 달성</td>
-						</tr>
-						<tr>
-						<td>VVIP</td>
-						<td>SAFETY 포인트 700점 달성</td>
-						</tr>
-						
-						
-						
-						
-						</table>
-						</div>
-										
-						</div>
+							<div class="slide-head">주차가이드</div>
+							<div class="slide-content parking">
+								<ul class="box1">
+									<li class="cardlist">
+										<div class="cardlist-img"></div>
+										<div class="cardlist-text">
+											버스/택시정류장<br>10m이내
+										</div>
+
+									</li>
+									<li class="cardlist">
+										<div class="cardlist-img"></div>
+										<div class="cardlist-text">
+											교통 약자<br>엘리베이터 앞
+										</div>
+									</li>
+								</ul>
+								<ul class="box1">
+									<li class="cardlist">
+										<div class="cardlist-img"></div>
+										<div class="cardlist-text">횡단보도 진입로</div>
+									</li>
+									<li class="cardlist">
+										<div class="cardlist-img"></div>
+										<div class="cardlist-text">차도, 자전거도로</div>
+									</li>
+								</ul>
+								<ul class="box1">
+									<li class="cardlist">
+										<div class="cardlist-img"></div>
+										<div class="cardlist-text">지하철 역 출구 앞</div>
+									</li>
+									<li class="cardlist">
+										<div class="cardlist-img"></div>
+										<div class="cardlist-text">점자 보도블럭 위</div>
+									</li>
+								</ul>
+
+							</div>
 						</div>
 						<div class="swiper-slide">
-						<div class="slide-head">미정</div>
-						<div class="slide-content"></div>
+							<div class="slide-head">회원등급 안내</div>
+							<div class="slide-content grade">
+
+								<div class="grade-head">
+									<h4>각 등급의 조건 충족 시 혜택이 제공됩니다.</h4>
+								</div>
+								<div class="grade-table">
+									<table class="grade-table-line">
+										<tr>
+											<td>등급</td>
+											<td>달성조건</td>
+										</tr>
+										<tr>
+											<td>WHITE</td>
+											<td>SAFETY 포인트 100점 달성</td>
+										</tr>
+										<tr>
+											<td>GOLD</td>
+											<td>SAFETY 포인트 300점 달성</td>
+										</tr>
+										<tr>
+											<td>VIP</td>
+											<td>SAFETY 포인트 500점 달성</td>
+										</tr>
+										<tr>
+											<td>VVIP</td>
+											<td>SAFETY 포인트 700점 달성</td>
+										</tr>
+
+
+
+
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="slide-head">미정</div>
+							<div class="slide-content"></div>
 						</div>
 					</div>
 					<div class="icons-outline">
@@ -196,8 +207,7 @@
 				<div class="body2">
 					<div onclick="alert12()" class="inner">
 						<div class="inner-top fade-in">
-							<span class="material-icons">storage</span>
-							<span>운행내역</span>
+							<span class="material-icons">storage</span> <span>운행내역</span>
 						</div>
 						<div class="inner-top fade-in">킥보드찾기</div>
 						<div class="inner-drive fade-in">
@@ -205,14 +215,12 @@
 							<div class="btn1">주행하기</div>
 						</div>
 					</div>
-
 			</c:if>
 			<c:if test="${!empty mvo.name}">
 				<div class="body2">
 					<div class="inner">
 						<div onclick="movetotalrecord()" class="inner-top fade-in">
-							<span class="material-icons">storage</span>
-							<span>운행내역</span>
+							<span class="material-icons">storage</span> <span>운행내역</span>
 						</div>
 						<div onclick="movemap()" class="inner-top fade-in">킥보드찾기</div>
 						<div class="inner-drive fade-in">
@@ -220,7 +228,6 @@
 							<div onclick="movedrive()" class="btn1">주행하기</div>
 						</div>
 					</div>
-				
 			</c:if>
 			<div class="inner2">
 				<div class="inner-middle1">
@@ -300,8 +307,8 @@
 							<c:otherwise>
 								<div class="btn-open-popup">
 									<div class="popup1-btn">
-										로그인이 필요한 서비스입니다 <span>로그인</span> <span
-											class="material-icons" id="mlogin">login</span>
+										로그인이 필요한 서비스입니다 <span>로그인</span> <span class="material-icons"
+											id="mlogin">login</span>
 									</div>
 								</div>
 							</c:otherwise>
@@ -310,10 +317,11 @@
 				</div>
 				<div class="inner-middle3">
 					<div class="middle3-inner1"></div>
-					<div  class="middle3-inner2">
-					<c:if test="${!empty mvo.name}">
-					<div class="m3-i2-inner" onclick='location.href="${cpath}/logout.do"'>로그아웃</div>
-					</c:if>
+					<div class="middle3-inner2">
+						<c:if test="${!empty mvo.name}">
+							<div class="m3-i2-inner"
+								onclick='location.href="${cpath}/logout.do"'>로그아웃</div>
+						</c:if>
 					</div>
 				</div>
 			</div>
@@ -322,8 +330,8 @@
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<img src="resources/image/일러스트0.png" alt="1" /> <a
-								class="btn">자세히 보기</a>
+							<img src="resources/image/일러스트0.png" alt="1" /> <a class="btn">자세히
+								보기</a>
 						</div>
 						<div class="swiper-slide">
 							<img src="resources/image/일러스트1.png" alt="슬라이드1" /> <a
@@ -352,12 +360,13 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- footer ====================================== -->
 		<div class="footer">
 			<div class="footer-inner1">
-				<div onclick='location.href="${cpath}/play.do"' class="foot-text-group">
-					<span class="material-icons">article</span> <span >서비스 안내</span>
+				<div onclick='location.href="${cpath}/play.do"'
+					class="foot-text-group">
+					<span class="material-icons">article</span> <span>서비스 안내</span>
 				</div>
 			</div>
 
@@ -595,16 +604,7 @@
 		<div class="swiper mySwiper">
 			<div class="swiper-wrapper">
 
-				<div id="inner-slide" class="swiper-slide">
-
-				
-					
-					
-			
-
-
-
-				</div>
+				<div id="inner-slide" class="swiper-slide"></div>
 
 				<div id="scrollbar" class="swiper-scrollbar"></div>
 			</div>
@@ -614,6 +614,14 @@
 		<div class="box-foot">
 			<span onclick="movehome()" class="material-icons">home</span>
 		</div>
+		<div class="btn-page">
+			<div class="close material-icons">cancel</div>
+			<canvas id="myChart"></canvas>
+
+
+		</div>
+
+
 
 	</section>
 
@@ -1114,13 +1122,13 @@ $('.footend').click(function(){
 	$('.footstart').css('display','flex').delay(500);
 	
 	
-	if($('.parking').css('display') == 'block'){
+	
 		 
-	 $('.main').css( { transition: "transform 0.5s",
-	                  transform:  "rotate(" + 0 + "deg)" } );
+		console.log("주차페이지");
+	 $('.main').css( { transition: "transform 0.5s", transform:  "rotate(" + 0 + "deg)" } );
 
 	setTimeout( function() { $('.drive-inner').css( { transition: "none" } ) }, 500 );
-			 }
+			 
 			
 	
 			
@@ -1552,14 +1560,17 @@ $('.footend').click(function(){
 								dlist += "</div>"
 								
 								
+									
 								
-								
-							})
+							}
+			
+			
+			)
 
 			
 			$('#inner-slide').append(dlist);
 			
-			
+			var config ="";
 			
 			$('div.slide-box3').click(function() {
 				console.log(this);
@@ -1576,13 +1587,75 @@ $('.footend').click(function(){
 					
 					//선택한 요소에 active 클래스 추가하고 추가된 요소의 자식인 input타입의 value 값 
 					var drinum = $(this).find('.inval').val();
-			
-					var detlist= "";
 					
+					$('.btn-page').fadeIn(300);
 					
+					$.ajax({
+						url : '${cpath}/check-detection.do',
+						type : 'post',
+						data : {
+							'drinum' : drinum},
+						success : function(res){
+							
+							console.log(res);
+							var helmet = res[1];
+							var head = res[2];
+							var two = res[3];
+							
 
+							const data = {
+									  labels: [
+									    'Hemet',
+									    'Head',
+									    'Two'
+									  ],
+									  datasets: [{
+									    label: '운전자 상세보기',
+									    data: [helmet,head, two],
+									    backgroundColor: [
+									      'rgb(255, 99, 132)',
+									      'rgb(54, 162, 235)',
+									      'rgb(255, 205, 86)'
+									    ],
+									    hoverOffset: 4
+									  }]
+									};
+							
+							 config = {
+									  type: 'pie',
+									  data: data,
+									};
+							
+							 myChart = new Chart(
+									    document.getElementById('myChart'),
+									    config
+									  );
+							 
+							 
+							 
+							
+							 
+							
+							 
+							
+						},
+						error : function() {
+							alert("에러입니다");
+						}
+
+					});
 				
-					
+					 $('.btn-page .close').click(function(){
+						 
+						 $('.btn-page').fadeOut(300);
+						 
+						myChart.destroy();	// ★★destroy로 기존의 canvas를 제거
+							  
+							  
+						 
+						 
+						 
+					 });
 					
 					
 					
