@@ -1,10 +1,18 @@
+@font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* COMMON */
 body {
     color: #333;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.4;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Recipekorea', sans-serif;
 }
 
 /* 이미지태그의 인라인 속성 */
@@ -108,7 +116,7 @@ header .inner {
 }
 
 .service2 .inner .main-service .phonebg .main {
-    background-image: url('../image/main.png');
+    background-image: url('../image/mainpage.png');
     width: 370px;
     height: 765px;
     position: absolute;

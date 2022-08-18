@@ -9,9 +9,14 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=0.6 user-scalable=no" />
 <title>서비스</title>
+<link rel="shortcut icon" href="resources/image/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="resources/image/favicon.ico" type="image/x-icon">
 <!-- reset.css cdn! 브라우저 초기화-->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+	
+	
 <link rel="stylesheet" href="resources/css/service.css">
 </head>
 <body>
