@@ -11,11 +11,13 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=0.6 user-scalable=no" />
 <title>KickSquad</title>
-
+<!-- favicon======================================== -->
 <link rel="shortcut icon" href="resources/image/favicon.ico"
 	type="image/x-icon">
 <link rel="icon" href="resources/image/favicon.ico" type="image/x-icon">
-<!-- Gsap & Scroll To Plugin-->
+
+
+<!-- Gsap & Scroll To Plugin========================-->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
 	integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
@@ -30,37 +32,47 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"
 	rel="stylesheet" />
-<!-- reset.css cdn! 브라우저 초기화-->
+
+<!-- reset.css cdn! 브라우저 초기화 ===============-->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-<!--구글 아이콘-->
 
+
+<!--구글 아이콘 =================================-->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<!-- SWIPER -->
+
+<!-- SWIPER ================================= -->
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
-<!-- Swiper JS -->
+
+<!-- Swiper JS ================================ -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+
 <!--jQuery CDN-->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <!-- chart.js -->
->
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!--자바스크립트,제이쿼리 -->
+
+<!--자바스크립트,css 링크 -->
 <script defer src="resources/js/main.js"></script>
 <link rel="stylesheet" href="resources/css/main.css" />
+
 </head>
 
 <body>
 	<div class="main">
+
 		<div>
 			<img src="resources/image/상단바2.png" alt="header" class="main-img1" />
 			<img src="resources/image/out-line2.png" alt="header"
 				class="main-img2" />
 		</div>
+
+
 		<!-- main page ==================================== -->
 		<div class="middle">
 			<div class="head">
@@ -89,24 +101,19 @@
 				<div class="swiper-wrapper">
 
 					<div class="swiper-slide">
-						<a href="javascript:void(0)">서비스 안내</a>
-
-					</div>
-					<div class="swiper-slide">
 						<a href="javascript:void(0)">주차 가이드</a>
 
 					</div>
+
 					<div class="swiper-slide">
 						<a href="javascript:void(0)">회원등급 안내</a>
-
 					</div>
-					<div class="swiper-slide">
-						<a href="javascript:void(0)">킥보드 법규가이드</a>
 
-					</div>
 				</div>
 			</div>
-			<!--  공지사항 내부 입력창 -->
+
+
+			<!--  공지사항 내부 입력창======================================== -->
 			<div class="modal-slide-down">
 				<div class="swiper mySwiper">
 					<div class="swiper-wrapper">
@@ -189,6 +196,7 @@
 
 							</div>
 						</div>
+
 						<div class="swiper-slide">
 							<div class="slide-head">미정</div>
 							<div class="slide-content"></div>
@@ -202,6 +210,7 @@
 			</div>
 
 
+			<!--  로그인시 세션 체크  =======================================================-->
 
 			<c:if test="${empty mvo.name}">
 				<div class="body2">
@@ -216,6 +225,7 @@
 						</div>
 					</div>
 			</c:if>
+
 			<c:if test="${!empty mvo.name}">
 				<div class="body2">
 					<div class="inner">
@@ -229,6 +239,7 @@
 						</div>
 					</div>
 			</c:if>
+
 			<div class="inner2">
 				<div class="inner-middle1">
 					<div class="middle1-inner1">
@@ -242,6 +253,7 @@
 					</div>
 					<div class="middle1-inner2"></div>
 				</div>
+
 				<div class="inner-middle2">
 					<div class="text-group">
 						<c:choose>
@@ -313,8 +325,10 @@
 								</div>
 							</c:otherwise>
 						</c:choose>
+
 					</div>
 				</div>
+
 				<div class="inner-middle3">
 					<div class="middle3-inner1"></div>
 					<div class="middle3-inner2">
@@ -324,8 +338,10 @@
 						</c:if>
 					</div>
 				</div>
+
 			</div>
 
+			<!--  포스터 open =======================================================-->
 			<div class="promotion">
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
@@ -359,26 +375,24 @@
 					<div class="material-icons">arrow_forward</div>
 				</div>
 			</div>
-		</div>
 
-		<!-- footer ====================================== -->
-		<div class="footer">
-			<div class="footer-inner1">
-				<div onclick='location.href="${cpath}/play.do"'
-					class="foot-text-group">
-					<span class="material-icons">article</span> <span>서비스 안내</span>
+</div>
+
+			<!-- footer ================================================================-->
+			<div class="footer">
+				<div class="footer-inner1">
+					<div onclick='location.href="${cpath}/play.do"'
+						class="foot-text-group">
+						<span class="material-icons">article</span> <span>서비스 안내</span>
+					</div>
 				</div>
 			</div>
-
-
-
-		</div>
-
-
-
-
+			
+		
 	</div>
-	<!-- modal================================================-->
+
+
+	<!-- 로그인modal==============================================================-->
 
 	<div class="modal">
 		<div class="modal_body">
@@ -454,7 +468,7 @@
 		<span class="material-icons .btn-close">cancel</span>
 	</div>
 
-	<!--  운행시작-종료 페이지===================================  -->
+	<!--  운행시작-종료 페이지=========================================================-->
 	<section class="drive-inner">
 		<div class="drive-inner-in">
 			<div class="drive-inner-head"></div>
@@ -476,7 +490,7 @@
 
 
 
-	<!-- 주차 등록 페이지 -->
+	<!--  주차 등록 페이지 open =======================================================-->
 	<section class="parking">
 
 		<img class="parkingimage" src="">
@@ -510,7 +524,7 @@
 		</div>
 	</section>
 
-	<!-- 주행기록 페이지 -->
+	<!--  주행기록 페이지 open  ======================================================-->
 	<section class="drive-record">
 		<div class="record">
 			<div class="inner1">
@@ -572,7 +586,7 @@
 
 	</section>
 
-	<!-- 공지사항 open-->
+	<!-- 공지사항 open============================================================-->
 	<section class="openlist">
 
 		<img alt="사진들어올곳" src=""> <span id="btn-close"
@@ -584,7 +598,7 @@
 	</section>
 
 
-	<!-- 킥보드 찾기 open-->
+	<!-- 킥보드 찾기 open===========================================================-->
 
 	<section class="map-inner">
 		<div class="map-box">
@@ -596,7 +610,7 @@
 		</div>
 	</section>
 
-	<!--  운행내역 페이지 open -->
+	<!--  운행내역 페이지 open =======================================================-->
 	<section class="total-record">
 
 		<div class="box-top">운행 내역</div>
@@ -626,9 +640,10 @@
 	</section>
 
 
-
+	<!--  카카오 api 발급인증키 ============================================-->
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d75a41bbb55475bec63a4ca074a7d2e"></script>
+	<!-- Jquery CDN ==================================================-->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -637,6 +652,9 @@
 
 	<script>
 		
+	
+	
+	
 	$('#btn-close').click(function() {
 		
 		$('.openlist').fadeOut(200);
@@ -1211,7 +1229,7 @@ $('.footend').click(function(){
 			
 		
 		
-		// 공지사항 ----------------------
+// 공지사항 ----------------------
 
 		function slidedown() {
 			$(".modal-slide-down").slideDown(500);
@@ -1242,6 +1260,7 @@ $('.footend').click(function(){
 		};
 		
 		
+// 킥보드 찾기 페이지 open시 카카오api 로드 -----------------------------
 		function movemap() {
 
 			$(".middle").fadeOut(300);
@@ -1254,7 +1273,7 @@ $('.footend').click(function(){
 			};
 			
 			
-			
+// 카카오api marker 좌표 -----------------------------------------			
 			var map = new kakao.maps.Map(container, options);
 			
 			var positions = [
@@ -1348,6 +1367,7 @@ $('.footend').click(function(){
 			    }
 			];
 
+			
 			for (var i = 0; i < positions.length; i ++) {
 				var marker = new kakao.maps.Marker({
 			        map: map, // 마커를 표시할 지도
@@ -1356,7 +1376,7 @@ $('.footend').click(function(){
 			    });
 			}
 		}
-		
+// 메인페이지로 이동 ------------------------------------------------------------	
 		function movehome() {
 			
 			$(".total-record").fadeOut(300);
@@ -1365,6 +1385,8 @@ $('.footend').click(function(){
 
 		}
 		
+		
+// 주행내역 페이지 종료시 메인페이지 이동과 함께 ajax로 session에 저장된 id값 넘기면서 메인페이지에 세션업데이트 ----------
 		function movehome2(){
 			$(".drive-record").fadeOut(300);
 			
@@ -1375,32 +1397,18 @@ $('.footend').click(function(){
 					'id' : '${mvo.id}'
 				},
 				success : function() {
-				
-					
-					
-					
+
 					window.location.href = "http://localhost:8090/web/basic.do";
 					$(".middle").fadeIn(300);
-					
-					
-					
-				}
-
-				,
-
+				},
 				error : function() {
 					alert("에러입니다");
 				}
 
 			});
-			
-			
-			
-		
-			
 		}
 		
-		
+//메인페이지에서 주행하기 버튼 클릭시 화면 -90도 전환 ------------------------------------		
 		function movedrive() {
 
 			$(".middle").fadeOut("slow");
@@ -1418,34 +1426,21 @@ $('.footend').click(function(){
 
 		}
 		
-
+//--로그인/회원가입 페이지 
 		function registerService() {
 
-			console.log($('#id2').val());
-			console.log($('#pw2').val());
-			console.log($('#name2').val());
-			console.log($('#tel2').val());
 
-			$
-					.ajax({
-						//서버 url
+			$.ajax({
 						url : '${cpath}/register.do',
-						// data : 보내줄 데이터를 객체 형식으로 넘겨줬었음! {'idx ': }
-						// var formdata = $('#frm').serialize();
-						// form 태그 안에 있는 input, textarea등등에 name값이 달려있는 태그들의 값을 가져와서
-						// 직렬화 시키는 함수!
 						data : {
 							'id' : $('#id2').val(),
 							'pw' : $('#pw2').val(),
 							'name' : $('#name2').val(),
 							'tel' : $('#tel2').val()
 						},
-						// 요청방식
 						type : 'post',
-						// 받아올 데이터 타입 지정
-						// 성공했을 때 실행할 함수
+						// 성공시 새로고침과 함계 session 저장된값을 가지고 메인페이지로 url 요청!
 						success :move,
-						// 실패했을 때 실행할 함수
 						error : function() {
 
 							alert('실패!');
@@ -1459,13 +1454,8 @@ $('.footend').click(function(){
 			alert('성공!');
 
 		}
-
-		function alert12() {
-
-			alert('로그인이필요한 서비스입니다.');
-
-		}
-
+		
+// -- 회원가입 페이지에서 ajax로 아이디 중복체크!--------------------------------------
 		function checkId() {
 
 			var id = $('#id2').val();
@@ -1496,11 +1486,14 @@ $('.footend').click(function(){
 
 			});
 		};
+// --세션이없다면 메인페이지에서 주요 서비스 사용 불가능 !----------------------------------
+		function alert12() {
+			alert('로그인이필요한 서비스입니다.');
+		}
+
 		
 		
-		//운행내역 페이지 이동
-		
-		
+//운행내역 페이지 이동 ----------------------------------------------------------
 		function movetotalrecord(){
 			
 			$(".middle").fadeOut(300);
@@ -1516,29 +1509,22 @@ $('.footend').click(function(){
 			        },
 			        mousewheel: true,
 			      });
-
-			
-			
 			$.ajax({
 				url : '${cpath}/check-record.do',
 				type : 'post',
 				data : {
 					'id' : '${mvo.id}'
 				},
+// 
 				success : listView
 				,
-
 				error : function() {
 					alert("에러입니다");
 				}
-
-			});
-			
-			
-			
-			
+			});	
 		}
 		
+// 		
 		function listView(data) {
 
 			console.log(data);
