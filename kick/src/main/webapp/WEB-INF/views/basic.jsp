@@ -9,7 +9,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
-	content="width=device-width, initial-scale=0.6 user-scalable=no" />
+	content="width=device-width, initial-scale=1.0 user-scalable=no" />
 <title>KickSquad</title>
 <!-- favicon======================================== -->
 <link rel="shortcut icon" href="resources/image/favicon.ico"
@@ -197,10 +197,7 @@
 							</div>
 						</div>
 
-						<div class="swiper-slide">
-							<div class="slide-head">미정</div>
-							<div class="slide-content"></div>
-						</div>
+					
 					</div>
 					<div class="icons-outline">
 						<span class="material-icons">swipe</span>
@@ -473,7 +470,8 @@
 		<div class="drive-inner-in">
 			<div class="drive-inner-head"></div>
 			<div class="drive-inner-main">
-				<video type="video/mp4" autoplay loop width="450" height="800"></video>
+				<video id="video2" type="video/mp4" autoplay loop width="450" height="800"></video>
+				
 				<div class="warning"></div>
 			</div>
 			<div class="drive-inner-foot">
@@ -630,8 +628,16 @@
 		</div>
 		<div class="btn-page">
 			<div class="close material-icons">cancel</div>
-			<canvas id="myChart"></canvas>
-
+			<canvas id="myChart" style="width:'60vw' height='450px'"></canvas>
+				<div>
+				<ul class="chartlist">
+				<li class="clistbox1"> <dd>주행번호</dd>     </li>
+				<li class="clistbox2"> <dd>헬멧착용</dd>     </li>
+				<li class="clistbox3"> <dd>헬멧미착용</dd>  </li>				
+				<li class="clistbox4"> <dd>동반탑승</dd>  </li>				
+				</ul>
+				
+				</div>
 
 		</div>
 
@@ -1169,7 +1175,7 @@ $('.footend').click(function(){
 		
 		$('.footstart').click(function() {
 
-			$('video').attr('src', 'resources/videos/video1.mp4');
+			$('#video2').attr('src', 'resources/videos/video2.mp4');
 			$('.footstart').fadeOut(500);
 
 			 var today = getTodayType(); // 0000-00-00
@@ -1588,36 +1594,55 @@ $('.footend').click(function(){
 							var head = res[2];
 							var two = res[3];
 							
-
+							var helper =(helmet/res[0])*100
+							var headper=(head/res[0])*100
+							var twoper=(two/res[0])*100
+			
+						
+						
+							
 							const data = {
 									  labels: [
-									    'Hemet',
-									    'Head',
-									    'Two'
+									    '헬멧 착용',
+									    '헬멧 미착용',
+									    '동반탑승'
 									  ],
 									  datasets: [{
 									    label: '운전자 상세보기',
 									    data: [helmet,head, two],
 									    backgroundColor: [
-									      'rgb(255, 99, 132)',
-									      'rgb(54, 162, 235)',
+									      'rgb(60, 179, 113)',
+									      'rgb(235, 88, 14)',
 									      'rgb(255, 205, 86)'
 									    ],
-									    hoverOffset: 4
+									    
+									    hoverOffset: 4,
+									    
 									  }]
 									};
-							
+					
 							 config = {
 									  type: 'pie',
 									  data: data,
+									  options: {
+											responsive: true,
+											legend:{
+												positon: 'bottom',
+												
+											}
+											
+										}
+									  
 									};
 							
 							 myChart = new Chart(
 									    document.getElementById('myChart'),
 									    config
 									  );
-							 
-							 
+							 $('.btn-page .chartlist .clistbox1 dd').after("<dt>"+drinum+"</dt>");
+							 $('.btn-page .chartlist .clistbox2 dd').after("<dt>"+helper.toFixed(2)+"%</dt>");
+							 $('.btn-page .chartlist .clistbox3 dd').after("<dt>"+headper.toFixed(2)+"%</dt>");
+							$('.btn-page .chartlist .clistbox4 dd').after("<dt>"+twoper.toFixed(2)+"%</dt>");
 							 
 							
 							 
@@ -1635,8 +1660,12 @@ $('.footend').click(function(){
 						 
 						 $('.btn-page').fadeOut(300);
 						 
-						myChart.destroy();	// ★★destroy로 기존의 canvas를 제거
-							  
+						myChart.destroy();	//닫기버튼 클릭시  destroy로 기존의 canvas를 제거
+						 
+						$('.btn-page .chartlist .clistbox1 dt').remove();
+						$('.btn-page .chartlist .clistbox2 dt').remove();
+						 $('.btn-page .chartlist .clistbox3 dt').remove();
+						$('.btn-page .chartlist .clistbox4 dt').remove();
 							  
 						 
 						 

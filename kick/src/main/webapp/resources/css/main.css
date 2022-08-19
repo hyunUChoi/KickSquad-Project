@@ -1145,7 +1145,7 @@ display:flex;
 	width: 100%;
 	height: 800px;
 }
-.drive-inner .drive-inner-in .drive-inner-main video{
+.drive-inner .drive-inner-in .drive-inner-main #video2{
 	width: 805px;
     height: 800px;
     position: relative;
@@ -1428,7 +1428,7 @@ display:flex;
 	height: 4px;
 	background-color: #DEDFE3;
 	position: absolute;
-	top: 440px;
+	top: 435px;
 	left: 20px;
 }
 
@@ -1687,6 +1687,72 @@ body>div>section.map-inner {
 	display:none;
 	
 }
+.btn-page .chartlist{
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 50px;
+}
+.btn-page .chartlist li{
+	
+	display: flex;
+   
+    width: 100%;
+	
+}
+.btn-page .chartlist li:nth-child(1){
+	background-color:#DEDFE3;
+	 justify-content: start;
+	 position:relative;
+	 left:-40px;
+	 border-top-right-radius:15px;
+	 border-bottom-right-radius:15px;
+}
+.btn-page .chartlist li:nth-child(2),
+.btn-page .chartlist li:nth-child(3),
+.btn-page .chartlist li:nth-child(4){
+	
+	 justify-content: space-around;
+}
+
+.btn-page .chartlist li dd,
+.btn-page .chartlist li dt{
+	
+	width:50%;
+	
+}
+.btn-page .chartlist .clistbox2:after{
+	content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 10px;
+    bottom: 158px;
+    background-color: #3cb371;
+	 border-radius: 10px;
+}
+.btn-page .chartlist .clistbox3:after{
+	content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #eb580e;
+    left: 10px;
+    bottom: 107px;
+    border-radius: 10px;
+	
+}
+.btn-page .chartlist .clistbox4:after{
+	content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #ffcd56;
+    border-radius: 10px;
+    left: 10px;
+    bottom: 55px;
+}
+
 .btn-page .close{
 	position: absolute;
     right: 0px;
