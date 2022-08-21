@@ -46,24 +46,16 @@
 <br><br>
 	
 ## 📌 ER다이어그램
-![image](https://user-images.githubusercontent.com/103619605/182579207-e5070ca5-2cde-43d1-94f7-5414a2d56a9f.png)
+![image](https://user-images.githubusercontent.com/103620466/185775183-33fd4d86-3837-46f1-8c5d-9ca798b68d77.png)
 <br><br>
 
 ## 📌 화면 구성
 
-### 회원가입 / 메인화면 / 사용자 튜토리얼 화면
-![image](https://user-images.githubusercontent.com/103620466/182588812-326be119-90cb-4264-b3f1-bb7eb059888f.png)
+### 메인화면 / 주행화면 / 주차화면
+![image](https://user-images.githubusercontent.com/103620466/185775407-0681dab8-6bb2-422b-a430-c90d87b24435.png)
 <br><br>
 
-### 매장 보기 화면 (전체 매장 / 카테고리 선택 / 매장명 검색)
-![image](https://user-images.githubusercontent.com/103620466/182589092-43fdf433-026b-47da-9d48-a5c5105ecdf3.png)
-<br><br>
-
-### 커뮤니티 게시판 화면 / 리뷰 등록 / 리뷰 수정
-![image](https://user-images.githubusercontent.com/103620466/182589351-00081d31-ca43-4193-9fb2-23fa1b506990.png)
-<br><br>
-
-### 등급 시각화 / 리워드 화면 / 신규 매장등록 화면
-![image](https://user-images.githubusercontent.com/103620466/182589764-d97e7c59-957b-47aa-a884-1e62ba9cd57d.png)
+### 운행종료 화면 / 내역조회 화면 / 내역 상세보기 화면
+![image](https://user-images.githubusercontent.com/103620466/185775448-742a46c4-3e6d-4a90-8b49-6c2f6ab2b17e.png)
 <br><br>
 </details>
