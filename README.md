@@ -42,7 +42,7 @@
 <br><br>
 
 ## 📌 SW유스케이스
-![스크린샷(27)](https://user-images.githubusercontent.com/103619605/182365968-09e3e196-5797-4fec-9eab-765e8925c9b8.png)
+![image](https://user-images.githubusercontent.com/103620466/185776514-e2182d99-c639-4327-8655-19b6e60c54d5.png)
 <br><br>
 	
 ## 📌 ER다이어그램
